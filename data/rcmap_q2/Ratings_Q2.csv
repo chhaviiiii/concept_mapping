@@ -1,0 +1,1701 @@
+ParticipantID,StatementID,Rating
+1,1,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 1. Human oversight during implementation in early days"
+1,2,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 2. Concerns with confidentiality"
+1,3,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 3. Concerns with patient acceptability"
+1,4,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 4. Efficiency improved for documentation"
+1,5,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 5. False confidence"
+1,6,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 6. AI could provide alternate perspectives"
+1,7,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 7. AI could perpetuate existing biases"
+1,8,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 8. Minimizing bias and increasing performance and accuracy"
+1,9,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 9. Ensuring accountability and oversight of AI"
+1,10,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 10. Concerns with digital literacy and digital divide barriers"
+1,11,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 11. Better detection (of moles, cancer lumps)"
+1,12,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 12. Diversification of AI training data and sources"
+1,13,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 13. Too much bureaucracy slowing progress"
+1,14,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 14. Concerns with liability"
+1,15,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 15. AI could decrease false positives"
+1,16,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 16. Proactive preventative care"
+1,17,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 17. Benefits in equitable access"
+1,18,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 18. AI could free up time for pt care"
+1,19,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 19. Developing a rigorous privacy and quality assurance framework"
+1,20,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 20. AI could be misused"
+1,21,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 21. Helps with generation of ideas can act as a sounding board"
+1,22,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 22. Benefits with accessibility & communication (translating languages lay terms)"
+1,23,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 23. AI allows access vast information very quickly to help diagnosis"
+1,24,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 24. Benefits in early distress screening"
+1,25,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 25. Establishing proper consent"
+1,26,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 26. Concerns with job security"
+1,27,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 27. Benefits with patient access to accurate information"
+1,28,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 28. Concerns about personalizing care"
+1,29,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 29. Data governance policies and regulations to enhance data quality and accountability"
+1,30,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 30. Savings in time, can integrate different information and improve in treatment especially when there is less number of human specialist"
+1,31,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 31. AI could remove human bias"
+1,32,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 32. Regulation framework and a good understanding of the medico-legal implications"
+1,33,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 33. AI could lead to excessive human delegation, assuming that that AI will take care of it!"
+1,34,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 34. Knowledge repositing for learning and research"
+1,35,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 35. AI could be of concern regarding its ongoing validation"
+1,36,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 36. AI could be of concern to patient privacy"
+1,37,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 37. Consultation recording and transcription"
+1,38,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 38. Ensuring cybersecurity of AI tools"
+1,39,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 39. Educating end-users about properly navigating AI"
+1,40,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 40. Concerns with protection of personal health identifiers"
+1,41,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 41. Facilitation of clinical research"
+1,42,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 42. Improve access to services"
+1,43,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 43. Ensuring accessibility and translation"
+1,44,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 44. AI could help improve accuracy"
+1,45,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 45. Embed research / quality improvement into all areas"
+1,46,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 46. ""Garbage in, garbage out"" - data that the AI model is trained on must be good, clean, large and diverse"
+1,47,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 47. Concerns with attrition of skills in healthcare providers"
+1,48,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 48. Preservation of human touch"
+1,49,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 49. Loss of human connection/interactions"
+1,50,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 50. Summarization of large amounts of text or data - increases digestability/highlighting key points"
+1,51,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 51. Collate large databases"
+1,52,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 52. AI could engender issues with trust"
+1,53,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 53. Pooling large volume of data can improve accuracy of AI system and allow for more timely diagnosis and treatment recommendation"
+1,54,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 54. Concerns with responsibility accountability of AI recommendations"
+1,55,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 55. AI hallucinations"
+1,56,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 56. Multidisciplinary collaboration and training in developing AI models"
+1,57,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 57. 24/7 availability, AI doesn’t get tired or brain fog"
+1,58,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 58. Noticing patterns and new things humans haven’t noticed"
+1,59,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 59. Prediction/prognosis/treatment recommendations"
+1,60,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 60. Concerns with standards for quality, accuracy, etc."
+1,61,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 61. Concerns with power outages and down time procedures"
+1,62,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 62. Increased opportunities for innovation"
+1,63,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 63. Distress is nuanced and often detected in the unsaid of human communication and in a trusting therapeutic relationship"
+1,64,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 64. Personalization of AI support tools for patients"
+1,65,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 65. Concerns with difficulty to know older data for training and missing new breakthrough information"
+1,66,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 66. Concerns with consent of patient"
+1,67,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 67. Racism bias through research (history of medical research)"
+1,68,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 68. Phased roll-out: Start with simple, ""low stakes"" tasks continue in stages"
+1,69,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 69. Reduce admin burden"
+1,70,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 70. Potential in navigation and directing to self-management resources"
+1,71,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 71. Over reliance by physicians and reduced problem solving skills"
+1,72,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 72. Ability to make text/conversation more digestable for patients (less technical)"
+1,73,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 73. Ensuring clinical validation of AI tools"
+1,74,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 74. Concerns with maintaining up to date information, sources and programming"
+1,75,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 75. Data privacy concerns"
+1,76,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 76. Triage diagnostic results for clinicians"
+1,77,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 77. Concerns with going too far and can’t come back"
+1,78,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 78. Control of data by corporations"
+1,79,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 79. AI could help address the human health resources issue"
+1,80,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 80. Faster assessments to inform decision-making"
+1,81,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 81. Concerns with transparency"
+1,82,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 82. AI could make mistakes"
+1,83,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 83. Concerns with stability of the system (during virus attack, power outage, system interruption)"
+1,84,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 84. Live translation and/or transcription of conversations"
+1,85,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 85. Establishing guidelines for “best practices” for training AI + clinical validation"
+1,86,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 86. Lack of training/knowledge for those using the AI tool in the real world"
+1,87,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 87. Can existing healthcare servers support the use of AI?"
+1,88,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 88. Ensuring interpretability of AI tools"
+1,89,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 89. Allow clinicians to focus on tasks requiring their expertise"
+1,90,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 90. Identifying and focusing on high-priority areas, such as prevention"
+1,91,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 91. Concerns that data is held by private companies"
+1,92,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 92. Maintaining competency with changing best practices and approuved standards"
+1,93,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 93. Minority groups being marginalized"
+1,94,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 94. Patient/parent/caregiver/provider acceptability"
+1,95,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 95. Data ownership and standards and guidelines on AI developed are not established"
+1,96,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 96. Possibility of data breaches / data leaks"
+1,97,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 97. Potential for widening differential diagnosis, widening perspective of patient"
+1,98,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 98. Lists possible outcome and risks for the patient"
+1,99,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 99. Cybersecurity concerns"
+1,100,"Statement Rating Task.
+
+Please rate each statement for its relative importance where: 1 = relatively unimportant (compared with the rest of the statements) 2 = somewhat important 3 = moderately important 4 = very important 5 = extremely important (compared with the rest of the statements). Please disregard the numbering of statements. - 100. Automation of routine tasks"
+1,1,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 1. Human oversight during implementation in early days"
+1,2,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 2. Concerns with confidentiality"
+1,3,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 3. Concerns with patient acceptability"
+1,4,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 4. Efficiency improved for documentation"
+1,5,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 5. False confidence"
+1,6,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 6. AI could provide alternate perspectives"
+1,7,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 7. AI could perpetuate existing biases"
+1,8,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 8. Minimizing bias and increasing performance and accuracy"
+1,9,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 9. Ensuring accountability and oversight of AI"
+1,10,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 10. Concerns with digital literacy and digital divide barriers"
+1,11,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 11. Better detection (of moles, cancer lumps)"
+1,12,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 12. Diversification of AI training data and sources"
+1,13,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 13. Too much bureaucracy slowing progress"
+1,14,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 14. Concerns with liability"
+1,15,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 15. AI could decrease false positives"
+1,16,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 16. Proactive preventative care"
+1,17,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 17. Benefits in equitable access"
+1,18,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 18. AI could free up time for pt care"
+1,19,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 19. Developing a rigorous privacy and quality assurance framework"
+1,20,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 20. AI could be misused"
+1,21,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 21. Helps with generation of ideas can act as a sounding board"
+1,22,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 22. Benefits with accessibility & communication (translating languages lay terms)"
+1,23,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 23. AI allows access vast information very quickly to help diagnosis"
+1,24,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 24. Benefits in early distress screening"
+1,25,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 25. Establishing proper consent"
+1,26,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 26. Concerns with job security"
+1,27,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 27. Benefits with patient access to accurate information"
+1,28,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 28. Concerns about personalizing care"
+1,29,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 29. Data governance policies and regulations to enhance data quality and accountability"
+1,30,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 30. Savings in time, can integrate different information and improve in treatment especially when there is less number of human specialist"
+1,31,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 31. AI could remove human bias"
+1,32,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 32. Regulation framework and a good understanding of the medico-legal implications"
+1,33,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 33. AI could lead to excessive human delegation, assuming that that AI will take care of it!"
+1,34,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 34. Knowledge repositing for learning and research"
+1,35,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 35. AI could be of concern regarding its ongoing validation"
+1,36,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 36. AI could be of concern to patient privacy"
+1,37,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 37. Consultation recording and transcription"
+1,38,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 38. Ensuring cybersecurity of AI tools"
+1,39,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 39. Educating end-users about properly navigating AI"
+1,40,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 40. Concerns with protection of personal health identifiers"
+1,41,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 41. Facilitation of clinical research"
+1,42,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 42. Improve access to services"
+1,43,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 43. Ensuring accessibility and translation"
+1,44,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 44. AI could help improve accuracy"
+1,45,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 45. Embed research / quality improvement into all areas"
+1,46,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 46. ""Garbage in, garbage out"" - data that the AI model is trained on must be good, clean, large and diverse"
+1,47,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 47. Concerns with attrition of skills in healthcare providers"
+1,48,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 48. Preservation of human touch"
+1,49,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 49. Loss of human connection/interactions"
+1,50,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 50. Summarization of large amounts of text or data - increases digestability/highlighting key points"
+1,51,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 51. Collate large databases"
+1,52,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 52. AI could engender issues with trust"
+1,53,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 53. Pooling large volume of data can improve accuracy of AI system and allow for more timely diagnosis and treatment recommendation"
+1,54,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 54. Concerns with responsibility accountability of AI recommendations"
+1,55,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 55. AI hallucinations"
+1,56,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 56. Multidisciplinary collaboration and training in developing AI models"
+1,57,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 57. 24/7 availability, AI doesn’t get tired or brain fog"
+1,58,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 58. Noticing patterns and new things humans haven’t noticed"
+1,59,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 59. Prediction/prognosis/treatment recommendations"
+1,60,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 60. Concerns with standards for quality, accuracy, etc."
+1,61,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 61. Concerns with power outages and down time procedures"
+1,62,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 62. Increased opportunities for innovation"
+1,63,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 63. Distress is nuanced and often detected in the unsaid of human communication and in a trusting therapeutic relationship"
+1,64,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 64. Personalization of AI support tools for patients"
+1,65,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 65. Concerns with difficulty to know older data for training and missing new breakthrough information"
+1,66,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 66. Concerns with consent of patient"
+1,67,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 67. Racism bias through research (history of medical research)"
+1,68,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 68. Phased roll-out: Start with simple, ""low stakes"" tasks continue in stages"
+1,69,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 69. Reduce admin burden"
+1,70,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 70. Potential in navigation and directing to self-management resources"
+1,71,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 71. Over reliance by physicians and reduced problem solving skills"
+1,72,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 72. Ability to make text/conversation more digestable for patients (less technical)"
+1,73,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 73. Ensuring clinical validation of AI tools"
+1,74,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 74. Concerns with maintaining up to date information, sources and programming"
+1,75,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 75. Data privacy concerns"
+1,76,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 76. Triage diagnostic results for clinicians"
+1,77,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 77. Concerns with going too far and can’t come back"
+1,78,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 78. Control of data by corporations"
+1,79,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 79. AI could help address the human health resources issue"
+1,80,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 80. Faster assessments to inform decision-making"
+1,81,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 81. Concerns with transparency"
+1,82,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 82. AI could make mistakes"
+1,83,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 83. Concerns with stability of the system (during virus attack, power outage, system interruption)"
+1,84,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 84. Live translation and/or transcription of conversations"
+1,85,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 85. Establishing guidelines for “best practices” for training AI + clinical validation"
+1,86,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 86. Lack of training/knowledge for those using the AI tool in the real world"
+1,87,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 87. Can existing healthcare servers support the use of AI?"
+1,88,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 88. Ensuring interpretability of AI tools"
+1,89,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 89. Allow clinicians to focus on tasks requiring their expertise"
+1,90,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 90. Identifying and focusing on high-priority areas, such as prevention"
+1,91,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 91. Concerns that data is held by private companies"
+1,92,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 92. Maintaining competency with changing best practices and approuved standards"
+1,93,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 93. Minority groups being marginalized"
+1,94,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 94. Patient/parent/caregiver/provider acceptability"
+1,95,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 95. Data ownership and standards and guidelines on AI developed are not established"
+1,96,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 96. Possibility of data breaches / data leaks"
+1,97,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 97. Potential for widening differential diagnosis, widening perspective of patient"
+1,98,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 98. Lists possible outcome and risks for the patient"
+1,99,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 99. Cybersecurity concerns"
+1,100,"Statement Rating Task.
+
+Please rate each statement for its relative feasibility* where: 1 = relatively unfeasible (compared with the rest of the statements) 2 = somewhat feasible 3 = moderately feasible 4 = very feasible 5 = extremely feasible (compared with the rest of the statements). Please disregard the numbering of statements.
+
+(*): By feasibility we mean how easy it will be to implement a priority, actualize a benefit, or address a concern. - 100. Automation of routine tasks"
+2,1,"{""ImportId"":""QID2_1""}"
+2,2,"{""ImportId"":""QID2_2""}"
+2,3,"{""ImportId"":""QID2_3""}"
+2,4,"{""ImportId"":""QID2_4""}"
+2,5,"{""ImportId"":""QID2_5""}"
+2,6,"{""ImportId"":""QID2_6""}"
+2,7,"{""ImportId"":""QID2_7""}"
+2,8,"{""ImportId"":""QID2_8""}"
+2,9,"{""ImportId"":""QID2_9""}"
+2,10,"{""ImportId"":""QID2_10""}"
+2,11,"{""ImportId"":""QID2_11""}"
+2,12,"{""ImportId"":""QID2_12""}"
+2,13,"{""ImportId"":""QID2_13""}"
+2,14,"{""ImportId"":""QID2_14""}"
+2,15,"{""ImportId"":""QID2_15""}"
+2,16,"{""ImportId"":""QID2_16""}"
+2,17,"{""ImportId"":""QID2_17""}"
+2,18,"{""ImportId"":""QID2_18""}"
+2,19,"{""ImportId"":""QID2_19""}"
+2,20,"{""ImportId"":""QID2_20""}"
+2,21,"{""ImportId"":""QID2_21""}"
+2,22,"{""ImportId"":""QID2_22""}"
+2,23,"{""ImportId"":""QID2_23""}"
+2,24,"{""ImportId"":""QID2_24""}"
+2,25,"{""ImportId"":""QID2_25""}"
+2,26,"{""ImportId"":""QID2_26""}"
+2,27,"{""ImportId"":""QID2_27""}"
+2,28,"{""ImportId"":""QID2_28""}"
+2,29,"{""ImportId"":""QID2_29""}"
+2,30,"{""ImportId"":""QID2_30""}"
+2,31,"{""ImportId"":""QID2_31""}"
+2,32,"{""ImportId"":""QID2_32""}"
+2,33,"{""ImportId"":""QID2_33""}"
+2,34,"{""ImportId"":""QID2_34""}"
+2,35,"{""ImportId"":""QID2_35""}"
+2,36,"{""ImportId"":""QID2_36""}"
+2,37,"{""ImportId"":""QID2_37""}"
+2,38,"{""ImportId"":""QID2_38""}"
+2,39,"{""ImportId"":""QID2_39""}"
+2,40,"{""ImportId"":""QID2_40""}"
+2,41,"{""ImportId"":""QID2_41""}"
+2,42,"{""ImportId"":""QID2_42""}"
+2,43,"{""ImportId"":""QID2_43""}"
+2,44,"{""ImportId"":""QID2_44""}"
+2,45,"{""ImportId"":""QID2_45""}"
+2,46,"{""ImportId"":""QID2_46""}"
+2,47,"{""ImportId"":""QID2_47""}"
+2,48,"{""ImportId"":""QID2_48""}"
+2,49,"{""ImportId"":""QID2_49""}"
+2,50,"{""ImportId"":""QID2_50""}"
+2,51,"{""ImportId"":""QID2_51""}"
+2,52,"{""ImportId"":""QID2_52""}"
+2,53,"{""ImportId"":""QID2_53""}"
+2,54,"{""ImportId"":""QID2_54""}"
+2,55,"{""ImportId"":""QID2_55""}"
+2,56,"{""ImportId"":""QID2_56""}"
+2,57,"{""ImportId"":""QID2_57""}"
+2,58,"{""ImportId"":""QID2_58""}"
+2,59,"{""ImportId"":""QID2_59""}"
+2,60,"{""ImportId"":""QID2_60""}"
+2,61,"{""ImportId"":""QID2_61""}"
+2,62,"{""ImportId"":""QID2_62""}"
+2,63,"{""ImportId"":""QID2_63""}"
+2,64,"{""ImportId"":""QID2_64""}"
+2,65,"{""ImportId"":""QID2_65""}"
+2,66,"{""ImportId"":""QID2_66""}"
+2,67,"{""ImportId"":""QID2_67""}"
+2,68,"{""ImportId"":""QID2_68""}"
+2,69,"{""ImportId"":""QID2_69""}"
+2,70,"{""ImportId"":""QID2_70""}"
+2,71,"{""ImportId"":""QID2_71""}"
+2,72,"{""ImportId"":""QID2_72""}"
+2,73,"{""ImportId"":""QID2_73""}"
+2,74,"{""ImportId"":""QID2_74""}"
+2,75,"{""ImportId"":""QID2_75""}"
+2,76,"{""ImportId"":""QID2_76""}"
+2,77,"{""ImportId"":""QID2_77""}"
+2,78,"{""ImportId"":""QID2_78""}"
+2,79,"{""ImportId"":""QID2_79""}"
+2,80,"{""ImportId"":""QID2_80""}"
+2,81,"{""ImportId"":""QID2_81""}"
+2,82,"{""ImportId"":""QID2_82""}"
+2,83,"{""ImportId"":""QID2_83""}"
+2,84,"{""ImportId"":""QID2_84""}"
+2,85,"{""ImportId"":""QID2_85""}"
+2,86,"{""ImportId"":""QID2_86""}"
+2,87,"{""ImportId"":""QID2_87""}"
+2,88,"{""ImportId"":""QID2_88""}"
+2,89,"{""ImportId"":""QID2_89""}"
+2,90,"{""ImportId"":""QID2_90""}"
+2,91,"{""ImportId"":""QID2_91""}"
+2,92,"{""ImportId"":""QID2_92""}"
+2,93,"{""ImportId"":""QID2_93""}"
+2,94,"{""ImportId"":""QID2_94""}"
+2,95,"{""ImportId"":""QID2_95""}"
+2,96,"{""ImportId"":""QID2_96""}"
+2,97,"{""ImportId"":""QID2_97""}"
+2,98,"{""ImportId"":""QID2_98""}"
+2,99,"{""ImportId"":""QID2_99""}"
+2,100,"{""ImportId"":""QID2_100""}"
+2,1,"{""ImportId"":""QID5_1""}"
+2,2,"{""ImportId"":""QID5_2""}"
+2,3,"{""ImportId"":""QID5_3""}"
+2,4,"{""ImportId"":""QID5_4""}"
+2,5,"{""ImportId"":""QID5_5""}"
+2,6,"{""ImportId"":""QID5_6""}"
+2,7,"{""ImportId"":""QID5_7""}"
+2,8,"{""ImportId"":""QID5_8""}"
+2,9,"{""ImportId"":""QID5_9""}"
+2,10,"{""ImportId"":""QID5_10""}"
+2,11,"{""ImportId"":""QID5_11""}"
+2,12,"{""ImportId"":""QID5_12""}"
+2,13,"{""ImportId"":""QID5_13""}"
+2,14,"{""ImportId"":""QID5_14""}"
+2,15,"{""ImportId"":""QID5_15""}"
+2,16,"{""ImportId"":""QID5_16""}"
+2,17,"{""ImportId"":""QID5_17""}"
+2,18,"{""ImportId"":""QID5_18""}"
+2,19,"{""ImportId"":""QID5_19""}"
+2,20,"{""ImportId"":""QID5_20""}"
+2,21,"{""ImportId"":""QID5_21""}"
+2,22,"{""ImportId"":""QID5_22""}"
+2,23,"{""ImportId"":""QID5_23""}"
+2,24,"{""ImportId"":""QID5_24""}"
+2,25,"{""ImportId"":""QID5_25""}"
+2,26,"{""ImportId"":""QID5_26""}"
+2,27,"{""ImportId"":""QID5_27""}"
+2,28,"{""ImportId"":""QID5_28""}"
+2,29,"{""ImportId"":""QID5_29""}"
+2,30,"{""ImportId"":""QID5_30""}"
+2,31,"{""ImportId"":""QID5_31""}"
+2,32,"{""ImportId"":""QID5_32""}"
+2,33,"{""ImportId"":""QID5_33""}"
+2,34,"{""ImportId"":""QID5_34""}"
+2,35,"{""ImportId"":""QID5_35""}"
+2,36,"{""ImportId"":""QID5_36""}"
+2,37,"{""ImportId"":""QID5_37""}"
+2,38,"{""ImportId"":""QID5_38""}"
+2,39,"{""ImportId"":""QID5_39""}"
+2,40,"{""ImportId"":""QID5_40""}"
+2,41,"{""ImportId"":""QID5_41""}"
+2,42,"{""ImportId"":""QID5_42""}"
+2,43,"{""ImportId"":""QID5_43""}"
+2,44,"{""ImportId"":""QID5_44""}"
+2,45,"{""ImportId"":""QID5_45""}"
+2,46,"{""ImportId"":""QID5_46""}"
+2,47,"{""ImportId"":""QID5_47""}"
+2,48,"{""ImportId"":""QID5_48""}"
+2,49,"{""ImportId"":""QID5_49""}"
+2,50,"{""ImportId"":""QID5_50""}"
+2,51,"{""ImportId"":""QID5_51""}"
+2,52,"{""ImportId"":""QID5_52""}"
+2,53,"{""ImportId"":""QID5_53""}"
+2,54,"{""ImportId"":""QID5_54""}"
+2,55,"{""ImportId"":""QID5_55""}"
+2,56,"{""ImportId"":""QID5_56""}"
+2,57,"{""ImportId"":""QID5_57""}"
+2,58,"{""ImportId"":""QID5_58""}"
+2,59,"{""ImportId"":""QID5_59""}"
+2,60,"{""ImportId"":""QID5_60""}"
+2,61,"{""ImportId"":""QID5_61""}"
+2,62,"{""ImportId"":""QID5_62""}"
+2,63,"{""ImportId"":""QID5_63""}"
+2,64,"{""ImportId"":""QID5_64""}"
+2,65,"{""ImportId"":""QID5_65""}"
+2,66,"{""ImportId"":""QID5_66""}"
+2,67,"{""ImportId"":""QID5_67""}"
+2,68,"{""ImportId"":""QID5_68""}"
+2,69,"{""ImportId"":""QID5_69""}"
+2,70,"{""ImportId"":""QID5_70""}"
+2,71,"{""ImportId"":""QID5_71""}"
+2,72,"{""ImportId"":""QID5_72""}"
+2,73,"{""ImportId"":""QID5_73""}"
+2,74,"{""ImportId"":""QID5_74""}"
+2,75,"{""ImportId"":""QID5_75""}"
+2,76,"{""ImportId"":""QID5_76""}"
+2,77,"{""ImportId"":""QID5_77""}"
+2,78,"{""ImportId"":""QID5_78""}"
+2,79,"{""ImportId"":""QID5_79""}"
+2,80,"{""ImportId"":""QID5_80""}"
+2,81,"{""ImportId"":""QID5_81""}"
+2,82,"{""ImportId"":""QID5_82""}"
+2,83,"{""ImportId"":""QID5_83""}"
+2,84,"{""ImportId"":""QID5_84""}"
+2,85,"{""ImportId"":""QID5_85""}"
+2,86,"{""ImportId"":""QID5_86""}"
+2,87,"{""ImportId"":""QID5_87""}"
+2,88,"{""ImportId"":""QID5_88""}"
+2,89,"{""ImportId"":""QID5_89""}"
+2,90,"{""ImportId"":""QID5_90""}"
+2,91,"{""ImportId"":""QID5_91""}"
+2,92,"{""ImportId"":""QID5_92""}"
+2,93,"{""ImportId"":""QID5_93""}"
+2,94,"{""ImportId"":""QID5_94""}"
+2,95,"{""ImportId"":""QID5_95""}"
+2,96,"{""ImportId"":""QID5_96""}"
+2,97,"{""ImportId"":""QID5_97""}"
+2,98,"{""ImportId"":""QID5_98""}"
+2,99,"{""ImportId"":""QID5_99""}"
+2,100,"{""ImportId"":""QID5_100""}"
+3,1,1 = relatively unimportant (compared with the rest of the statements)
+3,2,2 = somewhat important
+3,3,5 = extremely important (compared with the rest of the statements)
+3,4,2 = somewhat important
+3,5,2 = somewhat important
+3,6,1 = relatively unimportant (compared with the rest of the statements)
+3,7,5 = extremely important (compared with the rest of the statements)
+3,8,5 = extremely important (compared with the rest of the statements)
+3,9,4 = very important
+3,10,3 = moderately important
+3,11,4 = very important
+3,12,2 = somewhat important
+3,13,3 = moderately important
+3,14,4 = very important
+3,15,3 = moderately important
+3,16,2 = somewhat important
+3,17,2 = somewhat important
+3,18,4 = very important
+3,19,3 = moderately important
+3,20,2 = somewhat important
+3,21,3 = moderately important
+3,22,4 = very important
+3,23,3 = moderately important
+3,24,2 = somewhat important
+3,25,5 = extremely important (compared with the rest of the statements)
+3,26,4 = very important
+3,27,4 = very important
+3,28,4 = very important
+3,29,2 = somewhat important
+3,30,5 = extremely important (compared with the rest of the statements)
+3,31,2 = somewhat important
+3,32,2 = somewhat important
+3,33,1 = relatively unimportant (compared with the rest of the statements)
+3,34,3 = moderately important
+3,35,5 = extremely important (compared with the rest of the statements)
+3,36,5 = extremely important (compared with the rest of the statements)
+3,37,5 = extremely important (compared with the rest of the statements)
+3,38,3 = moderately important
+3,39,2 = somewhat important
+3,40,2 = somewhat important
+3,41,1 = relatively unimportant (compared with the rest of the statements)
+3,42,3 = moderately important
+3,43,3 = moderately important
+3,44,2 = somewhat important
+3,45,2 = somewhat important
+3,46,4 = very important
+3,47,5 = extremely important (compared with the rest of the statements)
+3,48,3 = moderately important
+3,49,2 = somewhat important
+3,50,4 = very important
+3,51,4 = very important
+3,52,2 = somewhat important
+3,53,4 = very important
+3,54,5 = extremely important (compared with the rest of the statements)
+3,55,2 = somewhat important
+3,56,4 = very important
+3,57,3 = moderately important
+3,58,2 = somewhat important
+3,59,2 = somewhat important
+3,60,4 = very important
+3,61,3 = moderately important
+3,62,2 = somewhat important
+3,63,3 = moderately important
+3,64,3 = moderately important
+3,65,2 = somewhat important
+3,66,4 = very important
+3,67,5 = extremely important (compared with the rest of the statements)
+3,68,3 = moderately important
+3,69,2 = somewhat important
+3,70,2 = somewhat important
+3,71,3 = moderately important
+3,72,4 = very important
+3,73,5 = extremely important (compared with the rest of the statements)
+3,74,5 = extremely important (compared with the rest of the statements)
+3,75,4 = very important
+3,76,2 = somewhat important
+3,77,3 = moderately important
+3,78,5 = extremely important (compared with the rest of the statements)
+3,79,1 = relatively unimportant (compared with the rest of the statements)
+3,80,3 = moderately important
+3,81,5 = extremely important (compared with the rest of the statements)
+3,82,1 = relatively unimportant (compared with the rest of the statements)
+3,83,3 = moderately important
+3,84,3 = moderately important
+3,85,4 = very important
+3,86,5 = extremely important (compared with the rest of the statements)
+3,87,3 = moderately important
+3,88,3 = moderately important
+3,89,1 = relatively unimportant (compared with the rest of the statements)
+3,90,1 = relatively unimportant (compared with the rest of the statements)
+3,91,4 = very important
+3,92,4 = very important
+3,93,4 = very important
+3,94,5 = extremely important (compared with the rest of the statements)
+3,95,2 = somewhat important
+3,96,4 = very important
+3,97,4 = very important
+3,98,3 = moderately important
+3,99,2 = somewhat important
+3,100,5 = extremely important (compared with the rest of the statements)
+6,1,4 = very important
+6,2,3 = moderately important
+6,3,3 = moderately important
+6,4,4 = very important
+6,5,3 = moderately important
+6,6,2 = somewhat important
+6,7,3 = moderately important
+6,8,4 = very important
+6,9,4 = very important
+6,10,2 = somewhat important
+6,11,4 = very important
+6,12,2 = somewhat important
+6,13,3 = moderately important
+6,14,2 = somewhat important
+6,15,4 = very important
+6,16,4 = very important
+6,17,3 = moderately important
+6,18,4 = very important
+6,19,3 = moderately important
+6,20,2 = somewhat important
+6,21,2 = somewhat important
+6,22,3 = moderately important
+6,23,3 = moderately important
+6,24,4 = very important
+6,25,3 = moderately important
+6,26,3 = moderately important
+6,27,4 = very important
+6,28,2 = somewhat important
+6,29,1 = relatively unimportant (compared with the rest of the statements)
+6,30,4 = very important
+6,31,3 = moderately important
+6,32,3 = moderately important
+6,33,3 = moderately important
+6,34,3 = moderately important
+6,35,3 = moderately important
+6,36,3 = moderately important
+6,37,4 = very important
+6,38,3 = moderately important
+6,39,3 = moderately important
+6,40,3 = moderately important
+6,41,3 = moderately important
+6,42,4 = very important
+6,43,3 = moderately important
+6,44,4 = very important
+6,45,4 = very important
+6,46,2 = somewhat important
+6,47,3 = moderately important
+6,48,4 = very important
+6,49,4 = very important
+6,50,3 = moderately important
+6,51,3 = moderately important
+6,52,3 = moderately important
+6,53,4 = very important
+6,54,4 = very important
+6,55,3 = moderately important
+6,56,2 = somewhat important
+6,57,3 = moderately important
+6,58,3 = moderately important
+6,59,4 = very important
+6,60,2 = somewhat important
+6,61,1 = relatively unimportant (compared with the rest of the statements)
+6,62,2 = somewhat important
+6,63,4 = very important
+6,64,3 = moderately important
+6,65,2 = somewhat important
+6,66,4 = very important
+6,67,3 = moderately important
+6,68,3 = moderately important
+6,69,4 = very important
+6,70,4 = very important
+6,71,3 = moderately important
+6,72,3 = moderately important
+6,73,3 = moderately important
+6,74,2 = somewhat important
+6,75,3 = moderately important
+6,76,4 = very important
+6,77,2 = somewhat important
+6,78,4 = very important
+6,79,5 = extremely important (compared with the rest of the statements)
+6,80,3 = moderately important
+6,81,4 = very important
+6,82,4 = very important
+6,83,2 = somewhat important
+6,84,4 = very important
+6,85,3 = moderately important
+6,86,3 = moderately important
+6,87,1 = relatively unimportant (compared with the rest of the statements)
+6,88,4 = very important
+6,89,5 = extremely important (compared with the rest of the statements)
+6,90,3 = moderately important
+6,91,3 = moderately important
+6,92,4 = very important
+6,93,3 = moderately important
+6,94,4 = very important
+6,95,2 = somewhat important
+6,96,3 = moderately important
+6,97,3 = moderately important
+6,98,4 = very important
+6,99,3 = moderately important
+6,100,4 = very important
+6,1,3 = moderately feasible
+6,2,3 = moderately feasible
+6,3,3 = moderately feasible
+6,4,4 = very feasible
+6,5,3 = moderately feasible
+6,6,3 = moderately feasible
+6,7,3 = moderately feasible
+6,8,4 = very feasible
+6,9,3 = moderately feasible
+6,10,2 = somewhat feasible
+6,11,4 = very feasible
+6,12,2 = somewhat feasible
+6,13,4 = very feasible
+6,14,3 = moderately feasible
+6,15,3 = moderately feasible
+6,16,4 = very feasible
+6,17,3 = moderately feasible
+6,18,4 = very feasible
+6,19,3 = moderately feasible
+6,20,2 = somewhat feasible
+6,21,3 = moderately feasible
+6,22,3 = moderately feasible
+6,23,4 = very feasible
+6,24,4 = very feasible
+6,25,4 = very feasible
+6,26,1 = relatively unfeasible (compared with the rest of the statements)
+6,27,4 = very feasible
+6,28,3 = moderately feasible
+6,29,2 = somewhat feasible
+6,30,4 = very feasible
+6,31,3 = moderately feasible
+6,32,2 = somewhat feasible
+6,33,3 = moderately feasible
+6,34,3 = moderately feasible
+6,35,3 = moderately feasible
+6,36,3 = moderately feasible
+6,37,5 = extremely feasible (compared with the rest of the statements)
+6,38,4 = very feasible
+6,39,3 = moderately feasible
+6,40,3 = moderately feasible
+6,41,3 = moderately feasible
+6,42,4 = very feasible
+6,43,3 = moderately feasible
+6,44,4 = very feasible
+6,45,3 = moderately feasible
+6,46,1 = relatively unfeasible (compared with the rest of the statements)
+6,47,3 = moderately feasible
+6,48,3 = moderately feasible
+6,49,3 = moderately feasible
+6,50,5 = extremely feasible (compared with the rest of the statements)
+6,51,4 = very feasible
+6,52,3 = moderately feasible
+6,53,4 = very feasible
+6,54,3 = moderately feasible
+6,55,4 = very feasible
+6,56,3 = moderately feasible
+6,57,3 = moderately feasible
+6,58,3 = moderately feasible
+6,59,4 = very feasible
+6,60,3 = moderately feasible
+6,61,1 = relatively unfeasible (compared with the rest of the statements)
+6,62,3 = moderately feasible
+6,63,3 = moderately feasible
+6,64,4 = very feasible
+6,65,3 = moderately feasible
+6,66,3 = moderately feasible
+6,67,3 = moderately feasible
+6,68,4 = very feasible
+6,69,5 = extremely feasible (compared with the rest of the statements)
+6,70,4 = very feasible
+6,71,3 = moderately feasible
+6,72,3 = moderately feasible
+6,73,3 = moderately feasible
+6,74,3 = moderately feasible
+6,75,3 = moderately feasible
+6,76,4 = very feasible
+6,77,2 = somewhat feasible
+6,78,4 = very feasible
+6,79,4 = very feasible
+6,80,3 = moderately feasible
+6,81,3 = moderately feasible
+6,82,3 = moderately feasible
+6,83,2 = somewhat feasible
+6,84,4 = very feasible
+6,85,3 = moderately feasible
+6,86,3 = moderately feasible
+6,87,2 = somewhat feasible
+6,88,4 = very feasible
+6,89,4 = very feasible
+6,90,3 = moderately feasible
+6,91,4 = very feasible
+6,92,3 = moderately feasible
+6,93,3 = moderately feasible
+6,94,3 = moderately feasible
+6,95,3 = moderately feasible
+6,96,3 = moderately feasible
+6,97,3 = moderately feasible
+6,98,4 = very feasible
+6,99,3 = moderately feasible
+6,100,5 = extremely feasible (compared with the rest of the statements)
+7,1,4 = very important
+7,2,2 = somewhat important
+7,3,5 = extremely important (compared with the rest of the statements)
+7,4,4 = very important
+7,5,5 = extremely important (compared with the rest of the statements)
+7,6,4 = very important
+7,7,3 = moderately important
+7,8,5 = extremely important (compared with the rest of the statements)
+7,9,5 = extremely important (compared with the rest of the statements)
+7,10,2 = somewhat important
+7,11,5 = extremely important (compared with the rest of the statements)
+7,12,2 = somewhat important
+7,13,4 = very important
+7,14,4 = very important
+7,15,5 = extremely important (compared with the rest of the statements)
+7,16,5 = extremely important (compared with the rest of the statements)
+7,17,2 = somewhat important
+7,18,4 = very important
+7,19,3 = moderately important
+7,20,2 = somewhat important
+7,21,4 = very important
+7,22,3 = moderately important
+7,23,5 = extremely important (compared with the rest of the statements)
+7,24,5 = extremely important (compared with the rest of the statements)
+7,25,2 = somewhat important
+7,26,1 = relatively unimportant (compared with the rest of the statements)
+7,27,4 = very important
+7,28,1 = relatively unimportant (compared with the rest of the statements)
+7,29,2 = somewhat important
+7,30,5 = extremely important (compared with the rest of the statements)
+7,31,2 = somewhat important
+7,32,3 = moderately important
+7,33,3 = moderately important
+7,34,2 = somewhat important
+7,35,4 = very important
+7,36,1 = relatively unimportant (compared with the rest of the statements)
+7,37,2 = somewhat important
+7,38,3 = moderately important
+7,39,5 = extremely important (compared with the rest of the statements)
+7,40,1 = relatively unimportant (compared with the rest of the statements)
+7,41,4 = very important
+7,42,5 = extremely important (compared with the rest of the statements)
+7,43,3 = moderately important
+7,44,5 = extremely important (compared with the rest of the statements)
+7,45,1 = relatively unimportant (compared with the rest of the statements)
+7,46,4 = very important
+7,47,2 = somewhat important
+7,48,2 = somewhat important
+7,49,3 = moderately important
+7,50,4 = very important
+7,51,2 = somewhat important
+7,52,2 = somewhat important
+7,53,5 = extremely important (compared with the rest of the statements)
+7,54,4 = very important
+7,55,5 = extremely important (compared with the rest of the statements)
+7,56,3 = moderately important
+7,57,3 = moderately important
+7,58,4 = very important
+7,59,5 = extremely important (compared with the rest of the statements)
+7,60,5 = extremely important (compared with the rest of the statements)
+7,61,2 = somewhat important
+7,62,2 = somewhat important
+7,63,3 = moderately important
+7,64,5 = extremely important (compared with the rest of the statements)
+7,65,2 = somewhat important
+7,66,1 = relatively unimportant (compared with the rest of the statements)
+7,67,1 = relatively unimportant (compared with the rest of the statements)
+7,68,3 = moderately important
+7,69,5 = extremely important (compared with the rest of the statements)
+7,70,5 = extremely important (compared with the rest of the statements)
+7,71,2 = somewhat important
+7,72,5 = extremely important (compared with the rest of the statements)
+7,73,4 = very important
+7,74,2 = somewhat important
+7,75,1 = relatively unimportant (compared with the rest of the statements)
+7,76,4 = very important
+7,77,2 = somewhat important
+7,78,4 = very important
+7,79,4 = very important
+7,80,5 = extremely important (compared with the rest of the statements)
+7,81,5 = extremely important (compared with the rest of the statements)
+7,82,3 = moderately important
+7,83,2 = somewhat important
+7,84,4 = very important
+7,85,5 = extremely important (compared with the rest of the statements)
+7,86,4 = very important
+7,87,2 = somewhat important
+7,88,5 = extremely important (compared with the rest of the statements)
+7,89,5 = extremely important (compared with the rest of the statements)
+7,90,5 = extremely important (compared with the rest of the statements)
+7,91,4 = very important
+7,92,2 = somewhat important
+7,93,1 = relatively unimportant (compared with the rest of the statements)
+7,94,5 = extremely important (compared with the rest of the statements)
+7,95,1 = relatively unimportant (compared with the rest of the statements)
+7,96,2 = somewhat important
+7,97,5 = extremely important (compared with the rest of the statements)
+7,98,5 = extremely important (compared with the rest of the statements)
+7,99,1 = relatively unimportant (compared with the rest of the statements)
+7,100,5 = extremely important (compared with the rest of the statements)
+7,1,3 = moderately feasible
+7,2,5 = extremely feasible (compared with the rest of the statements)
+7,3,3 = moderately feasible
+7,4,5 = extremely feasible (compared with the rest of the statements)
+7,5,4 = very feasible
+7,6,5 = extremely feasible (compared with the rest of the statements)
+7,7,5 = extremely feasible (compared with the rest of the statements)
+7,8,4 = very feasible
+7,9,4 = very feasible
+7,10,2 = somewhat feasible
+7,11,5 = extremely feasible (compared with the rest of the statements)
+7,12,5 = extremely feasible (compared with the rest of the statements)
+7,13,5 = extremely feasible (compared with the rest of the statements)
+7,14,1 = relatively unfeasible (compared with the rest of the statements)
+7,15,4 = very feasible
+7,16,4 = very feasible
+7,17,5 = extremely feasible (compared with the rest of the statements)
+7,18,4 = very feasible
+7,19,4 = very feasible
+7,20,2 = somewhat feasible
+7,21,5 = extremely feasible (compared with the rest of the statements)
+7,22,5 = extremely feasible (compared with the rest of the statements)
+7,23,5 = extremely feasible (compared with the rest of the statements)
+7,24,4 = very feasible
+7,25,5 = extremely feasible (compared with the rest of the statements)
+7,26,3 = moderately feasible
+7,27,4 = very feasible
+7,28,5 = extremely feasible (compared with the rest of the statements)
+7,29,3 = moderately feasible
+7,30,5 = extremely feasible (compared with the rest of the statements)
+7,31,2 = somewhat feasible
+7,32,2 = somewhat feasible
+7,33,3 = moderately feasible
+7,34,5 = extremely feasible (compared with the rest of the statements)
+7,35,3 = moderately feasible
+7,36,2 = somewhat feasible
+7,37,5 = extremely feasible (compared with the rest of the statements)
+7,38,3 = moderately feasible
+7,39,4 = very feasible
+7,40,3 = moderately feasible
+7,41,5 = extremely feasible (compared with the rest of the statements)
+7,42,5 = extremely feasible (compared with the rest of the statements)
+7,43,3 = moderately feasible
+7,44,5 = extremely feasible (compared with the rest of the statements)
+7,45,3 = moderately feasible
+7,46,2 = somewhat feasible
+7,47,3 = moderately feasible
+7,48,5 = extremely feasible (compared with the rest of the statements)
+7,49,5 = extremely feasible (compared with the rest of the statements)
+7,50,5 = extremely feasible (compared with the rest of the statements)
+7,51,4 = very feasible
+7,52,3 = moderately feasible
+7,53,5 = extremely feasible (compared with the rest of the statements)
+7,54,2 = somewhat feasible
+7,55,4 = very feasible
+7,56,3 = moderately feasible
+7,57,5 = extremely feasible (compared with the rest of the statements)
+7,58,5 = extremely feasible (compared with the rest of the statements)
+7,59,4 = very feasible
+7,60,3 = moderately feasible
+7,61,5 = extremely feasible (compared with the rest of the statements)
+7,62,5 = extremely feasible (compared with the rest of the statements)
+7,63,3 = moderately feasible
+7,64,5 = extremely feasible (compared with the rest of the statements)
+7,65,5 = extremely feasible (compared with the rest of the statements)
+7,66,3 = moderately feasible
+7,67,3 = moderately feasible
+7,68,4 = very feasible
+7,69,5 = extremely feasible (compared with the rest of the statements)
+7,70,4 = very feasible
+7,71,3 = moderately feasible
+7,72,5 = extremely feasible (compared with the rest of the statements)
+7,73,4 = very feasible
+7,74,4 = very feasible
+7,75,2 = somewhat feasible
+7,76,5 = extremely feasible (compared with the rest of the statements)
+7,77,4 = very feasible
+7,78,1 = relatively unfeasible (compared with the rest of the statements)
+7,79,5 = extremely feasible (compared with the rest of the statements)
+7,80,5 = extremely feasible (compared with the rest of the statements)
+7,81,3 = moderately feasible
+7,82,5 = extremely feasible (compared with the rest of the statements)
+7,83,2 = somewhat feasible
+7,84,5 = extremely feasible (compared with the rest of the statements)
+7,85,2 = somewhat feasible
+7,86,1 = relatively unfeasible (compared with the rest of the statements)
+7,87,4 = very feasible
+7,88,4 = very feasible
+7,89,5 = extremely feasible (compared with the rest of the statements)
+7,90,5 = extremely feasible (compared with the rest of the statements)
+7,91,1 = relatively unfeasible (compared with the rest of the statements)
+7,92,4 = very feasible
+7,93,5 = extremely feasible (compared with the rest of the statements)
+7,94,3 = moderately feasible
+7,95,3 = moderately feasible
+7,96,2 = somewhat feasible
+7,97,5 = extremely feasible (compared with the rest of the statements)
+7,98,5 = extremely feasible (compared with the rest of the statements)
+7,99,2 = somewhat feasible
+7,100,5 = extremely feasible (compared with the rest of the statements)
+8,1,5 = extremely important (compared with the rest of the statements)
+8,2,5 = extremely important (compared with the rest of the statements)
+8,3,5 = extremely important (compared with the rest of the statements)
+8,4,4 = very important
+8,5,4 = very important
+8,6,3 = moderately important
+8,7,4 = very important
+8,8,4 = very important
+8,9,4 = very important
+8,10,2 = somewhat important
+8,11,4 = very important
+8,12,5 = extremely important (compared with the rest of the statements)
+8,13,5 = extremely important (compared with the rest of the statements)
+8,14,3 = moderately important
+8,15,4 = very important
+8,16,4 = very important
+8,17,3 = moderately important
+8,18,5 = extremely important (compared with the rest of the statements)
+8,19,4 = very important
+8,20,4 = very important
+8,21,4 = very important
+8,22,4 = very important
+8,23,5 = extremely important (compared with the rest of the statements)
+8,24,3 = moderately important
+8,25,5 = extremely important (compared with the rest of the statements)
+8,26,2 = somewhat important
+8,27,4 = very important
+8,28,3 = moderately important
+8,29,2 = somewhat important
+8,30,4 = very important
+8,31,4 = very important
+8,32,2 = somewhat important
+8,33,4 = very important
+8,34,3 = moderately important
+8,35,2 = somewhat important
+8,36,4 = very important
+8,37,4 = very important
+8,38,5 = extremely important (compared with the rest of the statements)
+8,39,5 = extremely important (compared with the rest of the statements)
+8,40,5 = extremely important (compared with the rest of the statements)
+8,41,4 = very important
+8,42,4 = very important
+8,43,3 = moderately important
+8,44,3 = moderately important
+8,45,3 = moderately important
+8,46,2 = somewhat important
+8,47,3 = moderately important
+8,48,3 = moderately important
+8,49,4 = very important
+8,50,5 = extremely important (compared with the rest of the statements)
+8,51,3 = moderately important
+8,52,2 = somewhat important
+8,53,4 = very important
+8,54,2 = somewhat important
+8,55,3 = moderately important
+8,56,3 = moderately important
+8,57,5 = extremely important (compared with the rest of the statements)
+8,58,4 = very important
+8,59,4 = very important
+8,60,3 = moderately important
+8,61,3 = moderately important
+8,62,4 = very important
+8,63,4 = very important
+8,64,3 = moderately important
+8,65,4 = very important
+8,66,4 = very important
+8,67,3 = moderately important
+8,68,2 = somewhat important
+8,69,5 = extremely important (compared with the rest of the statements)
+8,70,4 = very important
+8,71,4 = very important
+8,72,3 = moderately important
+8,73,3 = moderately important
+8,74,4 = very important
+8,75,5 = extremely important (compared with the rest of the statements)
+8,76,4 = very important
+8,77,2 = somewhat important
+8,78,3 = moderately important
+8,79,5 = extremely important (compared with the rest of the statements)
+8,80,4 = very important
+8,81,3 = moderately important
+8,82,2 = somewhat important
+8,83,3 = moderately important
+8,84,5 = extremely important (compared with the rest of the statements)
+8,85,3 = moderately important
+8,86,2 = somewhat important
+8,87,1 = relatively unimportant (compared with the rest of the statements)
+8,88,4 = very important
+8,89,5 = extremely important (compared with the rest of the statements)
+8,90,3 = moderately important
+8,91,3 = moderately important
+8,92,4 = very important
+8,93,4 = very important
+8,94,4 = very important
+8,95,4 = very important
+8,96,5 = extremely important (compared with the rest of the statements)
+8,97,4 = very important
+8,98,4 = very important
+8,99,5 = extremely important (compared with the rest of the statements)
+8,100,4 = very important
+8,1,3 = moderately feasible
+8,2,3 = moderately feasible
+8,3,4 = very feasible
+8,4,5 = extremely feasible (compared with the rest of the statements)
+8,5,3 = moderately feasible
+8,6,5 = extremely feasible (compared with the rest of the statements)
+8,7,3 = moderately feasible
+8,8,4 = very feasible
+8,9,4 = very feasible
+8,10,4 = very feasible
+8,11,5 = extremely feasible (compared with the rest of the statements)
+8,12,4 = very feasible
+8,13,2 = somewhat feasible
+8,14,4 = very feasible
+8,15,5 = extremely feasible (compared with the rest of the statements)
+8,16,5 = extremely feasible (compared with the rest of the statements)
+8,17,5 = extremely feasible (compared with the rest of the statements)
+8,18,5 = extremely feasible (compared with the rest of the statements)
+8,19,4 = very feasible
+8,20,2 = somewhat feasible
+8,21,5 = extremely feasible (compared with the rest of the statements)
+8,22,5 = extremely feasible (compared with the rest of the statements)
+8,23,5 = extremely feasible (compared with the rest of the statements)
+8,24,5 = extremely feasible (compared with the rest of the statements)
+8,25,4 = very feasible
+8,26,2 = somewhat feasible
+8,27,5 = extremely feasible (compared with the rest of the statements)
+8,28,3 = moderately feasible
+8,29,2 = somewhat feasible
+8,30,5 = extremely feasible (compared with the rest of the statements)
+8,31,3 = moderately feasible
+8,32,3 = moderately feasible
+8,33,3 = moderately feasible
+8,34,5 = extremely feasible (compared with the rest of the statements)
+8,35,4 = very feasible
+8,36,4 = very feasible
+8,37,5 = extremely feasible (compared with the rest of the statements)
+8,38,3 = moderately feasible
+8,39,4 = very feasible
+8,40,4 = very feasible
+8,41,5 = extremely feasible (compared with the rest of the statements)
+8,42,5 = extremely feasible (compared with the rest of the statements)
+8,43,5 = extremely feasible (compared with the rest of the statements)
+8,44,4 = very feasible
+8,45,5 = extremely feasible (compared with the rest of the statements)
+8,46,4 = very feasible
+8,47,2 = somewhat feasible
+8,48,3 = moderately feasible
+8,49,3 = moderately feasible
+8,50,5 = extremely feasible (compared with the rest of the statements)
+8,51,5 = extremely feasible (compared with the rest of the statements)
+8,52,4 = very feasible
+8,53,5 = extremely feasible (compared with the rest of the statements)
+8,54,3 = moderately feasible
+8,55,3 = moderately feasible
+8,56,4 = very feasible
+8,57,5 = extremely feasible (compared with the rest of the statements)
+8,58,5 = extremely feasible (compared with the rest of the statements)
+8,59,5 = extremely feasible (compared with the rest of the statements)
+8,60,2 = somewhat feasible
+8,61,3 = moderately feasible
+8,62,5 = extremely feasible (compared with the rest of the statements)
+8,63,3 = moderately feasible
+8,64,4 = very feasible
+8,65,3 = moderately feasible
+8,66,4 = very feasible
+8,67,3 = moderately feasible
+8,68,4 = very feasible
+8,69,5 = extremely feasible (compared with the rest of the statements)
+8,70,5 = extremely feasible (compared with the rest of the statements)
+8,71,2 = somewhat feasible
+8,72,5 = extremely feasible (compared with the rest of the statements)
+8,73,4 = very feasible
+8,74,4 = very feasible
+8,75,3 = moderately feasible
+8,76,5 = extremely feasible (compared with the rest of the statements)
+8,77,2 = somewhat feasible
+8,78,2 = somewhat feasible
+8,79,5 = extremely feasible (compared with the rest of the statements)
+8,80,5 = extremely feasible (compared with the rest of the statements)
+8,81,3 = moderately feasible
+8,82,1 = relatively unfeasible (compared with the rest of the statements)
+8,83,2 = somewhat feasible
+8,84,5 = extremely feasible (compared with the rest of the statements)
+8,85,4 = very feasible
+8,86,4 = very feasible
+8,87,5 = extremely feasible (compared with the rest of the statements)
+8,88,4 = very feasible
+8,89,5 = extremely feasible (compared with the rest of the statements)
+8,90,5 = extremely feasible (compared with the rest of the statements)
+8,91,2 = somewhat feasible
+8,92,3 = moderately feasible
+8,93,3 = moderately feasible
+8,94,4 = very feasible
+8,95,3 = moderately feasible
+8,96,2 = somewhat feasible
+8,97,5 = extremely feasible (compared with the rest of the statements)
+8,98,5 = extremely feasible (compared with the rest of the statements)
+8,99,2 = somewhat feasible
+8,100,5 = extremely feasible (compared with the rest of the statements)
