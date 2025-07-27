@@ -1,0 +1,799 @@
+ParticipantID,StatementID,PileID
+1,1,"{""""ImportId"""":""""QID1_1""""}"
+1,1,"{""""ImportId"""":""""QID1_2""""}"
+1,1,"{""""ImportId"""":""""QID1_3""""}"
+1,1,"{""""ImportId"""":""""QID1_4""""}"
+1,1,"{""""ImportId"""":""""QID1_5""""}"
+1,1,"{""""ImportId"""":""""QID1_6""""}"
+1,1,"{""""ImportId"""":""""QID1_7""""}"
+1,1,"{""""ImportId"""":""""QID1_8""""}"
+1,1,"{""""ImportId"""":""""QID1_9""""}"
+1,1,"{""""ImportId"""":""""QID1_10""""}"
+1,1,"{""""ImportId"""":""""QID1_11""""}"
+1,1,"{""""ImportId"""":""""QID1_12""""}"
+1,1,"{""""ImportId"""":""""QID1_13""""}"
+1,1,"{""""ImportId"""":""""QID1_14""""}"
+1,1,"{""""ImportId"""":""""QID1_15""""}"
+1,1,"{""""ImportId"""":""""QID1_16""""}"
+1,1,"{""""ImportId"""":""""QID1_17""""}"
+1,1,"{""""ImportId"""":""""QID1_18""""}"
+1,1,"{""""ImportId"""":""""QID1_19""""}"
+1,1,"{""""ImportId"""":""""QID1_20""""}"
+1,1,"{""""ImportId"""":""""QID1_21""""}"
+1,1,"{""""ImportId"""":""""QID1_22""""}"
+1,1,"{""""ImportId"""":""""QID1_23""""}"
+1,1,"{""""ImportId"""":""""QID1_24""""}"
+1,1,"{""""ImportId"""":""""QID1_25""""}"
+1,1,"{""""ImportId"""":""""QID1_26""""}"
+1,1,"{""""ImportId"""":""""QID1_27""""}"
+1,1,"{""""ImportId"""":""""QID1_28""""}"
+1,1,"{""""ImportId"""":""""QID1_29""""}"
+1,1,"{""""ImportId"""":""""QID1_30""""}"
+1,1,"{""""ImportId"""":""""QID1_31""""}"
+1,1,"{""""ImportId"""":""""QID1_32""""}"
+1,1,"{""""ImportId"""":""""QID1_33""""}"
+1,1,"{""""ImportId"""":""""QID1_34""""}"
+1,1,"{""""ImportId"""":""""QID1_35""""}"
+1,1,"{""""ImportId"""":""""QID1_36""""}"
+1,1,"{""""ImportId"""":""""QID1_37""""}"
+1,1,"{""""ImportId"""":""""QID1_38""""}"
+1,1,"{""""ImportId"""":""""QID1_39""""}"
+1,1,"{""""ImportId"""":""""QID1_40""""}"
+1,1,"{""""ImportId"""":""""QID1_41""""}"
+1,1,"{""""ImportId"""":""""QID1_42""""}"
+1,1,"{""""ImportId"""":""""QID1_43""""}"
+1,1,"{""""ImportId"""":""""QID1_44""""}"
+1,1,"{""""ImportId"""":""""QID1_45""""}"
+1,1,"{""""ImportId"""":""""QID1_46""""}"
+1,1,"{""""ImportId"""":""""QID1_47""""}"
+1,1,"{""""ImportId"""":""""QID1_48""""}"
+1,1,"{""""ImportId"""":""""QID1_49""""}"
+1,1,"{""""ImportId"""":""""QID1_50""""}"
+1,1,"{""""ImportId"""":""""QID1_51""""}"
+1,1,"{""""ImportId"""":""""QID1_52""""}"
+1,1,"{""""ImportId"""":""""QID1_53""""}"
+1,1,"{""""ImportId"""":""""QID1_54""""}"
+1,1,"{""""ImportId"""":""""QID1_55""""}"
+1,1,"{""""ImportId"""":""""QID1_56""""}"
+1,1,"{""""ImportId"""":""""QID1_57""""}"
+1,1,"{""""ImportId"""":""""QID1_58""""}"
+1,1,"{""""ImportId"""":""""QID1_59""""}"
+1,1,"{""""ImportId"""":""""QID1_60""""}"
+1,1,"{""""ImportId"""":""""QID1_61""""}"
+1,1,"{""""ImportId"""":""""QID1_62""""}"
+1,1,"{""""ImportId"""":""""QID1_63""""}"
+1,1,"{""""ImportId"""":""""QID1_64""""}"
+1,1,"{""""ImportId"""":""""QID1_65""""}"
+1,1,"{""""ImportId"""":""""QID1_66""""}"
+1,1,"{""""ImportId"""":""""QID1_67""""}"
+1,1,"{""""ImportId"""":""""QID1_68""""}"
+1,1,"{""""ImportId"""":""""QID1_69""""}"
+1,1,"{""""ImportId"""":""""QID1_70""""}"
+1,1,"{""""ImportId"""":""""QID1_71""""}"
+1,1,"{""""ImportId"""":""""QID1_72""""}"
+1,1,"{""""ImportId"""":""""QID1_73""""}"
+1,1,"{""""ImportId"""":""""QID1_74""""}"
+1,1,"{""""ImportId"""":""""QID1_75""""}"
+1,1,"{""""ImportId"""":""""QID1_76""""}"
+1,1,"{""""ImportId"""":""""QID1_77""""}"
+1,1,"{""""ImportId"""":""""QID1_78""""}"
+1,1,"{""""ImportId"""":""""QID1_79""""}"
+1,1,"{""""ImportId"""":""""QID1_80""""}"
+1,1,"{""""ImportId"""":""""QID1_81""""}"
+1,1,"{""""ImportId"""":""""QID1_82""""}"
+1,1,"{""""ImportId"""":""""QID1_83""""}"
+1,1,"{""""ImportId"""":""""QID1_84""""}"
+1,1,"{""""ImportId"""":""""QID1_85""""}"
+1,1,"{""""ImportId"""":""""QID1_86""""}"
+1,1,"{""""ImportId"""":""""QID1_87""""}"
+1,1,"{""""ImportId"""":""""QID1_88""""}"
+1,1,"{""""ImportId"""":""""QID1_89""""}"
+1,1,"{""""ImportId"""":""""QID1_90""""}"
+1,1,"{""""ImportId"""":""""QID1_91""""}"
+1,1,"{""""ImportId"""":""""QID1_92""""}"
+1,1,"{""""ImportId"""":""""QID1_93""""}"
+1,1,"{""""ImportId"""":""""QID1_94""""}"
+1,1,"{""""ImportId"""":""""QID1_95""""}"
+1,1,"{""""ImportId"""":""""QID1_96""""}"
+1,1,"{""""ImportId"""":""""QID1_97""""}"
+1,1,"{""""ImportId"""":""""QID1_98""""}"
+1,1,"{""""ImportId"""":""""QID1_99""""}"
+1,1,"{""""ImportId"""":""""QID1_100""""}"
+5,1,Group 1
+5,1,Group 1
+5,1,Group 1
+5,1,Group 8
+5,1,Group 2
+5,1,Group 3
+5,1,Group 1
+5,1,Group 1
+5,1,Group 2
+5,1,Group 4
+5,1,Group 7
+5,1,Group 1
+5,1,Group 6
+5,1,Group 2
+5,1,Group 7
+5,1,Group 7
+5,1,Group 1
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 5
+5,1,Group 3
+5,1,Group 8
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 1
+5,1,Group 1
+5,1,Group 2
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 1
+5,1,Group 3
+5,1,Group 1
+5,1,Group 2
+5,1,Group 3
+5,1,Group 2
+5,1,Group 2
+5,1,Group 3
+5,1,Group 3
+5,1,Group 3
+5,1,Group 3
+5,1,Group 3
+5,1,Group 1
+5,1,Group 2
+5,1,Group 1
+5,1,Group 1
+5,1,Group 3
+5,1,Group 3
+5,1,Group 2
+5,1,Group 3
+5,1,Group 2
+5,1,Group 1
+5,1,Group 4
+5,1,Group 8
+5,1,Group 3
+5,1,Group 8
+5,1,Group 1
+5,1,Group 2
+5,1,Group 3
+5,1,Group 2
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 1
+5,1,Group 3
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 1
+5,1,Group 2
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 2
+5,1,Group 2
+5,1,Group 8
+5,1,Group 8
+5,1,Group 2
+5,1,Group 2
+5,1,Group 1
+5,1,Group 4
+5,1,Group 2
+5,1,Group 2
+5,1,Group 7
+5,1,Group 7
+5,1,Group 2
+5,1,Group 8
+6,1,Group 3
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 3
+6,1,Group 2
+6,1,Group 1
+6,1,Group 3
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 3
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 3
+6,1,Group 2
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 3
+6,1,Group 3
+6,1,Group 3
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 3
+6,1,Group 2
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 3
+6,1,Group 2
+6,1,Group 2
+6,1,Group 3
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+6,1,Group 2
+6,1,Group 2
+6,1,Group 2
+6,1,Group 2
+6,1,Group 1
+6,1,Group 1
+6,1,Group 2
+6,1,Group 1
+8,1,Group 1
+8,1,Group 2
+8,1,Group 2
+8,1,Group 3
+8,1,Group 4
+8,1,Group 5
+8,1,Group 6
+8,1,Group 6
+8,1,Group 1
+8,1,Group 2
+8,1,Group 7
+8,1,Group 6
+8,1,Group 8
+8,1,Group 2
+8,1,Group 7
+8,1,Group 7
+8,1,Group 9
+8,1,Group 3
+8,1,Group 2
+8,1,Group 4
+8,1,Group 5
+8,1,Group 3
+8,1,Group 7
+8,1,Group 7
+8,1,Group 3
+8,1,Group 8
+8,1,Group 3
+8,1,Group 6
+8,1,Group 2
+8,1,Group 7
+8,1,Group 9
+8,1,Group 8
+8,1,Group 6
+8,1,Group 5
+8,1,Group 2
+8,1,Group 2
+8,1,Group 3
+8,1,Group 1
+8,1,Group 2
+8,1,Group 2
+8,1,Group 5
+8,1,Group 9
+8,1,Group 2
+8,1,Group 7
+8,1,Group 5
+8,1,Group 6
+8,1,Group 8
+8,1,Group 6
+8,1,Group 6
+8,1,Group 3
+8,1,Group 5
+8,1,Group 2
+8,1,Group 7
+8,1,Group 2
+8,1,Group 6
+8,1,Group 1
+8,1,Group 3
+8,1,Group 7
+8,1,Group 7
+8,1,Group 2
+8,1,Group 2
+8,1,Group 5
+8,1,Group 6
+8,1,Group 6
+8,1,Group 6
+8,1,Group 2
+8,1,Group 6
+8,1,Group 1
+8,1,Group 3
+8,1,Group 7
+8,1,Group 6
+8,1,Group 3
+8,1,Group 1
+8,1,Group 2
+8,1,Group 7
+8,1,Group 7
+8,1,Group 6
+8,1,Group 2
+8,1,Group 9
+8,1,Group 7
+8,1,Group 2
+8,1,Group 6
+8,1,Group 6
+8,1,Group 3
+8,1,Group 1
+8,1,Group 2
+8,1,Group 6
+8,1,Group 2
+8,1,Group 3
+8,1,Group 1
+8,1,Group 2
+8,1,Group 2
+8,1,Group 6
+8,1,Group 2
+8,1,Group 2
+8,1,Group 2
+8,1,Group 7
+8,1,Group 7
+8,1,Group 2
+8,1,Group 3
+9,1,"{""""ImportId"""":""""QID1_1""""}"
+9,1,"{""""ImportId"""":""""QID1_2""""}"
+9,1,"{""""ImportId"""":""""QID1_3""""}"
+9,1,"{""""ImportId"""":""""QID1_4""""}"
+9,1,"{""""ImportId"""":""""QID1_5""""}"
+9,1,"{""""ImportId"""":""""QID1_6""""}"
+9,1,"{""""ImportId"""":""""QID1_7""""}"
+9,1,"{""""ImportId"""":""""QID1_8""""}"
+9,1,"{""""ImportId"""":""""QID1_9""""}"
+9,1,"{""""ImportId"""":""""QID1_10""""}"
+9,1,"{""""ImportId"""":""""QID1_11""""}"
+9,1,"{""""ImportId"""":""""QID1_12""""}"
+9,1,"{""""ImportId"""":""""QID1_13""""}"
+9,1,"{""""ImportId"""":""""QID1_14""""}"
+9,1,"{""""ImportId"""":""""QID1_15""""}"
+9,1,"{""""ImportId"""":""""QID1_16""""}"
+9,1,"{""""ImportId"""":""""QID1_17""""}"
+9,1,"{""""ImportId"""":""""QID1_18""""}"
+9,1,"{""""ImportId"""":""""QID1_19""""}"
+9,1,"{""""ImportId"""":""""QID1_20""""}"
+9,1,"{""""ImportId"""":""""QID1_21""""}"
+9,1,"{""""ImportId"""":""""QID1_22""""}"
+9,1,"{""""ImportId"""":""""QID1_23""""}"
+9,1,"{""""ImportId"""":""""QID1_24""""}"
+9,1,"{""""ImportId"""":""""QID1_25""""}"
+9,1,"{""""ImportId"""":""""QID1_26""""}"
+9,1,"{""""ImportId"""":""""QID1_27""""}"
+9,1,"{""""ImportId"""":""""QID1_28""""}"
+9,1,"{""""ImportId"""":""""QID1_29""""}"
+9,1,"{""""ImportId"""":""""QID1_30""""}"
+9,1,"{""""ImportId"""":""""QID1_31""""}"
+9,1,"{""""ImportId"""":""""QID1_32""""}"
+9,1,"{""""ImportId"""":""""QID1_33""""}"
+9,1,"{""""ImportId"""":""""QID1_34""""}"
+9,1,"{""""ImportId"""":""""QID1_35""""}"
+9,1,"{""""ImportId"""":""""QID1_36""""}"
+9,1,"{""""ImportId"""":""""QID1_37""""}"
+9,1,"{""""ImportId"""":""""QID1_38""""}"
+9,1,"{""""ImportId"""":""""QID1_39""""}"
+9,1,"{""""ImportId"""":""""QID1_40""""}"
+9,1,"{""""ImportId"""":""""QID1_41""""}"
+9,1,"{""""ImportId"""":""""QID1_42""""}"
+9,1,"{""""ImportId"""":""""QID1_43""""}"
+9,1,"{""""ImportId"""":""""QID1_44""""}"
+9,1,"{""""ImportId"""":""""QID1_45""""}"
+9,1,"{""""ImportId"""":""""QID1_46""""}"
+9,1,"{""""ImportId"""":""""QID1_47""""}"
+9,1,"{""""ImportId"""":""""QID1_48""""}"
+9,1,"{""""ImportId"""":""""QID1_49""""}"
+9,1,"{""""ImportId"""":""""QID1_50""""}"
+9,1,"{""""ImportId"""":""""QID1_51""""}"
+9,1,"{""""ImportId"""":""""QID1_52""""}"
+9,1,"{""""ImportId"""":""""QID1_53""""}"
+9,1,"{""""ImportId"""":""""QID1_54""""}"
+9,1,"{""""ImportId"""":""""QID1_55""""}"
+9,1,"{""""ImportId"""":""""QID1_56""""}"
+9,1,"{""""ImportId"""":""""QID1_57""""}"
+9,1,"{""""ImportId"""":""""QID1_58""""}"
+9,1,"{""""ImportId"""":""""QID1_59""""}"
+9,1,"{""""ImportId"""":""""QID1_60""""}"
+9,1,"{""""ImportId"""":""""QID1_61""""}"
+9,1,"{""""ImportId"""":""""QID1_62""""}"
+9,1,"{""""ImportId"""":""""QID1_63""""}"
+9,1,"{""""ImportId"""":""""QID1_64""""}"
+9,1,"{""""ImportId"""":""""QID1_65""""}"
+9,1,"{""""ImportId"""":""""QID1_66""""}"
+9,1,"{""""ImportId"""":""""QID1_67""""}"
+9,1,"{""""ImportId"""":""""QID1_68""""}"
+9,1,"{""""ImportId"""":""""QID1_69""""}"
+9,1,"{""""ImportId"""":""""QID1_70""""}"
+9,1,"{""""ImportId"""":""""QID1_71""""}"
+9,1,"{""""ImportId"""":""""QID1_72""""}"
+9,1,"{""""ImportId"""":""""QID1_73""""}"
+9,1,"{""""ImportId"""":""""QID1_74""""}"
+9,1,"{""""ImportId"""":""""QID1_75""""}"
+9,1,"{""""ImportId"""":""""QID1_76""""}"
+9,1,"{""""ImportId"""":""""QID1_77""""}"
+9,1,"{""""ImportId"""":""""QID1_78""""}"
+9,1,"{""""ImportId"""":""""QID1_79""""}"
+9,1,"{""""ImportId"""":""""QID1_80""""}"
+9,1,"{""""ImportId"""":""""QID1_81""""}"
+9,1,"{""""ImportId"""":""""QID1_82""""}"
+9,1,"{""""ImportId"""":""""QID1_83""""}"
+9,1,"{""""ImportId"""":""""QID1_84""""}"
+9,1,"{""""ImportId"""":""""QID1_85""""}"
+9,1,"{""""ImportId"""":""""QID1_86""""}"
+9,1,"{""""ImportId"""":""""QID1_87""""}"
+9,1,"{""""ImportId"""":""""QID1_88""""}"
+9,1,"{""""ImportId"""":""""QID1_89""""}"
+9,1,"{""""ImportId"""":""""QID1_90""""}"
+9,1,"{""""ImportId"""":""""QID1_91""""}"
+9,1,"{""""ImportId"""":""""QID1_92""""}"
+9,1,"{""""ImportId"""":""""QID1_93""""}"
+9,1,"{""""ImportId"""":""""QID1_94""""}"
+9,1,"{""""ImportId"""":""""QID1_95""""}"
+9,1,"{""""ImportId"""":""""QID1_96""""}"
+9,1,"{""""ImportId"""":""""QID1_97""""}"
+9,1,"{""""ImportId"""":""""QID1_98""""}"
+9,1,"{""""ImportId"""":""""QID1_99""""}"
+9,1,"{""""ImportId"""":""""QID1_100""""}"
+13,1,Group 1
+13,1,Group 1
+13,1,Group 1
+13,1,Group 8
+13,1,Group 2
+13,1,Group 3
+13,1,Group 1
+13,1,Group 1
+13,1,Group 2
+13,1,Group 4
+13,1,Group 7
+13,1,Group 1
+13,1,Group 6
+13,1,Group 2
+13,1,Group 7
+13,1,Group 7
+13,1,Group 1
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 5
+13,1,Group 3
+13,1,Group 8
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 1
+13,1,Group 1
+13,1,Group 2
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 1
+13,1,Group 3
+13,1,Group 1
+13,1,Group 2
+13,1,Group 3
+13,1,Group 2
+13,1,Group 2
+13,1,Group 3
+13,1,Group 3
+13,1,Group 3
+13,1,Group 3
+13,1,Group 3
+13,1,Group 1
+13,1,Group 2
+13,1,Group 1
+13,1,Group 1
+13,1,Group 3
+13,1,Group 3
+13,1,Group 2
+13,1,Group 3
+13,1,Group 2
+13,1,Group 1
+13,1,Group 4
+13,1,Group 8
+13,1,Group 3
+13,1,Group 8
+13,1,Group 1
+13,1,Group 2
+13,1,Group 3
+13,1,Group 2
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 1
+13,1,Group 3
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 1
+13,1,Group 2
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 2
+13,1,Group 2
+13,1,Group 8
+13,1,Group 8
+13,1,Group 2
+13,1,Group 2
+13,1,Group 1
+13,1,Group 4
+13,1,Group 2
+13,1,Group 2
+13,1,Group 7
+13,1,Group 7
+13,1,Group 2
+13,1,Group 8
+14,1,Group 3
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 3
+14,1,Group 2
+14,1,Group 1
+14,1,Group 3
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 3
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 3
+14,1,Group 2
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 3
+14,1,Group 3
+14,1,Group 3
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 3
+14,1,Group 2
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 3
+14,1,Group 2
+14,1,Group 2
+14,1,Group 3
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+14,1,Group 2
+14,1,Group 2
+14,1,Group 2
+14,1,Group 2
+14,1,Group 1
+14,1,Group 1
+14,1,Group 2
+14,1,Group 1
+16,1,Group 1
+16,1,Group 2
+16,1,Group 2
+16,1,Group 3
+16,1,Group 4
+16,1,Group 5
+16,1,Group 6
+16,1,Group 6
+16,1,Group 1
+16,1,Group 2
+16,1,Group 7
+16,1,Group 6
+16,1,Group 8
+16,1,Group 2
+16,1,Group 7
+16,1,Group 7
+16,1,Group 9
+16,1,Group 3
+16,1,Group 2
+16,1,Group 4
+16,1,Group 5
+16,1,Group 3
+16,1,Group 7
+16,1,Group 7
+16,1,Group 3
+16,1,Group 8
+16,1,Group 3
+16,1,Group 6
+16,1,Group 2
+16,1,Group 7
+16,1,Group 9
+16,1,Group 8
+16,1,Group 6
+16,1,Group 5
+16,1,Group 2
+16,1,Group 2
+16,1,Group 3
+16,1,Group 1
+16,1,Group 2
+16,1,Group 2
+16,1,Group 5
+16,1,Group 9
+16,1,Group 2
+16,1,Group 7
+16,1,Group 5
+16,1,Group 6
+16,1,Group 8
+16,1,Group 6
+16,1,Group 6
+16,1,Group 3
+16,1,Group 5
+16,1,Group 2
+16,1,Group 7
+16,1,Group 2
+16,1,Group 6
+16,1,Group 1
+16,1,Group 3
+16,1,Group 7
+16,1,Group 7
+16,1,Group 2
+16,1,Group 2
+16,1,Group 5
+16,1,Group 6
+16,1,Group 6
+16,1,Group 6
+16,1,Group 2
+16,1,Group 6
+16,1,Group 1
+16,1,Group 3
+16,1,Group 7
+16,1,Group 6
+16,1,Group 3
+16,1,Group 1
+16,1,Group 2
+16,1,Group 7
+16,1,Group 7
+16,1,Group 6
+16,1,Group 2
+16,1,Group 9
+16,1,Group 7
+16,1,Group 2
+16,1,Group 6
+16,1,Group 6
+16,1,Group 3
+16,1,Group 1
+16,1,Group 2
+16,1,Group 6
+16,1,Group 2
+16,1,Group 3
+16,1,Group 1
+16,1,Group 2
+16,1,Group 2
+16,1,Group 6
+16,1,Group 2
+16,1,Group 2
+16,1,Group 2
+16,1,Group 7
+16,1,Group 7
+16,1,Group 2
+16,1,Group 3
