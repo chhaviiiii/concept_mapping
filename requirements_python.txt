@@ -1,0 +1,32 @@
+# Python Requirements for Concept Mapping Analysis
+# Install with: pip install -r requirements_python.txt
+
+# Core data manipulation
+pandas>=1.5.0
+numpy>=1.21.0
+
+# Visualization
+matplotlib>=3.5.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Machine learning and statistics
+scikit-learn>=1.1.0
+scipy>=1.9.0
+
+# Additional useful packages
+jupyter>=1.0.0
+ipykernel>=6.0.0
+notebook>=6.4.0
+
+# Optional: For interactive dashboards
+dash>=2.0.0
+dash-bootstrap-components>=1.0.0
+
+# Optional: For advanced visualizations
+bokeh>=2.4.0
+altair>=4.2.0
+
+# Optional: For report generation
+jinja2>=3.0.0
+markdown>=3.4.0 
