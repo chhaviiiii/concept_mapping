@@ -21,13 +21,14 @@ import numpy as np
 import os
 from pathlib import Path
 import re
+import csv
 
 def process_csv_file(file_path):
     """
-    Process CSV file from Qualtrics survey.
+    Process CSV file from Qualtrics survey (with two header rows).
     
     This function extracts statements, ratings, and demographics from
-    a Qualtrics CSV export file.
+    a Qualtrics CSV export file with two header rows.
     
     Args:
         file_path (str): Path to the CSV file
@@ -37,32 +38,44 @@ def process_csv_file(file_path):
     """
     print(f"Processing CSV file: {file_path}")
     
-    # Read the CSV file
-    df = pd.read_csv(file_path)
+    # Read the first two rows separately
+    with open(file_path, 'r', encoding='utf-8-sig') as f:
+        header1 = f.readline()
+        header2 = f.readline()
     
-    # Extract statements from the first few rows
+    # Read the actual data, using the third row as header
+    df = pd.read_csv(file_path, skiprows=2)
+    
+    # Extract statements from Q1_x columns (from header2)
+    # We'll use the second header row to get statement text
+    with open(file_path, 'r', encoding='utf-8-sig') as f:
+        reader = csv.reader(f)
+        next(reader)  # skip first
+        question_row = next(reader)
+    
     statements = []
-    for i in range(1, 101):  # 100 statements
-        col_name = f"Q{i}"
+    for i in range(1, 101):
+        col_name = f"Q1_{i}"
         if col_name in df.columns:
-            statement_text = df[col_name].iloc[0]  # First row contains statement text
+            # Find the statement text from the second header row
+            idx = list(df.columns).index(col_name)
+            statement_text = question_row[idx]
             if pd.notna(statement_text) and statement_text.strip():
+                # Remove trailing :Right or similar
+                statement_text = statement_text.split(':')[0].strip()
+                # Remove leading numbering if present
+                statement_text = statement_text.split('- ', 1)[-1].strip() if '- ' in statement_text else statement_text
                 statements.append({
                     'StatementID': i,
-                    'StatementText': statement_text.strip()
+                    'StatementText': statement_text
                 })
     
     # Extract ratings data
     ratings_data = []
     demographics_data = []
-    
     for idx, row in df.iterrows():
-        if idx < 2:  # Skip header rows
-            continue
-            
-        participant_id = f"P{idx-1}"
-        
-        # Extract demographics
+        participant_id = f"P{idx+1}"
+        # Extract demographics (customize as needed)
         demographics_data.append({
             'ParticipantID': participant_id,
             'Age': row.get('Q101', ''),
@@ -70,30 +83,30 @@ def process_csv_file(file_path):
             'Role': row.get('Q103', ''),
             'Experience': row.get('Q104', '')
         })
-        
         # Extract importance and feasibility ratings
         for i in range(1, 101):
-            importance_col = f"Q{i}_1"  # Importance rating
-            feasibility_col = f"Q{i}_2"  # Feasibility rating
-            
-            if importance_col in df.columns and feasibility_col in df.columns:
-                importance = row[importance_col]
-                feasibility = row[feasibility_col]
-                
-                if pd.notna(importance) and pd.notna(feasibility):
+            importance_col = f"Q2.1_{i}"
+            feasibility_col = f"Q2.2_{i}"
+            if importance_col in df.columns and pd.notna(row[importance_col]):
+                try:
                     ratings_data.append({
                         'ParticipantID': participant_id,
                         'StatementID': i,
                         'RatingType': 'Importance',
-                        'Rating': int(importance)
+                        'Rating': int(row[importance_col])
                     })
+                except (ValueError, TypeError):
+                    continue
+            if feasibility_col in df.columns and pd.notna(row[feasibility_col]):
+                try:
                     ratings_data.append({
                         'ParticipantID': participant_id,
                         'StatementID': i,
                         'RatingType': 'Feasibility',
-                        'Rating': int(feasibility)
+                        'Rating': int(row[feasibility_col])
                     })
-    
+                except (ValueError, TypeError):
+                    continue
     return statements, ratings_data, demographics_data
 
 def process_tsv_file(file_path):
@@ -155,18 +168,22 @@ def process_tsv_file(file_path):
                 feasibility = row[feasibility_col]
                 
                 if pd.notna(importance) and pd.notna(feasibility):
-                    ratings_data.append({
-                        'ParticipantID': participant_id,
-                        'StatementID': i,
-                        'RatingType': 'Importance',
-                        'Rating': int(importance)
-                    })
-                    ratings_data.append({
-                        'ParticipantID': participant_id,
-                        'StatementID': i,
-                        'RatingType': 'Feasibility',
-                        'Rating': int(feasibility)
-                    })
+                    try:
+                        ratings_data.append({
+                            'ParticipantID': participant_id,
+                            'StatementID': i,
+                            'RatingType': 'Importance',
+                            'Rating': int(importance)
+                        })
+                        ratings_data.append({
+                            'ParticipantID': participant_id,
+                            'StatementID': i,
+                            'RatingType': 'Feasibility',
+                            'Rating': int(feasibility)
+                        })
+                    except (ValueError, TypeError):
+                        # Skip non-numeric ratings
+                        continue
     
     return statements, ratings_data, demographics_data
 

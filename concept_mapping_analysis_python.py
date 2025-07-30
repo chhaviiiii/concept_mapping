@@ -196,6 +196,7 @@ class ConceptMappingAnalysis:
         # Convert similarity to distance matrix
         # Distance = 1 - |correlation| (absolute correlation to handle negative correlations)
         distance_matrix = 1 - np.abs(similarity_matrix)
+        distance_matrix = np.array(distance_matrix)  # Convert to numpy array
         np.fill_diagonal(distance_matrix, 0)  # Set diagonal to 0 (self-similarity)
         
         # Handle NaN values that may arise from missing data
@@ -240,6 +241,10 @@ class ConceptMappingAnalysis:
         scaler = StandardScaler()
         coords_scaled = scaler.fit_transform(mds_coords)
         
+        # Adjust max_k based on number of samples
+        n_samples = len(mds_coords)
+        max_k = min(max_k, n_samples - 1)  # Can't have more clusters than samples - 1
+        
         # Calculate metrics for different k values
         wss = []
         silhouette_scores = []
@@ -253,10 +258,14 @@ class ConceptMappingAnalysis:
             # Calculate WSS (within-cluster sum of squares)
             wss.append(kmeans.inertia_)
             
-            # Calculate silhouette score (only if k > 1)
-            if k > 1:
-                silhouette_avg = silhouette_score(coords_scaled, cluster_labels)
-                silhouette_scores.append(silhouette_avg)
+            # Calculate silhouette score (only if k > 1 and k < n_samples)
+            if k > 1 and k < n_samples:
+                try:
+                    silhouette_avg = silhouette_score(coords_scaled, cluster_labels)
+                    silhouette_scores.append(silhouette_avg)
+                except ValueError:
+                    # If silhouette calculation fails, use 0
+                    silhouette_scores.append(0)
             else:
                 silhouette_scores.append(0)
         
@@ -768,9 +777,10 @@ class ConceptMappingAnalysis:
         summary_stats = self.generate_summary_statistics()
         
         # Step 8: Create results dataframe
+        # Only include statements that have MDS coordinates (i.e., those with ratings)
         results_df = pd.DataFrame({
-            'StatementID': self.statements['StatementID'],
-            'StatementText': self.statements['StatementText'],
+            'StatementID': self.statements['StatementID'].iloc[:len(mds_coords)],
+            'StatementText': self.statements['StatementText'].iloc[:len(mds_coords)],
             'MDS_Dim1': mds_coords[:, 0],
             'MDS_Dim2': mds_coords[:, 1],
             'Cluster': cluster_labels + 1  # Convert to 1-based indexing

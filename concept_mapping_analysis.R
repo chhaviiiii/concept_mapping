@@ -35,6 +35,8 @@ library(tidyr)        # Data tidying
 library(stringr)      # String manipulation
 library(purrr)        # Functional programming
 library(tibble)       # Modern data frames
+library(knitr)        # For kable
+library(grid)         # For grid.arrange
 
 # =============================================================================
 # Configuration and Setup
@@ -95,22 +97,20 @@ if (missing_ratings > 0) {
 
 # Function to analyze ratings and create statement similarity matrix
 analyze_ratings_and_similarity <- function(ratings, statements) {
-  """
-  Analyze ratings data and create similarity matrix for MDS analysis.
-  
-  This function:
-  1. Calculates summary statistics for each statement and rating type
-  2. Creates importance vs feasibility comparison
-  3. Generates similarity matrix based on rating patterns
-  4. Prepares data for multidimensional scaling
-  
-  Args:
-    ratings: Dataframe containing participant ratings
-    statements: Dataframe containing statement information
-  
-  Returns:
-    List containing rating summary, importance-feasibility data, and similarity matrix
-  """
+  # Analyze ratings data and create similarity matrix for MDS analysis.
+  #
+  # This function:
+  # 1. Calculates summary statistics for each statement and rating type
+  # 2. Creates importance vs feasibility comparison
+  # 3. Generates similarity matrix based on rating patterns
+  # 4. Prepares data for multidimensional scaling
+  #
+  # Args:
+  #   ratings: Dataframe containing participant ratings
+  #   statements: Dataframe containing statement information
+  #
+  # Returns:
+  #   List containing rating summary, importance-feasibility data, and similarity matrix
   cat("Analyzing ratings and creating similarity matrix...\n")
   
   # Calculate summary statistics by statement and rating type
@@ -175,20 +175,18 @@ analyze_ratings_and_similarity <- function(ratings, statements) {
 
 # Function to perform multidimensional scaling
 perform_mds_analysis <- function(distance_matrix, n_components = 2) {
-  """
-  Perform Multidimensional Scaling (MDS) on the distance matrix.
-  
-  MDS converts the high-dimensional rating patterns into 2D coordinates
-  that preserve the relative distances between statements. Statements with
-  similar rating patterns will be positioned closer together.
-  
-  Args:
-    distance_matrix: Matrix of distances between statements
-    n_components: Number of dimensions for MDS (default: 2)
-  
-  Returns:
-    MDS coordinates and stress value
-  """
+  # Perform Multidimensional Scaling (MDS) on the distance matrix.
+  #
+  # MDS converts the high-dimensional rating patterns into 2D coordinates
+  # that preserve the relative distances between statements. Statements with
+  # similar rating patterns will be positioned closer together.
+  #
+  # Args:
+  #   distance_matrix: Matrix of distances between statements
+  #   n_components: Number of dimensions for MDS (default: 2)
+  #
+  # Returns:
+  #   MDS coordinates and stress value
   cat("Performing Multidimensional Scaling (MDS)...\n")
   
   # Perform classical MDS using cmdscale
@@ -209,21 +207,19 @@ perform_mds_analysis <- function(distance_matrix, n_components = 2) {
 
 # Function to find optimal number of clusters
 find_optimal_clusters <- function(mds_coords, max_k = 10) {
-  """
-  Find the optimal number of clusters using elbow method and silhouette analysis.
-  
-  This function evaluates different numbers of clusters (k) and selects the
-  optimal k based on:
-  1. Elbow method: Where the within-cluster sum of squares (WSS) starts to level off
-  2. Silhouette analysis: Average silhouette score for each k
-  
-  Args:
-    mds_coords: 2D coordinates from MDS
-    max_k: Maximum number of clusters to evaluate
-  
-  Returns:
-    List containing optimal k, WSS scores, and silhouette scores
-  """
+  # Find the optimal number of clusters using elbow method and silhouette analysis.
+  #
+  # This function evaluates different numbers of clusters (k) and selects the
+  # optimal k based on:
+  # 1. Elbow method: Where the within-cluster sum of squares (WSS) starts to level off
+  # 2. Silhouette analysis: Average silhouette score for each k
+  #
+  # Args:
+  #   mds_coords: 2D coordinates from MDS
+  #   max_k: Maximum number of clusters to evaluate
+  #
+  # Returns:
+  #   List containing optimal k, WSS scores, and silhouette scores
   cat("Finding optimal number of clusters...\n")
   
   # Standardize coordinates for clustering
@@ -266,19 +262,17 @@ find_optimal_clusters <- function(mds_coords, max_k = 10) {
 
 # Helper function to find elbow point
 find_elbow_point <- function(k_range, wss) {
-  """
-  Find the elbow point in the WSS curve using the second derivative method.
-  
-  The elbow point is where the rate of decrease in WSS starts to level off,
-  indicating diminishing returns from adding more clusters.
-  
-  Args:
-    k_range: Range of k values evaluated
-    wss: Within-cluster sum of squares for each k
-  
-  Returns:
-    Optimal number of clusters (k value at elbow point)
-  """
+  # Find the elbow point in the WSS curve using the second derivative method.
+  #
+  # The elbow point is where the rate of decrease in WSS starts to level off,
+  # indicating diminishing returns from adding more clusters.
+  #
+  # Args:
+  #   k_range: Range of k values evaluated
+  #   wss: Within-cluster sum of squares for each k
+  #
+  # Returns:
+  #   Optimal number of clusters (k value at elbow point)
   if (length(wss) < 3) {
     return(k_range[1])  # Default to first k if not enough points
   }
@@ -298,16 +292,14 @@ find_elbow_point <- function(k_range, wss) {
 
 # Function to perform final clustering
 perform_clustering <- function(mds_coords, n_clusters) {
-  """
-  Perform K-means clustering on the MDS coordinates.
-  
-  Args:
-    mds_coords: 2D coordinates from MDS
-    n_clusters: Number of clusters to create
-  
-  Returns:
-    List containing cluster assignments and k-means model
-  """
+  # Perform K-means clustering on the MDS coordinates.
+  #
+  # Args:
+  #   mds_coords: 2D coordinates from MDS
+  #   n_clusters: Number of clusters to create
+  #
+  # Returns:
+  #   List containing cluster assignments and k-means model
   cat("Performing K-means clustering with", n_clusters, "clusters...\n")
   
   # Standardize coordinates
@@ -330,17 +322,15 @@ perform_clustering <- function(mds_coords, n_clusters) {
 
 # Function to create concept map visualization
 create_concept_map <- function(mds_coords, cluster_labels, statements) {
-  """
-  Create the main concept map visualization.
-  
-  This is the primary visualization showing how statements are positioned
-  in 2D space based on their rating patterns, with color-coding by cluster.
-  
-  Args:
-    mds_coords: 2D coordinates from MDS
-    cluster_labels: Cluster assignments for each statement
-    statements: Statement information
-  """
+  # Create the main concept map visualization.
+  #
+  # This is the primary visualization showing how statements are positioned
+  # in 2D space based on their rating patterns, with color-coding by cluster.
+  #
+  # Args:
+  #   mds_coords: 2D coordinates from MDS
+  #   cluster_labels: Cluster assignments for each statement
+  #   statements: Statement information
   cat("Creating concept map visualization...\n")
   
   # Prepare data for plotting
@@ -392,15 +382,13 @@ create_concept_map <- function(mds_coords, cluster_labels, statements) {
 
 # Function to create importance vs feasibility plot
 create_importance_feasibility_plot <- function(importance_feasibility) {
-  """
-  Create importance vs feasibility scatter plot.
-  
-  This visualization shows the relationship between importance and feasibility
-  ratings, with statements positioned based on their mean ratings on both dimensions.
-  
-  Args:
-    importance_feasibility: Dataframe with importance and feasibility ratings
-  """
+  # Create importance vs feasibility scatter plot.
+  #
+  # This visualization shows the relationship between importance and feasibility
+  # ratings, with statements positioned based on their mean ratings on both dimensions.
+  #
+  # Args:
+  #   importance_feasibility: Dataframe with importance and feasibility ratings
   cat("Creating importance vs feasibility plot...\n")
   
   # Calculate mean lines
@@ -417,8 +405,8 @@ create_importance_feasibility_plot <- function(importance_feasibility) {
       max.overlaps = 15
     ) +
     # Add mean lines
-    geom_vline(xintercept = mean_importance, color = "red", linestyle = "dashed", alpha = 0.7) +
-    geom_hline(yintercept = mean_feasibility, color = "red", linestyle = "dashed", alpha = 0.7) +
+    geom_vline(xintercept = mean_importance, color = "red", linetype = "dashed", alpha = 0.7) +
+    geom_hline(yintercept = mean_feasibility, color = "red", linetype = "dashed", alpha = 0.7) +
     # Add quadrant labels
     annotate("text", x = 0.1, y = 0.9, label = "High Importance\nLow Feasibility", 
              hjust = 0, vjust = 1, size = 4, color = "darkblue",
@@ -463,15 +451,13 @@ create_importance_feasibility_plot <- function(importance_feasibility) {
 
 # Function to create rating distribution plots
 create_rating_distribution <- function(ratings) {
-  """
-  Create rating distribution histograms for importance and feasibility.
-  
-  This visualization shows the distribution of ratings across all statements
-  and participants, helping to understand the overall rating patterns.
-  
-  Args:
-    ratings: Dataframe containing all ratings
-  """
+  # Create rating distribution histograms for importance and feasibility.
+  #
+  # This visualization shows the distribution of ratings across all statements
+  # and participants, helping to understand the overall rating patterns.
+  #
+  # Args:
+  #   ratings: Dataframe containing all ratings
   cat("Creating rating distribution plots...\n")
   
   # Create importance rating plot
@@ -480,7 +466,7 @@ create_rating_distribution <- function(ratings) {
     ggplot(aes(x = Rating)) +
     geom_histogram(bins = 6, fill = "steelblue", alpha = 0.7, color = "black") +
     geom_vline(xintercept = mean(ratings$Rating[ratings$RatingType == "Importance"], na.rm = TRUE),
-               color = "red", linestyle = "dashed", size = 1) +
+               color = "red", linetype = "dashed", size = 1) +
     labs(
       title = "Distribution of Importance Ratings",
       x = "Importance Rating",
@@ -498,7 +484,7 @@ create_rating_distribution <- function(ratings) {
     ggplot(aes(x = Rating)) +
     geom_histogram(bins = 6, fill = "orange", alpha = 0.7, color = "black") +
     geom_vline(xintercept = mean(ratings$Rating[ratings$RatingType == "Feasibility"], na.rm = TRUE),
-               color = "red", linestyle = "dashed", size = 1) +
+               color = "red", linetype = "dashed", size = 1) +
     labs(
       title = "Distribution of Feasibility Ratings",
       x = "Feasibility Rating",
@@ -530,15 +516,13 @@ create_rating_distribution <- function(ratings) {
 
 # Function to create cluster analysis plots
 create_cluster_analysis_plots <- function(mds_coords) {
-  """
-  Create cluster analysis plots showing WSS and silhouette analysis.
-  
-  These plots help visualize the process of finding the optimal number
-  of clusters and validate the clustering solution.
-  
-  Args:
-    mds_coords: 2D coordinates from MDS
-  """
+  # Create cluster analysis plots showing WSS and silhouette analysis.
+  #
+  # These plots help visualize the process of finding the optimal number
+  # of clusters and validate the clustering solution.
+  #
+  # Args:
+  #   mds_coords: 2D coordinates from MDS
   cat("Creating cluster analysis plots...\n")
   
   # Get cluster analysis data
@@ -553,7 +537,7 @@ create_cluster_analysis_plots <- function(mds_coords) {
     geom_line(size = 1, color = "blue") +
     geom_point(size = 3, color = "blue") +
     geom_vline(xintercept = cluster_analysis$optimal_k, 
-               color = "red", linestyle = "dashed", size = 1) +
+               color = "red", linetype = "dashed", size = 1) +
     labs(
       title = "Elbow Method for Optimal k Selection",
       x = "Number of Clusters (k)",
@@ -574,7 +558,7 @@ create_cluster_analysis_plots <- function(mds_coords) {
     geom_line(size = 1, color = "green") +
     geom_point(size = 3, color = "green") +
     geom_vline(xintercept = cluster_analysis$optimal_k, 
-               color = "red", linestyle = "dashed", size = 1) +
+               color = "red", linetype = "dashed", size = 1) +
     labs(
       title = "Silhouette Analysis for Optimal k Selection",
       x = "Number of Clusters (k)",
@@ -606,15 +590,13 @@ create_cluster_analysis_plots <- function(mds_coords) {
 
 # Function to create similarity heatmap
 create_similarity_heatmap <- function(similarity_matrix) {
-  """
-  Create similarity matrix heatmap.
-  
-  This visualization shows the correlation matrix between statements,
-  helping to identify groups of statements with similar rating patterns.
-  
-  Args:
-    similarity_matrix: Correlation matrix between statements
-  """
+  # Create similarity matrix heatmap.
+  #
+  # This visualization shows the correlation matrix between statements,
+  # helping to identify groups of statements with similar rating patterns.
+  #
+  # Args:
+  #   similarity_matrix: Correlation matrix between statements
   cat("Creating similarity heatmap...\n")
   
   # Create heatmap using corrplot
@@ -643,23 +625,21 @@ create_similarity_heatmap <- function(similarity_matrix) {
 
 # Function to generate summary statistics
 generate_summary_statistics <- function(ratings, statements, cluster_labels, importance_feasibility) {
-  """
-  Generate comprehensive summary statistics for the concept mapping analysis.
-  
-  This function creates summary tables and statistics including:
-  - Statement-level statistics (mean ratings, cluster assignments)
-  - Overall correlation between importance and feasibility
-  - Data quality metrics
-  
-  Args:
-    ratings: All rating data
-    statements: Statement information
-    cluster_labels: Cluster assignments
-    importance_feasibility: Importance vs feasibility data
-  
-  Returns:
-    List containing summary statistics
-  """
+  # Generate comprehensive summary statistics for the concept mapping analysis.
+  #
+  # This function creates summary tables and statistics including:
+  # - Statement-level statistics (mean ratings, cluster assignments)
+  # - Overall correlation between importance and feasibility
+  # - Data quality metrics
+  #
+  # Args:
+  #   ratings: All rating data
+  #   statements: Statement information
+  #   cluster_labels: Cluster assignments
+  #   importance_feasibility: Importance vs feasibility data
+  #
+  # Returns:
+  #   List containing summary statistics
   cat("Generating summary statistics...\n")
   
   # Calculate overall correlation
@@ -671,7 +651,7 @@ generate_summary_statistics <- function(ratings, statements, cluster_labels, imp
   statement_summary <- statements %>%
     mutate(Cluster = cluster_labels) %>%
     left_join(
-      importance_feasibility %>% select(StatementID, Importance, Feasibility),
+      importance_feasibility %>% dplyr::select(StatementID, Importance, Feasibility),
       by = "StatementID"
     )
   
@@ -713,9 +693,9 @@ generate_summary_statistics <- function(ratings, statements, cluster_labels, imp
 # Main Analysis Workflow
 # =============================================================================
 
-cat("=" * 60, "\n")
+cat(paste(rep("=", 60), collapse = ""), "\n")
 cat("CONCEPT MAPPING ANALYSIS - R IMPLEMENTATION\n")
-cat("=" * 60, "\n")
+cat(paste(rep("=", 60), collapse = ""), "\n")
 
 # Step 1: Analyze ratings and create similarity matrix
 analysis_results <- analyze_ratings_and_similarity(ratings, statements)
@@ -780,9 +760,9 @@ write_csv(results_df, file.path(output_dir, "statements_with_clusters.csv"))
 # Final Summary
 # =============================================================================
 
-cat("\n" + "=" * 60, "\n")
+cat("\n" + paste(rep("=", 60), collapse = ""), "\n")
 cat("ANALYSIS COMPLETED SUCCESSFULLY!\n")
-cat("=" * 60, "\n")
+cat(paste(rep("=", 60), collapse = ""), "\n")
 cat("📊 Results saved to:", output_dir, "\n")
 cat("📈 Visualizations created:", length(list.files(output_dir, pattern = "\\.png$")), "files\n")
 cat("📋 Summary:", summary_stats$total_statements, "statements in", summary_stats$n_clusters, "clusters\n")

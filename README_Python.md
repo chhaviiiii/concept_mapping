@@ -1,290 +1,318 @@
 # Python Concept Mapping Analysis
-## BCCS AI Workshop July 27, 2025
 
-A complete Python implementation of concept mapping analysis for AI applications in cancer care, featuring data transformation, multidimensional scaling, clustering, and advanced visualizations.
+A comprehensive Python implementation of concept mapping analysis featuring multidimensional scaling, clustering analysis, and advanced visualizations.
 
-## 🚀 Quick Start
+## Overview
 
-### 1. Install Requirements
+This Python implementation provides robust tools for concept mapping analysis, including data transformation, statistical analysis, and publication-quality visualizations. The analysis is designed for researchers conducting concept mapping studies in healthcare, education, business, and other domains.
+
+## Features
+
+### Core Analysis
+- **Data Transformation**: Convert Qualtrics survey data to analysis format
+- **Multidimensional Scaling (MDS)**: Reduce high-dimensional rating patterns to 2D visualization
+- **K-means Clustering**: Optimal cluster selection using elbow method and silhouette analysis
+- **Statistical Analysis**: Comprehensive correlation and descriptive statistics
+- **Quality Metrics**: Cluster validation and goodness-of-fit measures
+
+### Visualizations
+- **Concept Maps**: 2D positioning with color-coded clusters
+- **Importance vs Feasibility**: Strategic quadrant analysis
+- **Rating Distributions**: Histograms and statistical summaries
+- **Cluster Analysis**: Elbow plots and silhouette analysis
+- **Similarity Heatmaps**: Correlation matrix visualizations
+
+## Installation
+
+### Prerequisites
+- Python 3.8 or higher
+- Required packages: pandas, numpy, matplotlib, seaborn, scikit-learn, scipy
+
+### Setup
 ```bash
-pip install -r requirements_python.txt
+# Install required packages
+pip install pandas numpy matplotlib seaborn scikit-learn scipy
+
+# Verify installation
+python -c "import pandas, numpy, matplotlib, seaborn, sklearn, scipy; print('All packages installed successfully')"
 ```
 
-### 2. Run Complete Analysis
+## Usage
+
+### Option 1: Use Existing Processed Data (Recommended)
+
+The repository includes pre-processed data that works immediately:
+
 ```bash
-python run_python_analysis.py
+# Run complete analysis
+python3 concept_mapping_analysis_python.py
 ```
 
-### 3. Or Run Individual Steps
+### Option 2: Transform New Data (Requires Customization)
+
+For new Qualtrics exports, transformation may be required:
+
 ```bash
-# Transform data
-python transform_july27_2025_to_python.py
+# Transform data (may need customization)
+python3 transform_data_to_python.py
 
 # Run analysis
-python concept_mapping_analysis_python.py
+python3 concept_mapping_analysis_python.py
 ```
 
-## 📁 Python Project Structure
+### Complete Workflow
 
-```
-├── Python/                               # Python implementation files
-│   ├── transform_data_to_python.py       # Data transformation
-│   ├── concept_mapping_analysis_python.py # Main analysis
-│   └── run_python_analysis.py            # Master script
-├── data/python_analysis/                 # Python-formatted data
-│   ├── statements.csv                    # 100 statements
-│   ├── ratings.csv                       # Participant ratings
-│   ├── demographics.csv                  # Participant info
-│   └── sorted_cards.csv                  # Grouping data
-├── Figures/python_analysis/              # Generated visualizations
-│   ├── concept_map.png                   # MDS with clusters
-│   ├── importance_vs_feasibility.png     # Scatter plot
-│   ├── rating_distribution.png           # Histograms
-│   ├── cluster_analysis.png              # WSS and silhouette
-│   ├── similarity_heatmap.png            # Correlation matrix
-│   ├── summary_statistics.csv            # Key metrics
-│   └── statements_with_clusters.csv      # Results
-└── requirements_python.txt               # Python dependencies
+```bash
+# Run the complete pipeline
+python3 run_python_analysis.py
 ```
 
-## 🔧 Requirements
+## Data Requirements
 
-### Core Packages
-- **pandas** (≥1.5.0) - Data manipulation
-- **numpy** (≥1.21.0) - Numerical computing
-- **matplotlib** (≥3.5.0) - Basic plotting
-- **seaborn** (≥0.11.0) - Statistical visualizations
-- **scikit-learn** (≥1.1.0) - Machine learning
-- **scipy** (≥1.9.0) - Scientific computing
+### Input Data Format
 
-### Optional Packages
-- **plotly** (≥5.0.0) - Interactive plots
-- **jupyter** (≥1.0.0) - Jupyter notebooks
-- **dash** (≥2.0.0) - Interactive dashboards
+The analysis expects the following CSV files in `data/python_analysis/`:
 
-## 📊 Analysis Features
+**Statements.csv:**
+```csv
+StatementID,StatementText
+1,"Human oversight during implementation in early days"
+2,"Concerns with confidentiality"
+```
 
-### 1. Data Transformation
-- Converts Qualtrics survey data to Python format
-- Handles CSV and TSV files
-- Extracts statements, ratings, and demographics
-- Creates structured datasets for analysis
+**Ratings.csv:**
+```csv
+ParticipantID,StatementID,RatingType,Rating
+P1,1,Importance,4
+P1,1,Feasibility,3
+P1,2,Importance,3
+P1,2,Feasibility,4
+```
 
-### 2. Multidimensional Scaling (MDS)
-- Converts rating patterns to 2D coordinates
-- Uses correlation-based similarity matrix
-- Handles missing data and edge cases
-- Provides foundation for clustering
+**Demographics.csv (optional):**
+```csv
+ParticipantID,Age,Gender,Role,Experience
+P1,35,Female,Physician,10
+P2,28,Male,Resident,2
+```
 
-### 3. Clustering Analysis
-- **K-means clustering** with optimal k selection
-- **Elbow method** for WSS analysis
-- **Silhouette analysis** for cluster quality
-- Automatic selection of best number of clusters
+### Qualtrics Export Processing
 
-### 4. Visualizations
-- **Concept Map**: MDS plot with color-coded clusters
-- **Importance vs Feasibility**: Scatter plot with mean lines
-- **Rating Distribution**: Histograms for both rating types
-- **Cluster Analysis**: WSS and silhouette plots
-- **Similarity Heatmap**: Correlation matrix visualization
+**Important Note:** The transformation script requires customization for specific Qualtrics export formats. The current implementation handles:
+
+- **Standard Qualtrics format**: Simple column names (Q1_1, Q2.1_1, Q2.2_1)
+- **JSON format**: Complex column names with ImportId metadata
+
+Customization may be needed for:
+- Different question numbering schemes
+- Varying header row structures
+- Custom column naming conventions
+- Specialized rating scales
+
+**Working Data:** The repository includes pre-processed data in `data/rcmap_july27_2025/` that works without transformation.
+
+## Analysis Process
+
+### 1. Data Loading and Validation
+- Load statements, ratings, and demographics
+- Validate data structure and completeness
+- Check for missing values and outliers
+- Generate data quality reports
+
+### 2. Similarity Matrix Creation
+- Transform ratings into participant-statement matrix
+- Calculate correlation-based similarity between statements
+- Convert to distance matrix for MDS analysis
+- Handle missing data and edge cases
+
+### 3. Multidimensional Scaling (MDS)
+- Apply classical MDS to reduce dimensionality
+- Extract 2D coordinates for visualization
+- Calculate stress value for goodness-of-fit
+- Validate MDS solution quality
+
+### 4. Cluster Analysis
+- Determine optimal number of clusters using:
+  - Elbow method (within-cluster sum of squares)
+  - Silhouette analysis (cluster quality)
+- Perform K-means clustering with optimal k
+- Validate cluster assignments and quality
 
 ### 5. Statistical Analysis
-- Correlation between importance and feasibility
-- Mean ratings by statement and cluster
-- Cluster quality metrics
-- Summary statistics and reporting
+- Calculate importance vs feasibility correlations
+- Generate descriptive statistics by cluster
+- Analyze rating distributions and patterns
+- Create comprehensive summary reports
 
-## 🎯 Key Advantages of Python Version
+### 6. Visualization Generation
+- Concept map with cluster coloring
+- Importance vs feasibility scatter plot
+- Rating distribution histograms
+- Cluster analysis diagnostic plots
+- Similarity matrix heatmap
 
-### Performance
-- **Faster execution** with optimized libraries
-- **Memory efficient** data handling
-- **Parallel processing** capabilities
+## Output Files
 
-### Flexibility
-- **Object-oriented design** for easy extension
-- **Modular architecture** for custom analyses
-- **Rich ecosystem** of additional libraries
+### Visualizations (PNG format)
+- `concept_map.png`: Main concept map with cluster assignments
+- `importance_vs_feasibility.png`: Strategic quadrant analysis
+- `rating_distribution.png`: Rating distribution histograms
+- `cluster_analysis.png`: Elbow method and silhouette plots
+- `similarity_heatmap.png`: Statement similarity matrix
 
-### Visualization
-- **Interactive plots** with Plotly
-- **Publication-quality** graphics with Matplotlib/Seaborn
-- **Customizable styling** and themes
+### Data Files (CSV format)
+- `summary_statistics.csv`: Comprehensive analysis results
+- `statements_with_clusters.csv`: Final results with cluster assignments
 
-### Integration
-- **Jupyter notebooks** for interactive analysis
-- **Web dashboards** with Dash/Streamlit
-- **API integration** capabilities
-- **Database connectivity** options
+### Analysis Results
+- **Cluster assignments**: Each statement assigned to optimal cluster
+- **MDS coordinates**: 2D positioning for visualization
+- **Statistical summaries**: Correlations, means, standard deviations
+- **Quality metrics**: Stress values, silhouette scores, cluster quality
 
-## 📈 Comparison: R vs Python
+## Configuration
 
-| Feature | R Version | Python Version |
-|---------|-----------|----------------|
-| **Data Transformation** | ✅ | ✅ |
-| **MDS Analysis** | ✅ | ✅ |
-| **Clustering** | ✅ | ✅ |
-| **Basic Visualizations** | ✅ | ✅ |
-| **Performance** | Good | **Better** |
-| **Interactive Plots** | Limited | **Excellent** |
-| **Machine Learning** | Good | **Excellent** |
-| **Web Integration** | Limited | **Excellent** |
-| **Package Ecosystem** | Good | **Excellent** |
-| **Learning Curve** | Steep | **Gentler** |
+### Analysis Parameters
 
-## 🔍 Usage Examples
-
-### Basic Analysis
+**Clustering Parameters:**
 ```python
-from concept_mapping_analysis_python import ConceptMappingAnalysis
-
-# Initialize analysis
-analysis = ConceptMappingAnalysis()
-
-# Run complete analysis
-results = analysis.run_analysis()
-
-# Access results
-statements = results['statements']
-mds_coords = results['mds_coords']
-cluster_labels = results['cluster_labels']
+max_k = 10              # Maximum number of clusters to evaluate
+nstart = 25             # Number of K-means initializations
+random_state = 42       # Random seed for reproducibility
 ```
 
-### Custom Analysis
+**MDS Parameters:**
 ```python
-# Load data manually
-analysis = ConceptMappingAnalysis()
-analysis.load_data()
-
-# Custom MDS
-rating_matrix = analysis.prepare_rating_matrix()
-mds_coords, similarity_matrix = analysis.perform_mds(rating_matrix)
-
-# Custom clustering
-optimal_k, wss, silhouette_scores, k_range = analysis.find_optimal_clusters(mds_coords)
-cluster_labels, kmeans = analysis.perform_clustering(mds_coords, optimal_k)
+n_components = 2        # Number of dimensions for MDS
+metric = True           # Use metric MDS (classical)
 ```
 
-### Interactive Visualization
+**Visualization Parameters:**
 ```python
-import plotly.express as px
-import plotly.graph_objects as go
-
-# Create interactive concept map
-fig = px.scatter(
-    x=mds_coords[:, 0], 
-    y=mds_coords[:, 1],
-    color=cluster_labels,
-    hover_data={'Statement': statements['StatementText']},
-    title="Interactive Concept Map"
-)
-fig.show()
+figure_size = (12, 10)  # Figure dimensions in inches
+dpi = 300              # Image resolution
+color_palette = 'viridis'  # Color scheme for clusters
 ```
 
-## 🚀 Advanced Features
+### Customization Options
 
-### 1. Interactive Dashboards
+**Modifying Cluster Analysis:**
 ```python
-# Create Dash dashboard (requires dash package)
-import dash
-from dash import dcc, html
-import plotly.graph_objs as go
+# Adjust maximum clusters
+cluster_analysis = find_optimal_clusters(mds_coords, max_k=15)
 
-app = dash.Dash(__name__)
-# Add dashboard components...
+# Force specific number of clusters
+clustering_results = perform_clustering(mds_coords, n_clusters=3)
 ```
 
-### 2. Machine Learning Extensions
+**Customizing Visualizations:**
 ```python
-# Add advanced clustering
-from sklearn.mixture import GaussianMixture
-from sklearn.cluster import DBSCAN
-
-# Add dimensionality reduction
-from sklearn.decomposition import PCA
-from sklearn.manifold import TSNE
+# Modify plot styles
+plt.style.use('seaborn-v0_8')
+plt.rcParams['font.size'] = 12
+plt.rcParams['figure.figsize'] = (10, 8)
 ```
 
-### 3. Statistical Testing
-```python
-from scipy import stats
-from statsmodels.stats.multicomp import pairwise_tukeyhsd
-
-# ANOVA for cluster differences
-f_stat, p_value = stats.f_oneway(*cluster_groups)
-```
-
-## 📝 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
-1. **Package Installation**
-   ```bash
-   # If pip fails, try conda
-   conda install pandas numpy matplotlib seaborn scikit-learn scipy
-   ```
+**Data Format Errors:**
+- Ensure CSV files have correct column names
+- Check for missing values and data types
+- Verify statement numbering consistency
 
-2. **Memory Issues**
-   ```python
-   # Reduce memory usage
-   import gc
-   gc.collect()
-   ```
+**Memory Issues:**
+- Reduce dataset size for large analyses
+- Use data sampling for preliminary testing
+- Optimize matrix operations for large datasets
 
-3. **Plot Display**
-   ```python
-   # For Jupyter notebooks
-   %matplotlib inline
-   
-   # For headless servers
-   import matplotlib
-   matplotlib.use('Agg')
-   ```
+**Visualization Problems:**
+- Check matplotlib backend configuration
+- Ensure output directory exists and is writable
+- Verify color palette compatibility
 
-### Performance Optimization
+### Data Quality Checks
+
+**Before Analysis:**
 ```python
-# Use efficient data types
-ratings_df = ratings_df.astype({
-    'StatementID': 'int8',
-    'Rating': 'int8'
-})
-
-# Use parallel processing
-from joblib import Parallel, delayed
+# Check data completeness
+print(f"Statements: {len(statements)}")
+print(f"Participants: {len(ratings['ParticipantID'].unique())}")
+print(f"Ratings: {len(ratings)}")
+print(f"Missing values: {ratings['Rating'].isna().sum()}")
 ```
 
-## 🔮 Future Enhancements
+**After Analysis:**
+```python
+# Validate results
+print(f"Clusters: {len(set(cluster_labels))}")
+print(f"MDS stress: {mds_results['stress']:.3f}")
+print(f"Correlation: {correlation:.3f}")
+```
 
-### Planned Features
-- **Interactive web dashboard** with Dash
-- **Advanced clustering algorithms** (DBSCAN, HDBSCAN)
-- **Natural language processing** for statement analysis
-- **Real-time data processing** capabilities
-- **API endpoints** for integration
-- **Automated report generation** with Jinja2
+## Performance Optimization
 
-### Custom Extensions
-- **Deep learning** for pattern recognition
-- **Network analysis** for statement relationships
-- **Time series analysis** for longitudinal studies
-- **Geospatial analysis** for location-based insights
+### Large Datasets
+- Use efficient matrix operations with numpy
+- Implement data sampling for preliminary analysis
+- Optimize memory usage with data types
 
-## 📄 License
+### Computational Efficiency
+- Vectorize operations where possible
+- Use efficient clustering algorithms
+- Optimize visualization rendering
 
-This Python implementation is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
+## Extending the Analysis
 
-## 🤝 Contributing
+### Adding New Metrics
+```python
+def calculate_additional_metrics(ratings, statements):
+    # Add custom statistical measures
+    pass
+```
 
-To extend this analysis:
-1. Fork the repository
-2. Create a feature branch
-3. Add your enhancements
-4. Submit a pull request
+### Custom Visualizations
+```python
+def create_custom_plot(data, output_path):
+    # Create specialized visualizations
+    pass
+```
 
-## 📞 Support
+### Integration with Other Tools
+- Export results for external analysis
+- Generate reports in different formats
+- Interface with other statistical software
 
-For questions or issues:
+## Best Practices
+
+### Data Preparation
+- Validate data quality before analysis
+- Document data transformation steps
+- Maintain consistent naming conventions
+
+### Analysis Workflow
+- Use reproducible random seeds
+- Document parameter choices
+- Validate results with multiple methods
+
+### Result Interpretation
+- Consider context when interpreting clusters
+- Validate findings with domain experts
+- Document limitations and assumptions
+
+## Support
+
+For issues and questions:
 1. Check the troubleshooting section
-2. Review the code comments
-3. Create an issue in the repository 
+2. Review code comments for implementation details
+3. Validate data format and quality
+4. Test with sample data first
+
+## License
+
+Educational and Research Use
+
+## Acknowledgments
+
+Developed for concept mapping research in healthcare and related domains. This implementation supports the analysis of complex conceptual frameworks and strategic planning processes. 

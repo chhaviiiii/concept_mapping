@@ -1,305 +1,322 @@
-# R Implementation - Concept Mapping Analysis
+# R Concept Mapping Analysis
 
-Complete R implementation of concept mapping analysis with data transformation, multidimensional scaling, clustering, and advanced visualizations.
+A comprehensive R implementation of concept mapping analysis featuring multidimensional scaling, clustering analysis, and publication-quality visualizations.
 
-## 🚀 Quick Start
+## Overview
 
-### 1. Install Dependencies
+This R implementation provides robust tools for concept mapping analysis, including data transformation, statistical analysis, and advanced visualizations. The analysis is designed for researchers conducting concept mapping studies in healthcare, education, business, and other domains.
+
+## Features
+
+### Core Analysis
+- **Data Transformation**: Convert Qualtrics survey data to RCMap format
+- **Multidimensional Scaling (MDS)**: Reduce high-dimensional rating patterns to 2D visualization
+- **K-means Clustering**: Optimal cluster selection using elbow method and silhouette analysis
+- **Statistical Analysis**: Comprehensive correlation and descriptive statistics
+- **Quality Metrics**: Cluster validation and goodness-of-fit measures
+
+### Visualizations
+- **Concept Maps**: 2D positioning with color-coded clusters
+- **Importance vs Feasibility**: Strategic quadrant analysis
+- **Rating Distributions**: Histograms and statistical summaries
+- **Cluster Analysis**: Elbow plots and silhouette analysis
+- **Similarity Heatmaps**: Correlation matrix visualizations
+
+## Installation
+
+### Prerequisites
+- R 4.0 or higher
+- Required packages: dplyr, readr, ggplot2, cluster, factoextra, MASS, corrplot
+
+### Setup
 ```r
 # Install required packages
-install.packages(c(
-  "dplyr", "readr", "ggplot2", "ggrepel", "cluster", "factoextra", 
-  "MASS", "corrplot", "viridis", "RColorBrewer", "gridExtra", 
-  "tidyr", "stringr", "purrr", "tibble", "knitr"
-), repos = "https://cran.rstudio.com/")
+install.packages(c("dplyr", "readr", "ggplot2", "cluster", "factoextra", 
+                   "MASS", "corrplot", "viridis", "RColorBrewer", 
+                   "gridExtra", "tidyr", "stringr", "purrr", "tibble"))
+
+# Or use the requirements script
+Rscript requirements.R
 ```
 
-### 2. Run Complete Analysis
+## Usage
+
+### Option 1: Use Existing Processed Data (Recommended)
+
+The repository includes pre-processed data that works immediately:
+
 ```bash
-Rscript run_analysis.R
+# Run complete analysis
+Rscript concept_mapping_analysis.R
 ```
 
-### 3. Or Run Individual Steps
+### Option 2: Transform New Data (Requires Customization)
+
+For new Qualtrics exports, transformation may be required:
+
 ```bash
-# Transform data
+# Transform data (may need customization)
 Rscript transform_data_to_rcmap.R
 
 # Run analysis
 Rscript concept_mapping_analysis.R
-
-# Create custom visualizations
-Rscript create_custom_graphs.R
-
-# Generate HTML report
-Rscript create_html_report.R
 ```
 
-## 📁 R Project Structure
+### Complete Workflow
 
-```
-├── R/                                    # R implementation files
-│   ├── transform_data_to_rcmap.R         # Data transformation
-│   ├── concept_mapping_analysis.R         # Main analysis
-│   ├── create_custom_graphs.R             # Custom visualizations
-│   ├── create_html_report.R               # HTML report generator
-│   └── run_analysis.R                     # Master script
-├── data/rcmap_analysis/                   # R-formatted data
-│   ├── Statements.csv                     # 100 statements
-│   ├── Ratings.csv                        # Participant ratings
-│   ├── Demographics.csv                   # Participant info
-│   └── SortedCards.csv                    # Grouping data
-├── Figures/analysis/                      # Generated visualizations
-│   ├── concept_map.png                    # MDS with clusters
-│   ├── importance_vs_feasibility.png      # Scatter plot
-│   ├── rating_distribution.png            # Histograms
-│   ├── cluster_analysis.png               # WSS and silhouette
-│   ├── similarity_heatmap.png             # Correlation matrix
-│   ├── summary_statistics.csv             # Key metrics
-│   └── statements_with_clusters.csv       # Results
-└── requirements.R                         # R dependencies
+```bash
+# Run the complete pipeline
+Rscript run_analysis.R
 ```
 
-## 🔧 Requirements
+## Data Requirements
 
-### Core Packages
-- **dplyr** (≥1.0.0) - Data manipulation
-- **readr** (≥2.0.0) - Fast data reading
-- **ggplot2** (≥3.3.0) - Grammar of graphics
-- **ggrepel** (≥0.9.0) - Label positioning
-- **cluster** (≥2.1.0) - Clustering algorithms
-- **factoextra** (≥1.0.7) - Extract and visualize results
-- **MASS** (≥7.3.0) - Multidimensional scaling
-- **corrplot** (≥0.92) - Correlation matrix visualization
+### Input Data Format
 
-### Optional Packages
-- **viridis** (≥0.6.0) - Color palettes
-- **RColorBrewer** (≥1.1.0) - Color schemes
-- **gridExtra** (≥2.3) - Arrange multiple plots
-- **knitr** (≥1.40) - Report generation
+The analysis expects the following CSV files in `data/rcmap_analysis/`:
 
-## 📊 Analysis Features
+**Statements.csv:**
+```csv
+StatementID,StatementText
+1,"Human oversight during implementation in early days"
+2,"Concerns with confidentiality"
+```
 
-### 1. Data Transformation
-- Converts Qualtrics survey data to RCMap format
-- Handles CSV and TSV files with UTF-8 encoding
-- Extracts statements, ratings, and demographics
-- Creates structured datasets for analysis
+**Ratings.csv:**
+```csv
+ParticipantID,StatementID,RatingType,Rating
+P1,1,Importance,4
+P1,1,Feasibility,3
+P1,2,Importance,3
+P1,2,Feasibility,4
+```
 
-### 2. Multidimensional Scaling (MDS)
-- Converts rating patterns to 2D coordinates
-- Uses correlation-based similarity matrix
-- Handles missing data and edge cases
-- Provides foundation for clustering
+**Demographics.csv (optional):**
+```csv
+ParticipantID,Age,Gender,Role,Experience
+P1,35,Female,Physician,10
+P2,28,Male,Resident,2
+```
 
-### 3. Clustering Analysis
-- **K-means clustering** with optimal k selection
-- **Elbow method** for WSS analysis
-- **Silhouette analysis** for cluster quality
-- Automatic selection of best number of clusters
+### Qualtrics Export Processing
 
-### 4. Visualizations
-- **Concept Map**: MDS plot with color-coded clusters
-- **Importance vs Feasibility**: Scatter plot with mean lines
-- **Rating Distribution**: Histograms for both rating types
-- **Cluster Analysis**: WSS and silhouette plots
-- **Similarity Heatmap**: Correlation matrix visualization
+**Important Note:** The transformation script requires customization for specific Qualtrics export formats. The current implementation handles:
+
+- **Standard Qualtrics format**: Simple column names (Q1_1, Q2.1_1, Q2.2_1)
+- **JSON format**: Complex column names with ImportId metadata
+
+Customization may be needed for:
+- Different question numbering schemes
+- Varying header row structures
+- Custom column naming conventions
+- Specialized rating scales
+
+**Working Data:** The repository includes pre-processed data in `data/rcmap_july27_2025/` that works without transformation.
+
+## Analysis Process
+
+### 1. Data Loading and Validation
+- Load statements, ratings, and demographics
+- Validate data structure and completeness
+- Check for missing values and outliers
+- Generate data quality reports
+
+### 2. Similarity Matrix Creation
+- Transform ratings into participant-statement matrix
+- Calculate correlation-based similarity between statements
+- Convert to distance matrix for MDS analysis
+- Handle missing data and edge cases
+
+### 3. Multidimensional Scaling (MDS)
+- Apply classical MDS using cmdscale function
+- Extract 2D coordinates for visualization
+- Calculate stress value for goodness-of-fit
+- Validate MDS solution quality
+
+### 4. Cluster Analysis
+- Determine optimal number of clusters using:
+  - Elbow method (within-cluster sum of squares)
+  - Silhouette analysis (cluster quality)
+- Perform K-means clustering with optimal k
+- Validate cluster assignments and quality
 
 ### 5. Statistical Analysis
-- Correlation between importance and feasibility
-- Mean ratings by statement and cluster
-- Cluster quality metrics
-- Summary statistics and reporting
+- Calculate importance vs feasibility correlations
+- Generate descriptive statistics by cluster
+- Analyze rating distributions and patterns
+- Create comprehensive summary reports
 
-## 🎯 Key Advantages of R Version
+### 6. Visualization Generation
+- Concept map with cluster coloring
+- Importance vs feasibility scatter plot
+- Rating distribution histograms
+- Cluster analysis diagnostic plots
+- Similarity matrix heatmap
 
-### Statistical Rigor
-- **Comprehensive statistical testing** capabilities
-- **Publication-quality graphics** with ggplot2
-- **Advanced clustering methods** available
-- **Robust data validation** and cleaning
+## Output Files
 
-### Visualization Quality
-- **Professional appearance** suitable for publications
-- **Consistent styling** across all plots
-- **Customizable themes** and color schemes
-- **High-resolution output** for presentations
+### Visualizations (PNG format)
+- `concept_map.png`: Main concept map with cluster assignments
+- `importance_vs_feasibility.png`: Strategic quadrant analysis
+- `rating_distribution.png`: Rating distribution histograms
+- `cluster_analysis.png`: Elbow method and silhouette plots
+- `similarity_heatmap.png`: Statement similarity matrix
 
-### Research Integration
-- **Seamless integration** with other R packages
-- **Reproducible research** with R Markdown
-- **Statistical reporting** standards
-- **Academic workflow** compatibility
+### Data Files (CSV format)
+- `summary_statistics.csv`: Comprehensive analysis results
+- `statements_with_clusters.csv`: Final results with cluster assignments
 
-## 📈 Comparison: R vs Python
+### Analysis Results
+- **Cluster assignments**: Each statement assigned to optimal cluster
+- **MDS coordinates**: 2D positioning for visualization
+- **Statistical summaries**: Correlations, means, standard deviations
+- **Quality metrics**: Stress values, silhouette scores, cluster quality
 
-| Feature | R Version | Python Version |
-|---------|-----------|----------------|
-| **Data Transformation** | ✅ | ✅ |
-| **MDS Analysis** | ✅ | ✅ |
-| **Clustering** | ✅ | ✅ |
-| **Basic Visualizations** | ✅ | ✅ |
-| **Statistical Testing** | **Excellent** | Good |
-| **Publication Graphics** | **Excellent** | Good |
-| **Research Integration** | **Excellent** | Good |
-| **Performance** | Good | **Better** |
-| **Interactive Plots** | Limited | **Excellent** |
-| **Learning Curve** | Steep | **Gentler** |
+## Configuration
 
-## 🔍 Usage Examples
+### Analysis Parameters
 
-### Basic Analysis
+**Clustering Parameters:**
 ```r
-# Load the analysis script
-source("simplified_concept_mapping_analysis.R")
-
-# The script will automatically:
-# 1. Load and validate data
-# 2. Perform MDS analysis
-# 3. Find optimal clusters
-# 4. Create visualizations
-# 5. Generate summary statistics
+max_k <- 10              # Maximum number of clusters to evaluate
+nstart <- 25             # Number of K-means initializations
+set.seed(42)             # Random seed for reproducibility
 ```
 
-### Custom Analysis
+**MDS Parameters:**
 ```r
-# Load data manually
-statements <- read_csv("data/rcmap_july27_2025/Statements.csv")
-ratings <- read_csv("data/rcmap_july27_2025/Ratings.csv")
+n_components <- 2        # Number of dimensions for MDS
+eig <- TRUE              # Calculate eigenvalues
+```
 
-# Custom MDS
-rating_matrix <- create_rating_matrix(ratings)
-similarity_matrix <- cor(t(rating_matrix), use = "pairwise.complete.obs")
-distance_matrix <- 1 - abs(similarity_matrix)
-mds_result <- cmdscale(distance_matrix, k = 2)
+**Visualization Parameters:**
+```r
+figure_size <- c(12, 10) # Figure dimensions in inches
+dpi <- 300              # Image resolution
+color_palette <- "viridis"  # Color scheme for clusters
+```
 
-# Custom clustering
-optimal_k <- find_optimal_clusters(mds_result)
-cluster_result <- kmeans(mds_result, centers = optimal_k)
+### Customization Options
+
+**Modifying Cluster Analysis:**
+```r
+# Adjust maximum clusters
+cluster_analysis <- find_optimal_clusters(mds_coords, max_k = 15)
+
+# Force specific number of clusters
+clustering_results <- perform_clustering(mds_coords, n_clusters = 3)
+```
+
+**Customizing Visualizations:**
+```r
+# Modify plot themes
+theme_set(theme_minimal())
+theme_update(
+  plot.title = element_text(size = 16, face = "bold"),
+  axis.title = element_text(size = 12, face = "bold")
+)
+```
+
+## Troubleshooting
+
+### Common Issues
+
+**Data Format Errors:**
+- Ensure CSV files have correct column names
+- Check for missing values and data types
+- Verify statement numbering consistency
+
+**Memory Issues:**
+- Reduce dataset size for large analyses
+- Use data sampling for preliminary testing
+- Optimize matrix operations for large datasets
+
+**Visualization Problems:**
+- Check graphics device configuration
+- Ensure output directory exists and is writable
+- Verify color palette compatibility
+
+### Data Quality Checks
+
+**Before Analysis:**
+```r
+# Check data completeness
+cat("Statements:", nrow(statements), "\n")
+cat("Participants:", length(unique(ratings$ParticipantID)), "\n")
+cat("Ratings:", nrow(ratings), "\n")
+cat("Missing values:", sum(is.na(ratings$Rating)), "\n")
+```
+
+**After Analysis:**
+```r
+# Validate results
+cat("Clusters:", length(unique(cluster_labels)), "\n")
+cat("MDS stress:", round(mds_results$stress, 3), "\n")
+cat("Correlation:", round(correlation, 3), "\n")
+```
+
+## Performance Optimization
+
+### Large Datasets
+- Use efficient data.table operations
+- Implement data sampling for preliminary analysis
+- Optimize memory usage with data types
+
+### Computational Efficiency
+- Vectorize operations where possible
+- Use efficient clustering algorithms
+- Optimize visualization rendering
+
+## Extending the Analysis
+
+### Adding New Metrics
+```r
+calculate_additional_metrics <- function(ratings, statements) {
+  # Add custom statistical measures
+}
 ```
 
 ### Custom Visualizations
 ```r
-# Create custom concept map
-ggplot(data.frame(
-  x = mds_result[,1], 
-  y = mds_result[,2],
-  cluster = factor(cluster_result$cluster),
-  statement = statements$StatementText
-)) +
-  geom_point(aes(x = x, y = y, color = cluster), size = 3) +
-  geom_text_repel(aes(x = x, y = y, label = statement), size = 2) +
-  theme_minimal() +
-  labs(title = "Custom Concept Map")
-```
-
-## 🚀 Advanced Features
-
-### 1. HTML Report Generation
-```r
-# Generate comprehensive HTML report
-source("create_html_report.R")
-```
-
-### 2. Custom Visualizations
-```r
-# Create additional custom plots
-source("create_custom_graphs.R")
-```
-
-### 3. Statistical Testing
-```r
-# ANOVA for cluster differences
-cluster_groups <- split(ratings$Rating, cluster_result$cluster)
-anova_result <- aov(Rating ~ cluster, data = ratings)
-summary(anova_result)
-```
-
-### 4. Publication Graphics
-```r
-# Set publication theme
-theme_publication <- function() {
-  theme_minimal() +
-    theme(
-      text = element_text(size = 12, family = "Times"),
-      plot.title = element_text(size = 14, face = "bold"),
-      axis.title = element_text(size = 12),
-      legend.position = "bottom"
-    )
+create_custom_plot <- function(data, output_path) {
+  # Create specialized visualizations
 }
 ```
 
-## 📝 Troubleshooting
+### Integration with Other Tools
+- Export results for external analysis
+- Generate reports in different formats
+- Interface with other statistical software
 
-### Common Issues
+## Best Practices
 
-1. **Package Installation**
-   ```r
-   # If install.packages fails, try:
-   install.packages("package_name", dependencies = TRUE)
-   
-   # Or use BiocManager for bioinformatics packages
-   if (!require("BiocManager", quietly = TRUE))
-     install.packages("BiocManager")
-   BiocManager::install("package_name")
-   ```
+### Data Preparation
+- Validate data quality before analysis
+- Document data transformation steps
+- Maintain consistent naming conventions
 
-2. **Memory Issues**
-   ```r
-   # Clear memory
-   gc()
-   
-   # Increase memory limit (Windows)
-   memory.limit(size = 8000)
-   ```
+### Analysis Workflow
+- Use reproducible random seeds
+- Document parameter choices
+- Validate results with multiple methods
 
-3. **Encoding Issues**
-   ```r
-   # Set encoding for file reading
-   read_csv("file.csv", locale = locale(encoding = "UTF-8"))
-   ```
+### Result Interpretation
+- Consider context when interpreting clusters
+- Validate findings with domain experts
+- Document limitations and assumptions
 
-### Performance Optimization
-```r
-# Use data.table for large datasets
-library(data.table)
-ratings_dt <- fread("data/rcmap_july27_2025/Ratings.csv")
+## Support
 
-# Use parallel processing
-library(parallel)
-library(doParallel)
-```
-
-## 🔮 Future Enhancements
-
-### Planned Features
-- **Interactive Shiny dashboard** for real-time analysis
-- **Advanced clustering algorithms** (hierarchical, DBSCAN)
-- **Network analysis** for statement relationships
-- **Automated report generation** with R Markdown
-- **API integration** capabilities
-- **Database connectivity** options
-
-### Custom Extensions
-- **Mixed-methods analysis** integration
-- **Longitudinal concept mapping** support
-- **Multi-group comparisons** and testing
-- **Geospatial analysis** for location-based insights
-
-## 📄 License
-
-This R implementation is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
-
-## 🤝 Contributing
-
-To extend this analysis:
-1. Fork the repository
-2. Create a feature branch
-3. Add your enhancements
-4. Submit a pull request
-
-## 📞 Support
-
-For questions or issues:
+For issues and questions:
 1. Check the troubleshooting section
-2. Review the code comments
-3. Create an issue in the repository 
+2. Review code comments for implementation details
+3. Validate data format and quality
+4. Test with sample data first
+
+## License
+
+Educational and Research Use
+
+## Acknowledgments
+
+Developed for concept mapping research in healthcare and related domains. This implementation supports the analysis of complex conceptual frameworks and strategic planning processes. 

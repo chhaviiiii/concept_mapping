@@ -1,189 +1,183 @@
 # Concept Mapping Analysis Toolkit
 
-A comprehensive toolkit for concept mapping analysis with implementations in both **Python** and **R**. This project provides data transformation, multidimensional scaling, clustering analysis, and advanced visualizations for concept mapping studies.
+A comprehensive toolkit for conducting concept mapping analysis using both Python and R implementations. This repository provides researchers with robust tools for analyzing qualitative and quantitative data to identify patterns, relationships, and clusters in complex conceptual frameworks.
 
-## 🎯 What is Concept Mapping?
+## Overview
 
 Concept mapping is a research methodology that combines qualitative and quantitative approaches to:
-- **Generate ideas** through brainstorming sessions
-- **Structure concepts** using multidimensional scaling (MDS)
-- **Cluster related ideas** using statistical clustering
-- **Rate concepts** on importance and feasibility dimensions
-- **Visualize relationships** between concepts and clusters
+- Generate and structure ideas
+- Identify relationships between concepts
+- Create visual representations of complex data
+- Support decision-making and strategic planning
 
-This toolkit is designed for researchers, analysts, and practitioners conducting concept mapping studies in healthcare, education, business, or any domain requiring structured analysis of complex ideas.
+This toolkit is designed for researchers in healthcare, education, business, and other domains requiring structured analysis of complex ideas and their relationships.
 
-## 🚀 Quick Start
+## Project Structure
 
-### Option 1: Python Implementation (Recommended)
+```
+RCMap-1/
+├── data/
+│   ├── BCCS AI Workshop_July 27, 2025_15.23.csv    # Original Qualtrics export
+│   ├── rcmap_july27_2025/                          # Working processed data
+│   ├── python_analysis/                            # Python analysis data
+│   └── rcmap_analysis/                             # R analysis data
+├── Figures/
+│   ├── analysis/                                   # R analysis outputs
+│   └── python_analysis/                            # Python analysis outputs
+├── concept_mapping_analysis_python.py              # Core Python analysis
+├── concept_mapping_analysis.R                      # Core R analysis
+├── transform_data_to_python.py                     # Python data transformation
+├── transform_data_to_rcmap.R                       # R data transformation
+├── run_python_analysis.py                          # Python workflow script
+├── run_analysis.R                                  # R workflow script
+├── requirements.R                                  # R package dependencies
+├── README_Python.md                                # Python documentation
+├── README_R.md                                     # R documentation
+└── README.md                                       # This file
+```
+
+## Quick Start
+
+### Prerequisites
+
+**Python Requirements:**
 ```bash
-# Install dependencies
-pip install -r requirements_python.txt
-
-# Run complete analysis
-python run_python_analysis.py
+pip install pandas numpy matplotlib seaborn scikit-learn scipy
 ```
 
-### Option 2: R Implementation
+**R Requirements:**
 ```bash
-# Install dependencies
-Rscript -e "install.packages(c('dplyr', 'readr', 'ggplot2', 'cluster', 'factoextra', 'MASS', 'corrplot', 'viridis', 'RColorBrewer', 'gridExtra', 'tidyr', 'stringr', 'purrr', 'tibble'), repos='https://cran.rstudio.com/')"
-
-# Run complete analysis
-Rscript run_july27_2025_analysis.R
+Rscript requirements.R
 ```
 
-## 📁 Project Structure
+### Running the Analysis
 
-```
-├── README.md                           # This file - main documentation
-├── README_Python.md                    # Detailed Python documentation
-├── README_R.md                         # Detailed R documentation
-├── requirements_python.txt             # Python dependencies
-├── requirements.R                      # R dependencies
-│
-├── data/                               # Raw and processed data
-│   ├── python_analysis/               # Python-formatted data
-│   └── rcmap_analysis/                # R-formatted data
-│
-├── Python/                             # Python implementation
-│   ├── transform_data_to_python.py
-│   ├── concept_mapping_analysis_python.py
-│   └── run_python_analysis.py
-│
-├── R/                                  # R implementation
-│   ├── transform_data_to_rcmap.R
-│   ├── concept_mapping_analysis.R
-│   ├── create_custom_graphs.R
-│   ├── create_html_report.R
-│   └── run_analysis.R
-│
-└── Figures/                            # Generated visualizations
-    ├── python_analysis/               # Python outputs
-    └── analysis/                      # R outputs
+**Option 1: Use Existing Processed Data (Recommended)**
+```bash
+# Run R analysis
+Rscript concept_mapping_analysis.R
+
+# Run Python analysis  
+python3 concept_mapping_analysis_python.py
 ```
 
-## 🔧 Requirements
+**Option 2: Transform New Data (Requires Customization)**
+```bash
+# Transform data for R analysis
+Rscript transform_data_to_rcmap.R
 
-### Python Version
-- **Python 3.8+**
-- **Core packages**: pandas, numpy, matplotlib, seaborn, scikit-learn, scipy
-- **Optional**: plotly, jupyter, dash
-
-### R Version
-- **R 4.0+**
-- **Core packages**: dplyr, readr, ggplot2, cluster, factoextra, MASS, corrplot
-- **Optional**: viridis, RColorBrewer, gridExtra
-
-## 📊 Analysis Features
-
-### Core Analysis
-- **Data Transformation**: Convert survey data to analysis format
-- **Multidimensional Scaling (MDS)**: Convert rating patterns to 2D coordinates
-- **Clustering Analysis**: K-means clustering with optimal k selection
-- **Statistical Analysis**: Correlation, descriptive statistics, cluster quality metrics
-
-### Visualizations
-- **Concept Maps**: MDS plots with color-coded clusters
-- **Importance vs Feasibility**: Scatter plots with strategic quadrants
-- **Rating Distributions**: Histograms and box plots
-- **Cluster Analysis**: Elbow plots and silhouette analysis
-- **Similarity Heatmaps**: Correlation matrix visualizations
-
-### Outputs
-- **Interactive plots** (Python)
-- **Publication-quality graphics** (both versions)
-- **Statistical summaries** in CSV format
-- **HTML reports** (R version)
-
-## 🎯 Use Cases
-
-This toolkit is ideal for:
-- **Healthcare Research**: Patient care improvement initiatives
-- **Educational Planning**: Curriculum development and assessment
-- **Business Strategy**: Product development and market analysis
-- **Policy Development**: Stakeholder engagement and priority setting
-- **Academic Research**: Mixed-methods research studies
-
-## 📈 Example Results
-
-The concept mapping analysis (included as example) identified:
-- **3 distinct conceptual clusters** of AI applications in cancer care
-- **Moderate positive correlation** (r = 0.51) between importance and feasibility
-- **Strategic quadrants** for implementation planning
-- **Top priority statements** for immediate action
-
-## 🔄 Adapting to Your Data
-
-### Required Data Format
-1. **Statements**: List of concepts/ideas to be analyzed
-2. **Ratings**: Participant ratings on importance and feasibility scales
-3. **Demographics**: Participant information (optional)
-
-### Data Files Structure
-```csv
-# statements.csv
-StatementID,StatementText
-1,"Improve patient communication"
-2,"Enhance diagnostic accuracy"
-
-# ratings.csv
-ParticipantID,StatementID,RatingType,Rating
-P1,1,Importance,4
-P1,1,Feasibility,3
+# Transform data for Python analysis
+python3 transform_data_to_python.py
 ```
 
-## 🚀 Getting Started with Your Data
+## Data Transformation
 
-### Step 1: Prepare Your Data
-- Format your survey data according to the expected structure
-- Ensure consistent naming conventions
-- Validate data quality and completeness
+**Important Note:** The data transformation scripts require customization for specific Qualtrics export formats. The current scripts are configured for the dataset `data/BCCS AI Workshop_July 27, 2025_15.23.csv` but may need adjustments for different export formats.
 
-### Step 2: Choose Your Implementation
-- **Python**: Better for machine learning extensions and interactive visualizations
-- **R**: Better for statistical analysis and publication-quality graphics
+**Working Data:** The repository includes pre-processed data in `data/rcmap_july27_2025/` that works with both R and Python analyses without transformation.
 
-### Step 3: Run the Analysis
-- Follow the step-by-step instructions in the respective README files
-- Customize parameters as needed for your specific study
+### Qualtrics Export Formats
 
-### Step 4: Interpret Results
-- Review generated visualizations
-- Analyze cluster characteristics
-- Identify strategic priorities
+The transformation scripts handle different Qualtrics export formats:
+- **Standard format**: Simple column names (Q1_1, Q2.1_1, Q2.2_1)
+- **JSON format**: Complex column names with ImportId metadata
 
-## 📚 Documentation
+Customization may be required for:
+- Different question numbering schemes
+- Varying header row structures
+- Custom column naming conventions
+- Specialized rating scales
 
-- **[Python Documentation](README_Python.md)**: Detailed Python implementation guide
-- **[R Documentation](README_R.md)**: Detailed R implementation guide
-- **[Example Analysis](README_July27_2025_Analysis.md)**: Complete case study
+## Analysis Features
 
-## 🤝 Contributing
+### Core Analysis Components
+- **Multidimensional Scaling (MDS)**: Reduces high-dimensional data to 2D visualization
+- **K-means Clustering**: Groups similar statements using optimal cluster selection
+- **Similarity Matrix**: Calculates correlations between statement rating patterns
+- **Statistical Analysis**: Comprehensive summary statistics and validation
 
-We welcome contributions! Please:
-1. Fork the repository
-2. Create a feature branch
-3. Add your enhancements
-4. Submit a pull request
+### Visualization Outputs
+- **Concept Maps**: 2D positioning of statements with cluster coloring
+- **Importance vs Feasibility Plots**: Strategic quadrant analysis
+- **Rating Distributions**: Histograms of importance and feasibility ratings
+- **Cluster Analysis**: Elbow method and silhouette analysis plots
+- **Similarity Heatmaps**: Correlation matrices between statements
 
-## 📄 License
+### Output Files
+- `concept_map.png`: Main concept map visualization
+- `importance_vs_feasibility.png`: Strategic quadrant plot
+- `rating_distribution.png`: Rating distribution histograms
+- `cluster_analysis.png`: Cluster selection analysis
+- `similarity_heatmap.png`: Statement similarity matrix
+- `summary_statistics.csv`: Comprehensive results summary
+- `statements_with_clusters.csv`: Final results with cluster assignments
 
-This project is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
+## Implementation Details
 
-## 📞 Support
+### Python Implementation
+- **Libraries**: pandas, numpy, matplotlib, seaborn, scikit-learn, scipy
+- **Analysis**: MDS, K-means clustering, statistical analysis
+- **Output**: PNG visualizations and CSV results
 
-For questions or issues:
-1. Check the troubleshooting sections in the detailed README files
-2. Review the code comments for implementation details
-3. Create an issue in the repository
+### R Implementation  
+- **Libraries**: dplyr, ggplot2, cluster, factoextra, MASS, corrplot
+- **Analysis**: MDS, K-means clustering, statistical analysis
+- **Output**: PNG visualizations and CSV results
 
-## 🙏 Acknowledgments
+## Results Interpretation
 
-- **Concept mapping methodology** developers and researchers
-- **RCMap** methodology developers
-- **Open source community** for the excellent libraries and tools
+### Cluster Analysis
+- **Optimal Clusters**: Automatically determined using elbow method and silhouette analysis
+- **Cluster Characteristics**: Each cluster represents statements with similar rating patterns
+- **Interpretation**: Clusters can be interpreted as conceptual themes or strategic areas
 
----
+### Strategic Quadrants
+- **High Importance, High Feasibility**: Priority implementation areas
+- **High Importance, Low Feasibility**: Strategic challenges requiring attention
+- **Low Importance, High Feasibility**: Quick wins with limited impact
+- **Low Importance, Low Feasibility**: Low priority areas
 
-**Ready to start your concept mapping analysis?** Choose your preferred implementation and follow the detailed guides in the respective README files!
+### Correlation Analysis
+- **Importance vs Feasibility**: Measures relationship between perceived importance and implementation feasibility
+- **Interpretation**: High correlation suggests alignment, low correlation indicates strategic tensions
+
+## Customization
+
+### Modifying Analysis Parameters
+- **Number of Clusters**: Adjust `max_k` parameter in clustering functions
+- **MDS Dimensions**: Modify `n_components` parameter for different dimensionality
+- **Visualization Styles**: Customize plot parameters in visualization functions
+
+### Adding New Analysis Components
+- **Additional Metrics**: Extend statistical analysis functions
+- **Custom Visualizations**: Add new plotting functions
+- **Data Validation**: Implement additional quality checks
+
+## Troubleshooting
+
+### Common Issues
+- **Data Format**: Ensure Qualtrics export matches expected format
+- **Missing Dependencies**: Install required packages for Python or R
+- **File Paths**: Verify data files are in correct directories
+- **Memory Issues**: Reduce dataset size for large analyses
+
+### Data Quality Checks
+- **Missing Values**: Check for incomplete rating data
+- **Outliers**: Identify and handle extreme rating values
+- **Consistency**: Verify statement numbering and participant IDs
+
+## Contributing
+
+This toolkit is designed for educational and research use. Contributions are welcome for:
+- Additional analysis methods
+- Enhanced visualizations
+- Improved data transformation
+- Documentation improvements
+
+## License
+
+Educational and Research Use
+
+## Acknowledgments
+
+Developed for concept mapping research in healthcare and related domains. This toolkit supports the analysis of complex conceptual frameworks and strategic planning processes.

@@ -42,27 +42,29 @@ if (!dir.exists(output_dir)) {
 # =============================================================================
 
 process_csv_file <- function(file_path) {
-  """
-  Process CSV file from Qualtrics survey.
+  # Process CSV file from Qualtrics survey.
+  #
+  # This function extracts statements, ratings, and demographics from
+  # a Qualtrics CSV export file.
+  #
+  # Args:
+  #   file_path: Path to the CSV file
+  #
+  # Returns:
+  #   List containing statements, ratings, and demographics data
   
-  This function extracts statements, ratings, and demographics from
-  a Qualtrics CSV export file.
-  
-  Args:
-    file_path: Path to the CSV file
-    
-  Returns:
-    List containing statements, ratings, and demographics data
-  """
   cat("Processing CSV file:", file_path, "\n")
   
-  # Read the CSV file
-  df <- read_csv(file_path, show_col_types = FALSE)
+  # Read the CSV file - skip first 2 rows to get to the data
+  df <- read_csv(file_path, skip = 2, show_col_types = FALSE)
   
-  # Extract statements from the first few rows
+  cat("Column names after skipping 2 rows:\n")
+  print(head(names(df), 20))  # Show first 20 column names
+  
+  # Extract statements from Q1_x columns
   statements <- data.frame()
-  for (i in 1:100) {  # 100 statements
-    col_name <- paste0("Q", i)
+  for (i in 1:100) {
+    col_name <- paste0("Q1_", i)
     if (col_name %in% names(df)) {
       statement_text <- df[[col_name]][1]  # First row contains statement text
       if (!is.na(statement_text) && str_trim(statement_text) != "") {
@@ -78,40 +80,49 @@ process_csv_file <- function(file_path) {
   ratings <- data.frame()
   demographics <- data.frame()
   
-  for (i in 3:nrow(df)) {  # Skip header rows
-    participant_id <- paste0("P", i-2)
+  for (i in 1:nrow(df)) {
+    participant_id <- paste0("P", i)
     
-    # Extract demographics
+    # Extract demographics (if available)
     demographics <- rbind(demographics, data.frame(
       ParticipantID = participant_id,
-      Age = ifelse("Q101" %in% names(df), df$Q101[i], ""),
-      Gender = ifelse("Q102" %in% names(df), df$Q102[i], ""),
-      Role = ifelse("Q103" %in% names(df), df$Q103[i], ""),
-      Experience = ifelse("Q104" %in% names(df), df$Q104[i], "")
+      Age = ifelse("Q6" %in% names(df), df$Q6[i], ""),
+      Gender = ifelse("Q7" %in% names(df), df$Q7[i], ""),
+      Role = "",
+      Experience = ""
     ))
     
     # Extract importance and feasibility ratings
     for (j in 1:100) {
-      importance_col <- paste0("Q", j, "_1")  # Importance rating
-      feasibility_col <- paste0("Q", j, "_2")  # Feasibility rating
+      importance_col <- paste0("Q2.1_", j)  # Importance rating
+      feasibility_col <- paste0("Q2.2_", j)  # Feasibility rating
       
       if (importance_col %in% names(df) && feasibility_col %in% names(df)) {
         importance <- df[[importance_col]][i]
         feasibility <- df[[feasibility_col]][i]
         
         if (!is.na(importance) && !is.na(feasibility)) {
-          ratings <- rbind(ratings, data.frame(
-            ParticipantID = participant_id,
-            StatementID = j,
-            RatingType = "Importance",
-            Rating = as.numeric(importance)
-          ))
-          ratings <- rbind(ratings, data.frame(
-            ParticipantID = participant_id,
-            StatementID = j,
-            RatingType = "Feasibility",
-            Rating = as.numeric(feasibility)
-          ))
+          tryCatch({
+            importance_val <- as.numeric(importance)
+            feasibility_val <- as.numeric(feasibility)
+            
+            if (!is.na(importance_val) && !is.na(feasibility_val)) {
+              ratings <- rbind(ratings, data.frame(
+                ParticipantID = participant_id,
+                StatementID = j,
+                RatingType = "Importance",
+                Rating = importance_val
+              ))
+              ratings <- rbind(ratings, data.frame(
+                ParticipantID = participant_id,
+                StatementID = j,
+                RatingType = "Feasibility",
+                Rating = feasibility_val
+              ))
+            }
+          }, error = function(e) {
+            # Skip non-numeric ratings
+          })
         }
       }
     }
@@ -125,18 +136,17 @@ process_csv_file <- function(file_path) {
 }
 
 process_tsv_file <- function(file_path) {
-  """
-  Process TSV file from Qualtrics survey.
+  # Process TSV file from Qualtrics survey.
+  #
+  # This function extracts statements, ratings, and demographics from
+  # a Qualtrics TSV export file.
+  #
+  # Args:
+  #   file_path: Path to the TSV file
+  #
+  # Returns:
+  #   List containing statements, ratings, and demographics data
   
-  This function extracts statements, ratings, and demographics from
-  a Qualtrics TSV export file.
-  
-  Args:
-    file_path: Path to the TSV file
-    
-  Returns:
-    List containing statements, ratings, and demographics data
-  """
   cat("Processing TSV file:", file_path, "\n")
   
   # Read the TSV file
@@ -208,15 +218,14 @@ process_tsv_file <- function(file_path) {
 }
 
 save_transformed_data <- function(statements, ratings, demographics, output_dir) {
-  """
-  Save transformed data to CSV files.
+  # Save transformed data to CSV files.
+  #
+  # Args:
+  #   statements: Dataframe of statements
+  #   ratings: Dataframe of ratings
+  #   demographics: Dataframe of demographics
+  #   output_dir: Output directory for transformed data
   
-  Args:
-    statements: Dataframe of statements
-    ratings: Dataframe of ratings
-    demographics: Dataframe of demographics
-    output_dir: Output directory for transformed data
-  """
   # Save to CSV files
   write_csv(statements, file.path(output_dir, "Statements.csv"))
   write_csv(ratings, file.path(output_dir, "Ratings.csv"))
@@ -242,15 +251,14 @@ save_transformed_data <- function(statements, ratings, demographics, output_dir)
 # =============================================================================
 
 main <- function() {
-  """
-  Main function to transform concept mapping data.
+  # Main function to transform concept mapping data.
+  #
+  # This function processes Qualtrics survey data and converts it to
+  # RCMap format for analysis.
   
-  This function processes Qualtrics survey data and converts it to
-  RCMap format for analysis.
-  """
-  cat("=" * 60, "\n")
+  cat(paste(rep("=", 60), collapse = ""), "\n")
   cat("CONCEPT MAPPING DATA TRANSFORMATION - R\n")
-  cat("=" * 60, "\n")
+  cat(paste(rep("=", 60), collapse = ""), "\n")
   
   # Check if input directory exists
   if (!dir.exists(input_dir)) {
@@ -288,9 +296,9 @@ main <- function() {
     output_dir
   )
   
-  cat("\n" + "=" * 60, "\n")
+  cat("\n", paste(rep("=", 60), collapse = ""), "\n")
   cat("DATA TRANSFORMATION COMPLETED!\n")
-  cat("=" * 60, "\n")
+  cat(paste(rep("=", 60), collapse = ""), "\n")
   cat("📁 Transformed data is ready for R analysis\n")
   cat("🚀 Run: Rscript concept_mapping_analysis.R\n")
 }

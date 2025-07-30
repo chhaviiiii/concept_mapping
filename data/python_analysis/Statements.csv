@@ -1,0 +1,101 @@
+StatementID,StatementText
+1,1. Human oversight during implementation in early days
+2,2. Concerns with confidentiality
+3,3. Concerns with patient acceptability
+4,4. Efficiency improved for documentation
+5,5. False confidence
+6,6. AI could provide alternate perspectives
+7,7. AI could perpetuate existing biases
+8,8. Minimizing bias and increasing performance and accuracy
+9,9. Ensuring accountability and oversight of AI
+10,10. Concerns with digital literacy and digital divide barriers
+11,"11. Better detection (of moles, cancer lumps)"
+12,12. Diversification of AI training data and sources
+13,13. Too much bureaucracy slowing progress
+14,14. Concerns with liability
+15,15. AI could decrease false positives
+16,16. Proactive preventative care
+17,17. Benefits in equitable access
+18,18. AI could free up time for pt care
+19,19. Developing a rigorous privacy and quality assurance framework
+20,20. AI could be misused
+21,21. Helps with generation of ideas can act as a sounding board
+22,22. Benefits with accessibility & communication (translating languages lay terms)
+23,23. AI allows access vast information very quickly to help diagnosis
+24,24. Benefits in early distress screening
+25,25. Establishing proper consent
+26,26. Concerns with job security
+27,27. Benefits with patient access to accurate information
+28,28. Concerns about personalizing care
+29,29. Data governance policies and regulations to enhance data quality and accountability
+30,"30. Savings in time, can integrate different information and improve in treatment especially when there is less number of human specialist"
+31,31. AI could remove human bias
+32,32. Regulation framework and a good understanding of the medico-legal implications
+33,"33. AI could lead to excessive human delegation, assuming that that AI will take care of it!"
+34,34. Knowledge repositing for learning and research
+35,35. AI could be of concern regarding its ongoing validation
+36,36. AI could be of concern to patient privacy
+37,37. Consultation recording and transcription
+38,38. Ensuring cybersecurity of AI tools
+39,39. Educating end-users about properly navigating AI
+40,40. Concerns with protection of personal health identifiers
+41,41. Facilitation of clinical research
+42,42. Improve access to services
+43,43. Ensuring accessibility and translation
+44,44. AI could help improve accuracy
+45,45. Embed research / quality improvement into all areas
+46,"data that the AI model is trained on must be good, clean, large and diverse"
+47,47. Concerns with attrition of skills in healthcare providers
+48,48. Preservation of human touch
+49,49. Loss of human connection/interactions
+50,increases digestability/highlighting key points
+51,51. Collate large databases
+52,52. AI could engender issues with trust
+53,53. Pooling large volume of data can improve accuracy of AI system and allow for more timely diagnosis and treatment recommendation
+54,54. Concerns with responsibility accountability of AI recommendations
+55,55. AI hallucinations
+56,56. Multidisciplinary collaboration and training in developing AI models
+57,"57. 24/7 availability, AI doesn’t get tired or brain fog"
+58,58. Noticing patterns and new things humans haven’t noticed
+59,59. Prediction/prognosis/treatment recommendations
+60,"60. Concerns with standards for quality, accuracy, etc."
+61,61. Concerns with power outages and down time procedures
+62,62. Increased opportunities for innovation
+63,63. Distress is nuanced and often detected in the unsaid of human communication and in a trusting therapeutic relationship
+64,64. Personalization of AI support tools for patients
+65,65. Concerns with difficulty to know older data for training and missing new breakthrough information
+66,66. Concerns with consent of patient
+67,67. Racism bias through research (history of medical research)
+68,68. Phased roll-out
+69,69. Reduce admin burden
+70,70. Potential in navigation and directing to self-management resources
+71,71. Over reliance by physicians and reduced problem solving skills
+72,72. Ability to make text/conversation more digestable for patients (less technical)
+73,73. Ensuring clinical validation of AI tools
+74,"74. Concerns with maintaining up to date information, sources and programming"
+75,75. Data privacy concerns
+76,76. Triage diagnostic results for clinicians
+77,77. Concerns with going too far and can’t come back
+78,78. Control of data by corporations
+79,79. AI could help address the human health resources issue
+80,80. Faster assessments to inform decision-making
+81,81. Concerns with transparency
+82,82. AI could make mistakes
+83,"83. Concerns with stability of the system (during virus attack, power outage, system interruption)"
+84,84. Live translation and/or transcription of conversations
+85,85. Establishing guidelines for “best practices” for training AI + clinical validation
+86,86. Lack of training/knowledge for those using the AI tool in the real world
+87,87. Can existing healthcare servers support the use of AI?
+88,88. Ensuring interpretability of AI tools
+89,89. Allow clinicians to focus on tasks requiring their expertise
+90,"90. Identifying and focusing on high-priority areas, such as prevention"
+91,91. Concerns that data is held by private companies
+92,92. Maintaining competency with changing best practices and approuved standards
+93,93. Minority groups being marginalized
+94,94. Patient/parent/caregiver/provider acceptability
+95,95. Data ownership and standards and guidelines on AI developed are not established
+96,96. Possibility of data breaches / data leaks
+97,"97. Potential for widening differential diagnosis, widening perspective of patient"
+98,98. Lists possible outcome and risks for the patient
+99,99. Cybersecurity concerns
+100,100. Automation of routine tasks

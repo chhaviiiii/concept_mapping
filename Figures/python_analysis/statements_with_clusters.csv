@@ -1,0 +1,29 @@
+StatementID,StatementText,MDS_Dim1,MDS_Dim2,Cluster
+1,1. Human oversight during implementation in early days,0.0,0.0,1
+2,2. Concerns with confidentiality,0.0,0.0,1
+3,3. Concerns with patient acceptability,-0.10944674570433625,-0.24341938013298528,4
+4,4. Efficiency improved for documentation,-0.14191363714493474,-0.4469918433701138,4
+5,5. False confidence,-0.50212173674416,0.06914493866912166,1
+6,6. AI could provide alternate perspectives,-0.3602466178224084,-0.2545465085635777,4
+7,7. AI could perpetuate existing biases,-0.2816494850985765,0.06808057616052693,1
+8,8. Minimizing bias and increasing performance and accuracy,0.16568692273647678,-0.4197619679523885,2
+9,9. Ensuring accountability and oversight of AI,0.17820315511357776,0.2716953283926622,3
+10,10. Concerns with digital literacy and digital divide barriers,0.5300288675786563,0.31951414007284235,3
+11,"11. Better detection (of moles, cancer lumps)",-0.017788870951559576,0.5387314952100657,3
+12,12. Diversification of AI training data and sources,-0.2709837395464872,0.3361734711533772,1
+13,13. Too much bureaucracy slowing progress,0.3058463902239898,-0.015899051048993654,2
+14,14. Concerns with liability,0.504043223192353,-0.22355200694613253,2
+15,15. AI could decrease false positives,0.0,0.0,1
+16,16. Proactive preventative care,0.0,0.0,1
+17,17. Benefits in equitable access,-0.10944674570433338,-0.24341938013298403,4
+18,18. AI could free up time for pt care,-0.14191363719474356,-0.44699184336140574,4
+19,19. Developing a rigorous privacy and quality assurance framework,-0.5021217346693894,0.06914495099247182,1
+20,20. AI could be misused,-0.36024661782231476,-0.2545465085638177,4
+21,21. Helps with generation of ideas can act as a sounding board,-0.2816494850158919,0.06808057622467989,1
+22,22. Benefits with accessibility & communication (translating languages lay terms),0.165686922736486,-0.4197619679523697,2
+23,23. AI allows access vast information very quickly to help diagnosis,0.17813441435610552,0.271614011541412,3
+24,24. Benefits in early distress screening,0.5300176832346466,0.319532835230107,3
+25,25. Establishing proper consent,-0.017788862959511747,0.5387314950872073,3
+26,26. Concerns with job security,-0.2709837395655766,0.3361734711561435,1
+27,27. Benefits with patient access to accurate information,0.30584639022398924,-0.01589905104899319,2
+28,28. Concerns about personalizing care,0.5048076865479431,-0.2218277808168563,2
