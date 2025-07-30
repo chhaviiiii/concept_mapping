@@ -16,16 +16,16 @@ install.packages(c(
 
 ### 2. Run Complete Analysis
 ```bash
-Rscript run_july27_2025_analysis.R
+Rscript run_analysis.R
 ```
 
 ### 3. Or Run Individual Steps
 ```bash
 # Transform data
-Rscript transform_july27_2025_to_rcmap.R
+Rscript transform_data_to_rcmap.R
 
 # Run analysis
-Rscript simplified_concept_mapping_analysis.R
+Rscript concept_mapping_analysis.R
 
 # Create custom visualizations
 Rscript create_custom_graphs.R
@@ -38,17 +38,17 @@ Rscript create_html_report.R
 
 ```
 ├── R/                                    # R implementation files
-│   ├── transform_july27_2025_to_rcmap.R      # Data transformation
-│   ├── simplified_concept_mapping_analysis.R  # Main analysis
-│   ├── create_custom_graphs.R                 # Custom visualizations
-│   ├── create_html_report.R                   # HTML report generator
-│   └── run_july27_2025_analysis.R            # Master script
-├── data/rcmap_july27_2025/               # R-formatted data
+│   ├── transform_data_to_rcmap.R         # Data transformation
+│   ├── concept_mapping_analysis.R         # Main analysis
+│   ├── create_custom_graphs.R             # Custom visualizations
+│   ├── create_html_report.R               # HTML report generator
+│   └── run_analysis.R                     # Master script
+├── data/rcmap_analysis/                   # R-formatted data
 │   ├── Statements.csv                     # 100 statements
 │   ├── Ratings.csv                        # Participant ratings
 │   ├── Demographics.csv                   # Participant info
 │   └── SortedCards.csv                    # Grouping data
-├── Figures/july27_2025_analysis/          # Generated visualizations
+├── Figures/analysis/                      # Generated visualizations
 │   ├── concept_map.png                    # MDS with clusters
 │   ├── importance_vs_feasibility.png      # Scatter plot
 │   ├── rating_distribution.png            # Histograms
@@ -287,7 +287,7 @@ library(doParallel)
 
 ## 📄 License
 
-This R implementation is part of the BCCS AI Workshop analysis conducted on July 27, 2025.
+This R implementation is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
 
 ## 🤝 Contributing
 

@@ -24,29 +24,27 @@ python transform_july27_2025_to_python.py
 python concept_mapping_analysis_python.py
 ```
 
-## 📁 Project Structure
+## 📁 Python Project Structure
 
 ```
-├── data/                                    # Raw data files
-│   ├── BCCS AI Workshop_July 27, 2025_15.23.csv
-│   └── BCCS AI Workshop_July 27, 2025_15.26_utf8.tsv
-├── data/python_july27_2025/                 # Transformed Python format data
-│   ├── statements.csv                       # 100 statements
-│   ├── ratings.csv                          # Participant ratings
-│   ├── demographics.csv                     # Participant info
-│   └── sorted_cards.csv                     # Grouping data
-├── Figures/python_analysis/                 # Generated visualizations
-│   ├── concept_map.png                      # MDS with clusters
-│   ├── importance_vs_feasibility.png        # Scatter plot
-│   ├── rating_distribution.png              # Histograms
-│   ├── cluster_analysis.png                 # WSS and silhouette
-│   ├── similarity_heatmap.png               # Correlation matrix
-│   ├── summary_statistics.csv               # Key metrics
-│   └── statements_with_clusters.csv         # Results
-├── transform_july27_2025_to_python.py       # Data transformation
-├── concept_mapping_analysis_python.py       # Main analysis
-├── run_python_analysis.py                   # Master script
-└── requirements_python.txt                  # Python dependencies
+├── Python/                               # Python implementation files
+│   ├── transform_data_to_python.py       # Data transformation
+│   ├── concept_mapping_analysis_python.py # Main analysis
+│   └── run_python_analysis.py            # Master script
+├── data/python_analysis/                 # Python-formatted data
+│   ├── statements.csv                    # 100 statements
+│   ├── ratings.csv                       # Participant ratings
+│   ├── demographics.csv                  # Participant info
+│   └── sorted_cards.csv                  # Grouping data
+├── Figures/python_analysis/              # Generated visualizations
+│   ├── concept_map.png                   # MDS with clusters
+│   ├── importance_vs_feasibility.png     # Scatter plot
+│   ├── rating_distribution.png           # Histograms
+│   ├── cluster_analysis.png              # WSS and silhouette
+│   ├── similarity_heatmap.png            # Correlation matrix
+│   ├── summary_statistics.csv            # Key metrics
+│   └── statements_with_clusters.csv      # Results
+└── requirements_python.txt               # Python dependencies
 ```
 
 ## 🔧 Requirements
@@ -274,7 +272,7 @@ from joblib import Parallel, delayed
 
 ## 📄 License
 
-This Python implementation is part of the BCCS AI Workshop analysis conducted on July 27, 2025.
+This Python implementation is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
 
 ## 🤝 Contributing
 

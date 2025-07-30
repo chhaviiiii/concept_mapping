@@ -56,7 +56,7 @@ class ConceptMappingAnalysis:
         output_dir (str): Directory for saving generated visualizations
     """
     
-    def __init__(self, data_dir="data/python_july27_2025"):
+    def __init__(self, data_dir="data/python_analysis"):
         """
         Initialize the concept mapping analysis.
         

@@ -14,8 +14,8 @@
 # in healthcare, education, business, or any domain requiring structured analysis
 # of complex ideas and their relationships.
 #
-# Author: BCCS AI Workshop Team
-# Date: July 27, 2025
+# Author: Concept Mapping Analysis Team
+# Date: 2025
 # License: Educational and Research Use
 # =============================================================================
 
@@ -41,8 +41,8 @@ library(tibble)       # Modern data frames
 # =============================================================================
 
 # Set data and output directories
-data_dir <- "data/rcmap_july27_2025"
-output_dir <- "Figures/july27_2025_analysis"
+data_dir <- "data/rcmap_analysis"
+output_dir <- "Figures/analysis"
 
 # Create output directory if it doesn't exist
 if (!dir.exists(output_dir)) {
@@ -236,8 +236,8 @@ find_optimal_clusters <- function(mds_coords, max_k = 10) {
   
   for (i in seq_along(k_range)) {
     k <- k_range[i]
-    
-    # Perform k-means clustering
+  
+  # Perform k-means clustering
     kmeans_result <- kmeans(mds_scaled, centers = k, nstart = 25)
     
     # Calculate WSS

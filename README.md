@@ -43,26 +43,24 @@ Rscript run_july27_2025_analysis.R
 ├── requirements.R                      # R dependencies
 │
 ├── data/                               # Raw and processed data
-│   ├── BCCS AI Workshop_July 27, 2025_15.23.csv
-│   ├── BCCS AI Workshop_July 27, 2025_15.26_utf8.tsv
-│   ├── python_july27_2025/            # Python-formatted data
-│   └── rcmap_july27_2025/             # R-formatted data
+│   ├── python_analysis/               # Python-formatted data
+│   └── rcmap_analysis/                # R-formatted data
 │
 ├── Python/                             # Python implementation
-│   ├── transform_july27_2025_to_python.py
+│   ├── transform_data_to_python.py
 │   ├── concept_mapping_analysis_python.py
 │   └── run_python_analysis.py
 │
 ├── R/                                  # R implementation
-│   ├── transform_july27_2025_to_rcmap.R
-│   ├── simplified_concept_mapping_analysis.R
+│   ├── transform_data_to_rcmap.R
+│   ├── concept_mapping_analysis.R
 │   ├── create_custom_graphs.R
 │   ├── create_html_report.R
-│   └── run_july27_2025_analysis.R
+│   └── run_analysis.R
 │
 └── Figures/                            # Generated visualizations
     ├── python_analysis/               # Python outputs
-    └── july27_2025_analysis/          # R outputs
+    └── analysis/                      # R outputs
 ```
 
 ## 🔧 Requirements
@@ -109,7 +107,7 @@ This toolkit is ideal for:
 
 ## 📈 Example Results
 
-The BCCS AI Workshop analysis (included as example) identified:
+The concept mapping analysis (included as example) identified:
 - **3 distinct conceptual clusters** of AI applications in cancer care
 - **Moderate positive correlation** (r = 0.51) between importance and feasibility
 - **Strategic quadrants** for implementation planning
@@ -171,7 +169,7 @@ We welcome contributions! Please:
 
 ## 📄 License
 
-This project is part of the BCCS AI Workshop analysis conducted on July 27, 2025. The code is provided as-is for educational and research purposes.
+This project is provided as-is for educational and research purposes. The code is designed to be reusable for any concept mapping analysis study.
 
 ## 📞 Support
 
@@ -182,7 +180,7 @@ For questions or issues:
 
 ## 🙏 Acknowledgments
 
-- **BCCS AI Workshop** participants and organizers
+- **Concept mapping methodology** developers and researchers
 - **RCMap** methodology developers
 - **Open source community** for the excellent libraries and tools
 

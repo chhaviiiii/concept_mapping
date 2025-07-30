@@ -1,7 +1,19 @@
 #!/usr/bin/env python3
 """
-Transform July 27, 2025 BCCS AI Workshop Data to Python Format
-This script converts Qualtrics survey data into a format suitable for concept mapping analysis in Python.
+Transform Concept Mapping Data to Python Format
+===============================================
+
+This script converts Qualtrics survey data into a format suitable for 
+concept mapping analysis in Python. It handles CSV and TSV files and
+extracts statements, ratings, and demographics for analysis.
+
+This implementation is designed for researchers conducting concept mapping studies
+in healthcare, education, business, or any domain requiring structured analysis
+of complex ideas and their relationships.
+
+Author: Concept Mapping Analysis Team
+Date: 2025
+License: Educational and Research Use
 """
 
 import pandas as pd
@@ -11,7 +23,18 @@ from pathlib import Path
 import re
 
 def process_csv_file(file_path):
-    """Process CSV file from Qualtrics survey"""
+    """
+    Process CSV file from Qualtrics survey.
+    
+    This function extracts statements, ratings, and demographics from
+    a Qualtrics CSV export file.
+    
+    Args:
+        file_path (str): Path to the CSV file
+        
+    Returns:
+        tuple: (statements, ratings_data, demographics_data)
+    """
     print(f"Processing CSV file: {file_path}")
     
     # Read the CSV file
@@ -74,7 +97,18 @@ def process_csv_file(file_path):
     return statements, ratings_data, demographics_data
 
 def process_tsv_file(file_path):
-    """Process TSV file from Qualtrics survey"""
+    """
+    Process TSV file from Qualtrics survey.
+    
+    This function extracts statements, ratings, and demographics from
+    a Qualtrics TSV export file.
+    
+    Args:
+        file_path (str): Path to the TSV file
+        
+    Returns:
+        tuple: (statements, ratings_data, demographics_data)
+    """
     print(f"Processing TSV file: {file_path}")
     
     # Read the TSV file
@@ -136,86 +170,84 @@ def process_tsv_file(file_path):
     
     return statements, ratings_data, demographics_data
 
-def main():
-    """Main transformation function"""
-    print("=== BCCS AI Workshop July 27, 2025 Data Transformation ===")
+def save_transformed_data(statements, ratings_data, demographics_data, output_dir="data/python_analysis"):
+    """
+    Save transformed data to CSV files.
     
-    # Input files
-    input_files = [
-        "data/BCCS AI Workshop_July 27, 2025_15.23.csv",
-        "data/BCCS AI Workshop_July 27, 2025_15.26_utf8.tsv"
-    ]
-    
-    # Output directory
-    output_dir = "data/python_july27_2025"
+    Args:
+        statements (list): List of statement dictionaries
+        ratings_data (list): List of rating dictionaries
+        demographics_data (list): List of demographic dictionaries
+        output_dir (str): Output directory for transformed data
+    """
+    # Create output directory
     os.makedirs(output_dir, exist_ok=True)
     
-    # Collect all data
-    all_statements = []
-    all_ratings = []
-    all_demographics = []
+    # Convert to DataFrames
+    statements_df = pd.DataFrame(statements)
+    ratings_df = pd.DataFrame(ratings_data)
+    demographics_df = pd.DataFrame(demographics_data)
     
-    # Process each input file
-    for file_path in input_files:
-        if not os.path.exists(file_path):
-            print(f"Warning: File not found: {file_path}")
-            continue
-            
-        if file_path.endswith('.csv'):
-            statements, ratings, demographics = process_csv_file(file_path)
-        elif file_path.endswith('.tsv'):
-            statements, ratings, demographics = process_tsv_file(file_path)
-        else:
-            print(f"Warning: Unsupported file format: {file_path}")
-            continue
-        
-        all_statements.extend(statements)
-        all_ratings.extend(ratings)
-        all_demographics.extend(demographics)
-    
-    # Remove duplicates and create final datasets
-    statements_df = pd.DataFrame(all_statements).drop_duplicates(subset=['StatementID']).sort_values('StatementID')
-    ratings_df = pd.DataFrame(all_ratings)
-    demographics_df = pd.DataFrame(all_demographics).drop_duplicates(subset=['ParticipantID'])
-    
-    # Create sorted cards data (simplified - you may need to adjust based on your grouping data)
-    sorted_cards_data = []
-    for _, row in ratings_df.iterrows():
-        if row['RatingType'] == 'Importance' and row['Rating'] >= 4:  # High importance items
-            sorted_cards_data.append({
-                'ParticipantID': row['ParticipantID'],
-                'PileID': 1,  # Default pile for high importance
-                'StatementID': row['StatementID']
-            })
-    
-    sorted_cards_df = pd.DataFrame(sorted_cards_data)
-    
-    # Save the transformed data
+    # Save to CSV files
     statements_df.to_csv(os.path.join(output_dir, "statements.csv"), index=False)
     ratings_df.to_csv(os.path.join(output_dir, "ratings.csv"), index=False)
     demographics_df.to_csv(os.path.join(output_dir, "demographics.csv"), index=False)
+    
+    # Create a placeholder sorted_cards file (empty for now)
+    sorted_cards_df = pd.DataFrame(columns=['ParticipantID', 'StatementID', 'GroupID'])
     sorted_cards_df.to_csv(os.path.join(output_dir, "sorted_cards.csv"), index=False)
     
-    # Print summary
-    print(f"\n=== Transformation Complete ===")
-    print(f"Output directory: {output_dir}")
-    print(f"Statements: {len(statements_df)}")
-    print(f"Ratings: {len(ratings_df)}")
-    print(f"Participants: {len(demographics_df)}")
-    print(f"Sorted cards: {len(sorted_cards_df)}")
+    print(f"✅ Transformed data saved to {output_dir}")
+    print(f"   - {len(statements)} statements")
+    print(f"   - {len(ratings_data)} ratings")
+    print(f"   - {len(demographics_data)} participants")
+
+def main():
+    """
+    Main function to transform concept mapping data.
     
-    # Create summary statistics
-    summary_stats = {
-        'total_statements': len(statements_df),
-        'total_participants': len(demographics_df),
-        'total_ratings': len(ratings_df),
-        'importance_ratings': len(ratings_df[ratings_df['RatingType'] == 'Importance']),
-        'feasibility_ratings': len(ratings_df[ratings_df['RatingType'] == 'Feasibility'])
-    }
+    This function processes Qualtrics survey data and converts it to
+    a format suitable for Python concept mapping analysis.
+    """
+    print("=" * 60)
+    print("CONCEPT MAPPING DATA TRANSFORMATION - PYTHON")
+    print("=" * 60)
     
-    print(f"\n=== Summary Statistics ===")
-    for key, value in summary_stats.items():
-        print(f"{key}: {value}")
+    # Look for data files in the data directory
+    data_dir = "data"
+    
+    if not os.path.exists(data_dir):
+        print(f"❌ Data directory '{data_dir}' not found!")
+        print("Please place your Qualtrics CSV/TSV files in the 'data' directory.")
+        return
+    
+    # Find CSV and TSV files
+    csv_files = list(Path(data_dir).glob("*.csv"))
+    tsv_files = list(Path(data_dir).glob("*.tsv"))
+    
+    if not csv_files and not tsv_files:
+        print(f"❌ No CSV or TSV files found in '{data_dir}'!")
+        print("Please add your Qualtrics export files to the data directory.")
+        return
+    
+    # Process the first file found
+    if csv_files:
+        file_path = str(csv_files[0])
+        print(f"Found CSV file: {file_path}")
+        statements, ratings_data, demographics_data = process_csv_file(file_path)
+    elif tsv_files:
+        file_path = str(tsv_files[0])
+        print(f"Found TSV file: {file_path}")
+        statements, ratings_data, demographics_data = process_tsv_file(file_path)
+    
+    # Save transformed data
+    save_transformed_data(statements, ratings_data, demographics_data)
+    
+    print("\n" + "=" * 60)
+    print("DATA TRANSFORMATION COMPLETED!")
+    print("=" * 60)
+    print("📁 Transformed data is ready for Python analysis")
+    print("🚀 Run: python concept_mapping_analysis_python.py")
 
 if __name__ == "__main__":
     main() 
