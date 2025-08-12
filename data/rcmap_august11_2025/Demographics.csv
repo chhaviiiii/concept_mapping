@@ -1,0 +1,19 @@
+ParticipantID,Name,Role,ResponseDate,Duration,Progress
+1,"Please enter your name below as LAST NAME, FIRST NAME.
+
+This information will be used by the research team to track responses only and will not be shared in any way.","Please describe your role with respect to the development of AI in cancer care (eg, medical oncologist / radiation oncologist / other specialist, primary care physician, allied health professional, patient partner, computer/data scientist, trainee, etc.). Be as specific as possible.",Recorded Date,Duration (in seconds),Progress
+2,"{""ImportId"":""QID6_TEXT""}","{""ImportId"":""QID8_TEXT""}","{""ImportId"":""recordedDate"",""timeZone"":""America/Denver""}","{""ImportId"":""duration""}","{""ImportId"":""progress""}"
+3,,,2025-06-29 14:56:33,2669,100
+4,,,2025-06-30 04:30:31,1919,100
+5,,,2025-07-05 19:38:01,2971,100
+6,"Avery, Jonathan","Operations, Supportive Care",2025-07-18 13:01:24,3971,100
+7,"Hilbers, Daniel",Medical student and AI researcher,2025-07-20 22:11:40,989,100
+8,"Hilbers, Dan",Medical Student and AI researcher,2025-07-20 22:18:07,343,100
+9,"Xu, Hong Hao",Medical trainee having seen cancer patients and aspiring cancer researcher.,2025-07-22 16:22:28,3479,100
+10,Shaocheng Wu,Data scientist,2025-08-04 17:15:26,1230,100
+11,"Wassersug, Richard ","prostate cancer patient, psychosocial oncology researcher, QoL researcher, Co-Lead for the canadian national Androgen Deprivation Therapy Educational Program (see: www;LifeOnAdt.com)",2025-08-04 21:36:51,3361,100
+12,"Van der Meer, Lindsay","allied health - professional practice leader
+",2025-08-07 10:59:05,4299,100
+13,"Raman, Srinivas`",Radiation oncologist ,2025-08-09 20:32:02,22,50
+14,"Capozzi, Lauren",Cancer Physiatrist (Physical Medicine & Rehabilitation),2025-08-10 00:35:32,122845,100
+15,"Raman, Srinivas",Radiation oncologist ,2025-08-10 14:18:01,2505,100
