@@ -29,6 +29,7 @@ class ConceptMappingAnalysis:
     
     def __init__(self):
         self.data = None
+        self.sorting_data = None  # Store sorting data for proper concept mapping
         self.mds_coords = None
         self.cluster_labels = None
         self.n_clusters = None
@@ -43,17 +44,36 @@ class ConceptMappingAnalysis:
             directory.mkdir(parents=True, exist_ok=True)
     
     def load_data(self, data_path):
-        """Load and process August 11 data."""
+        """Load and process August 11 data with proper sorting data extraction."""
         print("Loading August 11 data...")
         
         raw_data = pd.read_csv(data_path)
+        
+        # Extract sorting data (Q1 columns) - THIS IS THE KEY FOR PROPER CONCEPT MAPPING
+        sorting_cols = [col for col in raw_data.columns if col.startswith('Q1_')]
         
         # Extract ratings
         ratings = []
         importance_cols = [col for col in raw_data.columns if col.startswith('Q2.1_')]
         feasibility_cols = [col for col in raw_data.columns if col.startswith('Q2.2_')]
         
+        # Process sorting data for concept mapping
+        sorting_data = []
         for participant_id, row in raw_data.iterrows():
+            # Extract sorting data
+            participant_sorting = {}
+            for col in sorting_cols:
+                statement_id = int(col.split('_')[1])
+                group_value = str(row[col]).strip()
+                if group_value and group_value != 'nan' and group_value != '':
+                    participant_sorting[statement_id] = group_value
+            
+            if participant_sorting:  # Only add if participant has sorting data
+                sorting_data.append({
+                    'ParticipantID': participant_id + 1,
+                    'Sorting': participant_sorting
+                })
+            
             # Importance ratings
             for col in importance_cols:
                 statement_id = int(col.split('_')[1])
@@ -82,6 +102,9 @@ class ConceptMappingAnalysis:
                         'RatingType': 'Feasibility'
                     })
         
+        self.sorting_data = sorting_data
+        print(f"Found sorting data from {len(sorting_data)} participants")
+        
         ratings_df = pd.DataFrame(ratings)
         
         # Create importance-feasibility matrix
@@ -93,15 +116,68 @@ class ConceptMappingAnalysis:
         
         print(f"Loaded {len(self.data)} statements")
     
+    def create_cooccurrence_matrix(self):
+        """Create co-occurrence matrix from sorting data for proper concept mapping MDS."""
+        print("Creating co-occurrence matrix from sorting data...")
+        
+        n_statements = len(self.data)
+        cooccurrence_matrix = np.zeros((n_statements, n_statements))
+        
+        # For each participant's sorting
+        for participant in self.sorting_data:
+            sorting = participant['Sorting']
+            
+            # Group statements by their assigned groups
+            groups = {}
+            for stmt_id, group in sorting.items():
+                if group not in groups:
+                    groups[group] = []
+                groups[group].append(stmt_id)
+            
+            # For each group, increment co-occurrence for all pairs
+            for group_statements in groups.values():
+                for i, stmt1 in enumerate(group_statements):
+                    for j, stmt2 in enumerate(group_statements):
+                        if stmt1 <= n_statements and stmt2 <= n_statements:
+                            # Convert to 0-based indexing
+                            idx1 = stmt1 - 1
+                            idx2 = stmt2 - 1
+                            cooccurrence_matrix[idx1, idx2] += 1
+        
+        # Convert co-occurrence to distance (higher co-occurrence = lower distance)
+        n_participants = len(self.sorting_data)
+        
+        # Normalize by number of participants
+        cooccurrence_matrix = cooccurrence_matrix / n_participants
+        
+        # Convert to distance matrix: distance = 1 - (co-occurrence rate)
+        distance_matrix = 1.0 - cooccurrence_matrix
+        
+        # Ensure diagonal is 0 (distance from statement to itself)
+        np.fill_diagonal(distance_matrix, 0)
+        
+        # Ensure symmetry
+        distance_matrix = (distance_matrix + distance_matrix.T) / 2
+        
+        print(f"Created {n_statements}x{n_statements} distance matrix from sorting data")
+        return distance_matrix
+    
     def perform_analysis(self):
-        """Perform MDS and clustering analysis."""
+        """Perform MDS and clustering analysis using proper concept mapping methodology."""
         print("Performing MDS and clustering analysis...")
         
-        # MDS
-        similarity_data = self.data[['mean_Importance', 'mean_Feasibility']].values
-        distances = pdist(similarity_data)
-        distance_matrix = squareform(distances)
+        # Create distance matrix from sorting data (PROPER CONCEPT MAPPING)
+        if self.sorting_data and len(self.sorting_data) > 0:
+            distance_matrix = self.create_cooccurrence_matrix()
+            print("✅ Using sorting-based distance matrix for MDS (proper concept mapping)")
+        else:
+            # Fallback to rating-based if no sorting data
+            print("⚠️  WARNING: No sorting data found, falling back to rating-based MDS")
+            similarity_data = self.data[['mean_Importance', 'mean_Feasibility']].values
+            distances = pdist(similarity_data)
+            distance_matrix = squareform(distances)
         
+        # MDS using proper distance matrix
         mds = MDS(n_components=2, random_state=42, dissimilarity='precomputed')
         self.mds_coords = mds.fit_transform(distance_matrix)
         
@@ -124,58 +200,25 @@ class ConceptMappingAnalysis:
         print(f"Optimal clusters: {self.n_clusters}")
     
     def create_all_figures(self):
-        """Create all 17 figures."""
-        print("Creating all 17 figures...")
+        """Create the 6 core concept mapping figures."""
+        print("Creating the 6 core concept mapping figures...")
         
-        # Figure 1: Importance vs Feasibility Scatter Plot
-        self.create_figure_1_scatter()
-        
-        # Figure 2: Quadrant Analysis
-        self.create_figure_2_quadrant()
-        
-        # Figure 3: Bubble Chart
-        self.create_figure_3_bubble()
-        
-        # Figure 4: Optimal Cluster Analysis
-        self.create_figure_4_optimal_clusters()
-        
-        # Figure 5: Cluster Comparison
-        self.create_figure_5_cluster_comparison()
-        
-        # Figure 6: Radar Chart
-        self.create_figure_6_radar()
-        
-        # Figure 7: Heatmap
-        self.create_figure_7_heatmap()
-        
-        # Figure 8: Grouping Frequency
-        self.create_figure_8_grouping()
-        
-        # Figure 9: Gap Analysis
-        self.create_figure_9_gap()
-        
-        # Figure 10: Strategic Priorities
-        self.create_figure_10_strategic()
-        
-        # Figure 11: Slope Graph
-        self.create_figure_11_slope()
-        
-        # Figure 12: Point Map
+        # Figure 1: Point Map (MDS Configuration)
         self.create_figure_12_point_map()
         
-        # Figure 13: Cluster Map
+        # Figure 2: Cluster Map
         self.create_figure_13_cluster_map()
         
-        # Figure 14: Point Rating Map
+        # Figure 3: Point Rating Map
         self.create_figure_14_point_rating()
         
-        # Figure 15: Cluster Rating Map
+        # Figure 4: Cluster Rating Map
         self.create_figure_15_cluster_rating()
         
-        # Figure 16: Pattern Match
+        # Figure 5: Pattern Match
         self.create_figure_16_pattern()
         
-        # Figure 17: Go-Zone Plot
+        # Figure 6: Go-Zone Plot
         self.create_figure_17_go_zone()
     
     def create_figure_1_scatter(self):
@@ -496,7 +539,7 @@ class ConceptMappingAnalysis:
         plt.close()
     
     def create_figure_12_point_map(self):
-        """Figure 12: Point Map (MDS Configuration)."""
+        """Figure 1: Point Map (MDS Configuration)."""
         fig, ax = plt.subplots(figsize=(12, 10))
         
         for i in range(self.n_clusters):
@@ -509,17 +552,17 @@ class ConceptMappingAnalysis:
             ax.annotate(f'{i+1}', (x, y), xytext=(5, 5), 
                        textcoords='offset points', fontsize=8, alpha=0.8)
         
-        ax.set_title('Figure 12: Point Map (MDS Configuration)\n(Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
+        ax.set_title('Figure 1: Point Map (MDS Configuration)\n(Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
         ax.set_xlabel('Dimension 1')
         ax.set_ylabel('Dimension 2')
         ax.legend()
         ax.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_12_point_map.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_1_point_map.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def create_figure_13_cluster_map(self):
-        """Figure 13: Cluster Map."""
+        """Figure 2: Cluster Map."""
         fig, ax = plt.subplots(figsize=(12, 10))
         
         for i in range(self.n_clusters):
@@ -541,17 +584,17 @@ class ConceptMappingAnalysis:
             ax.annotate(f'{i+1}', (x, y), xytext=(5, 5), 
                        textcoords='offset points', fontsize=8, alpha=0.8)
         
-        ax.set_title(f'Figure 13: {self.n_clusters}-Cluster Map\n(Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
+        ax.set_title(f'Figure 2: {self.n_clusters}-Cluster Map\n(Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
         ax.set_xlabel('Dimension 1')
         ax.set_ylabel('Dimension 2')
         ax.legend()
         ax.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_13_cluster_map.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_2_cluster_map.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def create_figure_14_point_rating(self):
-        """Figure 14: Point Rating Map."""
+        """Figure 3: Point Rating Map."""
         fig, ax = plt.subplots(figsize=(10, 8))
         
         importance_means = self.data['mean_Importance'].values
@@ -563,42 +606,88 @@ class ConceptMappingAnalysis:
         cbar = plt.colorbar(scatter, ax=ax)
         cbar.set_label('Importance Rating')
         
-        ax.set_title('Figure 14: Point Rating Map\nSize and Color = Importance Rating', fontsize=14, fontweight='bold')
+        ax.set_title('Figure 3: Point Rating Map\nSize and Color = Importance Rating', fontsize=14, fontweight='bold')
         ax.set_xlabel('Dimension 1')
         ax.set_ylabel('Dimension 2')
         ax.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_14_point_rating_map.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_3_point_rating_map.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def create_figure_15_cluster_rating(self):
-        """Figure 15: Cluster Rating Map."""
+        """Figure 4: Cluster Rating Map."""
         fig, ax = plt.subplots(figsize=(10, 8))
         
+        # Get cluster importance ratings
         cluster_importance = self.data.groupby('Cluster')['mean_Importance'].mean()
         
-        for i, cluster_id in enumerate(cluster_importance.index):
-            cluster_data = self.data[self.data['Cluster'] == cluster_id]
-            cluster_coords = self.mds_coords[self.cluster_labels == cluster_id]
-            
-            importance_mean = cluster_importance.loc[cluster_id]
-            ax.scatter(cluster_coords[:, 0], cluster_coords[:, 1], 
-                      s=importance_mean * 100, c=colors[i], 
-                      label=f'Cluster {cluster_id+1} (Mean Imp: {importance_mean:.2f})', 
-                      alpha=0.7, edgecolors='black')
+        # Simple horizontal layout for 2 clusters
+        cluster_positions = [-1.5, 1.5]  # Left and right positions
+        cluster_colors = ['#2E8B57', '#4682B4']  # Sea green and steel blue
         
-        ax.set_title('Figure 15: Cluster Rating Map\nSize = Mean Cluster Importance', fontsize=14, fontweight='bold')
-        ax.set_xlabel('Dimension 1')
-        ax.set_ylabel('Dimension 2')
-        ax.legend()
-        ax.grid(True, alpha=0.3)
+        # Sort clusters by importance
+        sorted_clusters = cluster_importance.sort_values(ascending=False)
+        
+        for i, (cluster_id, importance) in enumerate(sorted_clusters.items()):
+            x_pos = cluster_positions[i]
+            
+            # Create irregular quadrilateral for each cluster
+            base_size = 0.6 + (importance - cluster_importance.min()) / (cluster_importance.max() - cluster_importance.min()) * 0.4
+            
+            # Define irregular quadrilateral points
+            quad_points = np.array([
+                [x_pos - base_size*0.8, -0.4],  # Bottom left
+                [x_pos + base_size*1.2, -0.3],  # Bottom right  
+                [x_pos + base_size*0.9, 0.4],   # Top right
+                [x_pos - base_size*0.6, 0.5]    # Top left
+            ])
+            
+            # Add some randomness to make each unique
+            np.random.seed(i)
+            random_offset = np.random.normal(0, 0.05, quad_points.shape)
+            quad_points += random_offset
+            
+            # Create the quadrilateral
+            quad = plt.Polygon(quad_points, 
+                             facecolor=cluster_colors[i], 
+                             edgecolor='black', 
+                             linewidth=2, 
+                             alpha=0.8)
+            ax.add_patch(quad)
+            
+            # Calculate center of the quadrilateral for text positioning
+            quad_center_x = np.mean(quad_points[:, 0])
+            quad_center_y = np.mean(quad_points[:, 1])
+            
+            # Add cluster label inside the quadrilateral
+            ax.text(quad_center_x, quad_center_y + 0.15, f'Cluster {cluster_id+1}', 
+                   ha='center', va='center', fontsize=14, fontweight='bold', color='white')
+            
+            # Add importance rating inside the quadrilateral
+            ax.text(quad_center_x, quad_center_y - 0.15, f'{importance:.2f}', 
+                   ha='center', va='center', fontsize=12, fontweight='bold', color='white')
+        
+        # Set equal aspect ratio and remove axes
+        ax.set_aspect('equal')
+        ax.set_xlim(-3, 3)
+        ax.set_ylim(-2, 2)
+        ax.axis('off')
+        
+        # Add title
+        ax.text(0, 1.5, 'Figure 4: Cluster Rating Map', 
+               ha='center', va='center', fontsize=16, fontweight='bold')
+        
+        # Add subtitle
+        ax.text(0, 1.2, 'Cluster Size ∝ Mean Importance Rating', 
+               ha='center', va='center', fontsize=12, style='italic')
+        
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_15_cluster_rating_map.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_4_cluster_rating_map.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def create_figure_16_pattern(self):
-        """Figure 16: Pattern Match."""
-        fig, ax = plt.subplots(figsize=(10, 8))
+        """Figure 5: Pattern Match."""
+        fig, ax = plt.subplots(figsize=(10, 6))
         
         cluster_means = self.data.groupby('Cluster')[['mean_Importance', 'mean_Feasibility']].mean()
         
@@ -613,21 +702,30 @@ class ConceptMappingAnalysis:
                    color=colors[i], label=f'Cluster {cluster_id+1}', markersize=10)
         
         correlation = np.corrcoef(cluster_means['mean_Importance'], cluster_means['mean_Feasibility'])[0, 1]
-        ax.text(1.5, 4.5, f'Correlation (r) = {correlation:.3f}', 
+        
+        # Position correlation text closer to the data
+        max_rating = max(cluster_means['mean_Importance'].max(), cluster_means['mean_Feasibility'].max())
+        text_y = max_rating + 0.2  # Just above the highest data point
+        
+        ax.text(1.5, text_y, f'Correlation (r) = {correlation:.3f}', 
                fontsize=12, ha='center', bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.7))
         
         ax.set_xticks(x_positions)
         ax.set_xticklabels(categories)
-        ax.set_title('Figure 16: Pattern Match\nCluster-Level Ratings with Correlation', fontsize=14, fontweight='bold')
+        ax.set_title('Figure 5: Pattern Match\nCluster-Level Ratings with Correlation', fontsize=14, fontweight='bold')
         ax.set_ylabel('Mean Rating')
         ax.legend()
         ax.grid(True, alpha=0.3)
+        
+        # Set y-axis limits to reduce vertical space
+        ax.set_ylim(0, max_rating + 0.5)
+        
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_16_pattern_match.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_5_pattern_match.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def create_figure_17_go_zone(self):
-        """Figure 17: Go-Zone Plot."""
+        """Figure 6: Go-Zone Plot."""
         fig, ax = plt.subplots(figsize=(12, 10))
         
         overall_imp_mean = self.data['mean_Importance'].mean()
@@ -655,13 +753,13 @@ class ConceptMappingAnalysis:
         ax.axhline(y=overall_feas_mean, color='gray', linestyle='--', alpha=0.7, label=f'Mean Feasibility ({overall_feas_mean:.2f})')
         ax.axvline(x=overall_imp_mean, color='gray', linestyle='--', alpha=0.7, label=f'Mean Importance ({overall_imp_mean:.2f})')
         
-        ax.set_title('Figure 17: Go-Zone Plot\nAbove/Below Average Statements (Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
+        ax.set_title('Figure 6: Go-Zone Plot\nAbove/Below Average Statements (Points labeled with Statement Numbers)', fontsize=14, fontweight='bold')
         ax.set_xlabel('Importance Rating')
         ax.set_ylabel('Feasibility Rating')
         ax.legend()
         ax.grid(True, alpha=0.3)
         plt.tight_layout()
-        plt.savefig(self.figures_dir / 'figure_17_go_zone_plot.png', dpi=300, bbox_inches='tight')
+        plt.savefig(self.figures_dir / 'figure_6_go_zone_plot.png', dpi=300, bbox_inches='tight')
         plt.close()
     
     def save_data_files(self):

@@ -1,7 +1,7 @@
 BCCS AI WORKSHOP - CONCEPT MAPPING ANALYSIS SUMMARY
 ============================================================
 
-Analysis Date: 2025-09-01 21:25:09
+Analysis Date: 2025-09-17 23:13:07
 Data Source: BCCS AI Workshop August 11, 2025
 
 ANALYSIS RESULTS:
@@ -11,8 +11,8 @@ ANALYSIS RESULTS:
   - Figures Generated: 17
 
 CLUSTER SUMMARY:
-  - Cluster 1: 64 statements
-  - Cluster 2: 36 statements
+  - Cluster 1: 62 statements
+  - Cluster 2: 38 statements
 
 TOP STATEMENTS BY IMPORTANCE:
   - Statement 1: 4.25
