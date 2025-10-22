@@ -72,7 +72,7 @@ class DataHandler:
             if not statements['StatementID'].equals(pd.Series(expected_ids)):
                 warnings.warn("StatementID is not sequential from 1 to N")
             
-            print(f"✅ Loaded {len(statements)} statements")
+            print(f"Loaded {len(statements)} statements")
             return statements
             
         except Exception as e:
@@ -140,7 +140,7 @@ class DataHandler:
                         'Sorting': piles
                     })
             
-            print(f"✅ Loaded sorting data from {len(sorting_data)} sorters")
+            print(f"Loaded sorting data from {len(sorting_data)} sorters")
             return sorting_data
             
         except Exception as e:
@@ -179,7 +179,7 @@ class DataHandler:
             if 'RaterID' not in demographics.columns:
                 raise ValueError("Missing required column: RaterID")
             
-            print(f"✅ Loaded demographics for {len(demographics)} participants")
+            print(f"Loaded demographics for {len(demographics)} participants")
             return demographics
             
         except Exception as e:
@@ -237,7 +237,7 @@ class DataHandler:
                     if min_val < 1 or max_val > 5:
                         warnings.warn(f"Rating column {col} has values outside 1-5 range")
             
-            print(f"✅ Loaded {len(ratings)} ratings")
+            print(f"Loaded {len(ratings)} ratings")
             print(f"  - Rating variables: {rating_cols}")
             
             return ratings
@@ -370,7 +370,7 @@ class DataHandler:
                 })
         
         if lumpers:
-            print(f"⚠️  Found {len(lumpers)} potential lumpers/splitters:")
+            print(f"Found {len(lumpers)} potential lumpers/splitters:")
             for lumper in lumpers:
                 print(f"  - Sorter {lumper['SorterID']}: {lumper['Type']} "
                       f"({lumper['NumPiles']} piles, {lumper['TotalStatements']} statements)")

@@ -171,10 +171,10 @@ def main():
     print(f"\nOverall: {passed}/{len(results)} tests passed")
     
     if passed == len(results):
-        print("\n🎉 ALL TESTS PASSED! PyConceptMap is working correctly.")
+        print("\nALL TESTS PASSED! PyConceptMap is working correctly.")
         return 0
     else:
-        print(f"\n⚠️  {len(results) - passed} tests failed. Please check the errors above.")
+        print(f"\n{len(results) - passed} tests failed. Please check the errors above.")
         return 1
 
 if __name__ == '__main__':

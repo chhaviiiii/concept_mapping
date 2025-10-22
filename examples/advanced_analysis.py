@@ -124,9 +124,9 @@ def main():
     output_files = list(analysis.output_folder.glob('*'))
     for file_path in sorted(output_files):
         if file_path.is_file():
-            print(f"📄 {file_path.name}")
+            print(f"{file_path.name}")
     
-    print("\n🎉 Advanced analysis example completed successfully!")
+    print("\nAdvanced analysis example completed successfully!")
     print(f"Results saved to: {analysis.output_folder}")
     
     return 0

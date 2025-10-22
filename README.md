@@ -6,26 +6,26 @@
 
 **PyConceptMap** is a comprehensive Python implementation of concept mapping methodology, inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017). It provides a user-friendly interface for performing concept mapping analysis, including data loading, multidimensional scaling (MDS), clustering, visualization, and report generation.
 
-## 📋 Table of Contents
+## Table of Contents
 
-- [Features](#-features)
-- [Installation](#-installation)
-- [Quick Start](#-quick-start)
-- [Data Format](#-data-format)
-- [Usage](#-usage)
+- [Features](#features)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [Data Format](#data-format)
+- [Usage](#usage)
   - [Command Line Interface](#command-line-interface)
   - [Programmatic Interface](#programmatic-interface)
-- [Generated Outputs](#-generated-outputs)
-- [Methodology](#-methodology)
-- [Advanced Features](#-advanced-features)
-- [Examples](#-examples)
-- [Troubleshooting](#-troubleshooting)
-- [Contributing](#-contributing)
-- [Citation](#-citation)
-- [License](#-license)
-- [Acknowledgments](#-acknowledgments)
+- [Generated Outputs](#generated-outputs)
+- [Methodology](#methodology)
+- [Advanced Features](#advanced-features)
+- [Examples](#examples)
+- [Troubleshooting](#troubleshooting)
+- [Contributing](#contributing)
+- [Citation](#citation)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
-## ✨ Features
+## Features
 
 - **Complete Concept Mapping Workflow**: From data loading to final reports
 - **Multiple Visualization Types**: Point maps, cluster maps, rating maps, go-zone plots, and more
@@ -35,7 +35,7 @@
 - **Well-Documented**: Extensive documentation and examples
 - **Production-Ready**: Robust error handling and validation
 
-## 🚀 Installation
+## Installation
 
 ### From Source
 
@@ -55,7 +55,7 @@ pip install -e .
 - Scikit-learn >= 1.0.0
 - SciPy >= 1.7.0
 
-## 🏃‍♂️ Quick Start
+## Quick Start
 
 ### 1. Create Sample Data
 
@@ -77,7 +77,7 @@ python run_pyconceptmap.py --data_folder ./sample_data
 python run_pyconceptmap.py --check_requirements
 ```
 
-## 📊 Data Format
+## Data Format
 
 PyConceptMap requires four CSV files in your data folder:
 
@@ -115,7 +115,7 @@ RaterID,StatementID,Importance,Feasibility
 2,2,4,3
 ```
 
-## 💻 Usage
+## Usage
 
 ### Command Line Interface
 
@@ -157,7 +157,7 @@ analysis.generate_visualizations()
 analysis.generate_reports()
 ```
 
-## 📈 Generated Outputs
+## Generated Outputs
 
 ### Visualizations (8 files)
 - **Point Map**: MDS configuration with statement numbers
@@ -178,7 +178,7 @@ analysis.generate_reports()
 - **Cluster Analysis**: Cluster quality and characteristics
 - **Comprehensive Report**: Complete analysis summary
 
-## 🔬 Methodology
+## Methodology
 
 PyConceptMap implements the standard concept mapping methodology:
 
@@ -198,7 +198,7 @@ PyConceptMap implements the standard concept mapping methodology:
 - **Statistical Analysis**: ANOVA, Tukey's HSD, gap analysis
 - **Comprehensive Visualization**: 8 different plot types
 
-## 🛠️ Advanced Features
+## Advanced Features
 
 ### Custom Analysis Parameters
 
@@ -232,7 +232,7 @@ fig = analysis.visualizer.create_point_map(mds_coords, statements)
 fig = analysis.visualizer.create_go_zone_plot(statement_summary)
 ```
 
-## 📚 Examples
+## Examples
 
 ### Example 1: Basic Analysis
 
@@ -286,7 +286,7 @@ validation_result = validate_data(statements, sorting_data, ratings, demographic
 print("Validation result:", validation_result)
 ```
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### Common Issues
 
@@ -301,7 +301,7 @@ print("Validation result:", validation_result)
 - Review the [examples](examples/) folder for sample code
 - Open an [issue](https://github.com/pyconceptmap/pyconceptmap/issues) for bugs or feature requests
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
@@ -314,7 +314,7 @@ pip install -e ".[dev]"
 pytest  # Run tests
 ```
 
-## 📖 Citation
+## Citation
 
 If you use PyConceptMap in your research, please cite:
 
@@ -327,17 +327,17 @@ If you use PyConceptMap in your research, please cite:
 }
 ```
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017)
 - Built on the concept mapping methodology of Trochim & Kane (2002)
 - Thanks to the open-source community for the excellent Python libraries
 
-## 📊 Changelog
+## Changelog
 
 ### Version 0.1.0 (2024-01-01)
 - Initial release
@@ -349,4 +349,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**PyConceptMap** - Making concept mapping accessible in Python! 🐍✨
+**PyConceptMap** - Making concept mapping accessible in Python!

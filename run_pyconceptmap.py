@@ -27,7 +27,7 @@ except ImportError:
         sys.path.insert(0, '.')
         from pyconceptmap import ConceptMappingAnalysis, check_requirements, create_sample_data
     except ImportError:
-        print("❌ PyConceptMap package not found. Please install it first.")
+        print("PyConceptMap package not found. Please install it first.")
         print("   pip install -e .")
         sys.exit(1)
 
@@ -154,11 +154,11 @@ Examples:
         
         if success:
             print("\n" + "=" * 60)
-            print("✅ CONCEPT MAPPING ANALYSIS COMPLETED SUCCESSFULLY!")
+            print("CONCEPT MAPPING ANALYSIS COMPLETED SUCCESSFULLY!")
             print("=" * 60)
             print(f"Results saved to: {output_folder}")
             print("\nGenerated files:")
-            print("  📊 Visualizations:")
+            print("  Visualizations:")
             print("    - point_map.png")
             print("    - cluster_map.png") 
             print("    - point_rating_map.png")
@@ -167,7 +167,7 @@ Examples:
             print("    - go_zone_plot.png")
             print("    - dendrogram.png")
             print("    - parallel_coordinates.png")
-            print("  📋 Reports:")
+            print("  Reports:")
             print("    - sorter_summary.txt")
             print("    - rater_summary.txt")
             print("    - statement_summary.txt")

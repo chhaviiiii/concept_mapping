@@ -77,7 +77,7 @@ def main():
         
         print("✅ Reports generated")
         
-        print("\n🎉 ALL TESTS PASSED! PyConceptMap is working correctly.")
+        print("\nALL TESTS PASSED! PyConceptMap is working correctly.")
         return 0
         
     except Exception as e:
