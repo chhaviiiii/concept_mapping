@@ -1,406 +1,352 @@
-# BCCS AI Workshop - Concept Mapping Analysis
+# PyConceptMap: Open-Source Concept Mapping Tool
 
-A comprehensive concept mapping analysis tool for the BCCS AI Workshop August 11, 2025 data. This tool generates 17 different visualizations and provides organized data outputs for strategic decision-making.
+[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/pyconceptmap/pyconceptmap)
 
-## 🎯 Overview
+**PyConceptMap** is a comprehensive Python implementation of concept mapping methodology, inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017). It provides a user-friendly interface for performing concept mapping analysis, including data loading, multidimensional scaling (MDS), clustering, visualization, and report generation.
 
-This project performs concept mapping analysis on workshop data to identify strategic priorities, cluster statements, and provide actionable insights through multiple visualization techniques.
+## 📋 Table of Contents
 
-## 📁 Project Structure
+- [Features](#-features)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Data Format](#-data-format)
+- [Usage](#-usage)
+  - [Command Line Interface](#command-line-interface)
+  - [Programmatic Interface](#programmatic-interface)
+- [Generated Outputs](#-generated-outputs)
+- [Methodology](#-methodology)
+- [Advanced Features](#-advanced-features)
+- [Examples](#-examples)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [Citation](#-citation)
+- [License](#-license)
+- [Acknowledgments](#-acknowledgments)
 
-```
-RCMap-1/
-├── data/
-│   └── BCCS AI Workshop_August 11, 2025_23.45.csv    # Raw workshop data
-├── concept_mapping_analysis.py                       # Main analysis script
-├── run_concept_mapping.py                           # Simple runner script
-├── requirements.txt                                  # Python dependencies
-└── README.md                                        # This file
-```
+## ✨ Features
 
-## 🚀 Quick Start
+- **Complete Concept Mapping Workflow**: From data loading to final reports
+- **Multiple Visualization Types**: Point maps, cluster maps, rating maps, go-zone plots, and more
+- **Flexible Analysis Options**: Various MDS and clustering methods
+- **Comprehensive Reporting**: Detailed statistical analysis and summaries
+- **Easy-to-Use Interface**: Both programmatic and command-line interfaces
+- **Well-Documented**: Extensive documentation and examples
+- **Production-Ready**: Robust error handling and validation
 
-### Prerequisites
+## 🚀 Installation
 
-Install the required Python packages:
+### From Source
 
 ```bash
-pip install -r requirements.txt
+git clone https://github.com/pyconceptmap/pyconceptmap.git
+cd pyconceptmap
+pip install -e .
 ```
 
-### Run Analysis
+### Requirements
 
-Execute the complete analysis with a single command:
+- Python 3.8+
+- NumPy >= 1.21.0
+- Pandas >= 1.3.0
+- Matplotlib >= 3.4.0
+- Seaborn >= 0.11.0
+- Scikit-learn >= 1.0.0
+- SciPy >= 1.7.0
+
+## 🏃‍♂️ Quick Start
+
+### 1. Create Sample Data
 
 ```bash
-python run_concept_mapping.py
+python run_pyconceptmap.py --create_sample_data
 ```
 
-## 📊 Using This Analysis for Your Own Data
+This creates sample data files in the `./sample_data` folder.
 
-### Data Format Requirements
+### 2. Run Analysis
 
-To use this analysis with your own data, your CSV file should follow this structure:
-
-#### Required Columns:
-- **Statement Grouping**: `Q1_1`, `Q1_2`, `Q1_3`, ... `Q1_N` (where N = number of statements)
-- **Importance Ratings**: `Q2.1_1`, `Q2.1_2`, `Q2.1_3`, ... `Q2.1_N`
-- **Feasibility Ratings**: `Q2.2_1`, `Q2.2_2`, `Q2.2_3`, ... `Q2.2_N`
-- **Optional**: Participant information columns (Q6, Q7, etc.)
-
-#### Rating Format:
-Ratings should be in text format like:
-- "4 = very important"
-- "3 = somewhat important" 
-- "2 = not very important"
-- "1 = not important at all"
-
-### Step-by-Step Guide for Your Data
-
-#### 1. Prepare Your Data
 ```bash
-# Create a data directory
-mkdir data
-
-# Place your CSV file in the data directory
-# Rename it to match the expected format or update the script
+python run_pyconceptmap.py --data_folder ./sample_data
 ```
 
-#### 2. Update the Data Path (if needed)
-Edit `run_concept_mapping.py` and change line 18:
-```python
-# Change this line to your data file name
-data_path = Path("data/YOUR_DATA_FILE.csv")
-```
+### 3. Check Requirements
 
-#### 3. Run the Analysis
 ```bash
-python3 run_concept_mapping.py
+python run_pyconceptmap.py --check_requirements
 ```
 
-### Customizing for Different Data Formats
+## 📊 Data Format
 
-#### Option 1: Modify the Script
-If your data has different column names, edit `concept_mapping_analysis.py`:
+PyConceptMap requires four CSV files in your data folder:
 
-```python
-# In the load_data method, update these lines:
-importance_cols = [col for col in raw_data.columns if col.startswith('YOUR_IMPORTANCE_PREFIX')]
-feasibility_cols = [col for col in raw_data.columns if col.startswith('YOUR_FEASIBILITY_PREFIX')]
-```
-
-#### Option 2: Rename Your Columns
-Rename your CSV columns to match the expected format:
-- `Q2.1_1`, `Q2.1_2`, ... for importance ratings
-- `Q2.2_1`, `Q2.2_2`, ... for feasibility ratings
-
-#### Option 3: Create a Custom Data Loader
-For completely different data formats, create a new method in the `ConceptMappingAnalysis` class:
-
-```python
-def load_custom_data(self, data_path):
-    """Load data in your custom format."""
-    # Your custom data loading logic here
-    pass
-```
-
-### Data Requirements Checklist
-
-Before running the analysis, ensure your data has:
-
-- [ ] **100 statements** (or modify the script for different numbers)
-- [ ] **Importance ratings** for each statement
-- [ ] **Feasibility ratings** for each statement  
-- [ ] **Multiple participants** (recommended: 10+ participants)
-- [ ] **Consistent rating scale** (1-4 or 1-5 scale)
-- [ ] **No missing values** (or handle them appropriately)
-
-### Example Data Structure
-
-Your CSV should look like this:
-
+### 1. Statements.csv
 ```csv
-ParticipantID,Q1_1,Q1_2,Q1_3,...,Q2.1_1,Q2.1_2,Q2.1_3,...,Q2.2_1,Q2.2_2,Q2.2_3,...
-1,Group1,Group1,Group2,...,"4 = very important","3 = somewhat important","2 = not very important",...,"3 = somewhat feasible","4 = very feasible","2 = not very feasible",...
-2,Group2,Group1,Group3,...,"3 = somewhat important","4 = very important","1 = not important",...,"4 = very feasible","3 = somewhat feasible","1 = not feasible",...
+StatementID,Statement
+1,First statement
+2,Second statement
+3,Third statement
 ```
 
-### Troubleshooting Your Data
+### 2. SortedCards.csv
+```csv
+SorterID,PileName,Statement_1,Statement_2,Statement_3
+1,Pile A,1,2,3
+1,Pile B,4,5
+2,Pile 1,1,4
+2,Pile 2,2,5
+```
 
-#### Common Issues and Solutions:
+### 3. Demographics.csv
+```csv
+RaterID,Age,Experience,Department
+1,25,Low,A
+2,30,Medium,B
+3,35,High,A
+```
 
-1. **"KeyError: 'RatingType'"**
-   - **Solution**: Check that your rating columns follow the expected naming pattern
+### 4. Ratings.csv
+```csv
+RaterID,StatementID,Importance,Feasibility
+1,1,4,3
+1,2,5,4
+2,1,3,2
+2,2,4,3
+```
 
-2. **"No numeric rating found"**
-   - **Solution**: Ensure ratings are in text format like "4 = very important"
+## 💻 Usage
 
-3. **"Data file not found"**
-   - **Solution**: Check the file path in `run_concept_mapping.py`
+### Command Line Interface
 
-4. **"ValueError: x and y must have same first dimension"**
-   - **Solution**: Ensure you have the same number of importance and feasibility ratings
+```bash
+# Basic usage
+python run_pyconceptmap.py --data_folder /path/to/data
 
-### Advanced Customization
+# With custom output folder
+python run_pyconceptmap.py --data_folder /path/to/data --output_folder /path/to/output
 
-#### Changing Analysis Parameters
-Edit `concept_mapping_analysis.py` to modify:
+# With custom parameters
+python run_pyconceptmap.py --data_folder /path/to/data --mds_method classical --clustering_method complete
+
+# Create sample data for testing
+python run_pyconceptmap.py --create_sample_data
+```
+
+### Programmatic Interface
 
 ```python
-# Number of clusters to test
-for k in range(2, 6):  # Change 6 to test more clusters
+from pyconceptmap import ConceptMappingAnalysis
 
-# MDS parameters
-mds = MDS(n_components=2, random_state=42, dissimilarity='precomputed')
+# Initialize analysis
+analysis = ConceptMappingAnalysis(
+    data_folder='./data',
+    output_folder='./output',
+    random_state=42
+)
 
-# Clustering method
-clustering = AgglomerativeClustering(n_clusters=optimal_k, linkage='ward')
+# Run complete analysis
+success = analysis.run_complete_analysis()
+
+# Or run individual steps
+analysis.load_data()
+analysis.perform_mds()
+analysis.perform_clustering()
+analysis.analyze_ratings()
+analysis.generate_visualizations()
+analysis.generate_reports()
 ```
 
-#### Adding New Visualizations
-To add custom figures:
+## 📈 Generated Outputs
+
+### Visualizations (8 files)
+- **Point Map**: MDS configuration with statement numbers
+- **Cluster Map**: Clusters with convex hull boundaries
+- **Point Rating Map**: Point sizes based on importance ratings
+- **Cluster Rating Map**: Cluster-level rating visualization
+- **Pattern Match**: Cluster comparison across dimensions
+- **Go-Zone Plot**: Importance vs feasibility quadrant analysis
+- **Dendrogram**: Hierarchical clustering tree
+- **Parallel Coordinates**: Multi-dimensional cluster comparison
+
+### Reports (7 files)
+- **Sorter Summary**: Participant sorting statistics
+- **Rater Summary**: Demographics and rating statistics
+- **Statement Summary**: Individual statement statistics
+- **ANOVA Results**: Between-cluster variance analysis
+- **Tukey's HSD**: Pairwise cluster comparisons
+- **Cluster Analysis**: Cluster quality and characteristics
+- **Comprehensive Report**: Complete analysis summary
+
+## 🔬 Methodology
+
+PyConceptMap implements the standard concept mapping methodology:
+
+1. **Data Collection**: Participants sort statements into piles and rate them
+2. **Co-occurrence Matrix**: Calculate how often statements are grouped together
+3. **Multidimensional Scaling**: Create 2D representation of statement relationships
+4. **Clustering**: Group similar statements using hierarchical clustering
+5. **Rating Analysis**: Analyze importance and feasibility ratings
+6. **Visualization**: Create comprehensive plots and maps
+7. **Reporting**: Generate detailed statistical reports
+
+### Key Methodological Features
+
+- **Proper Concept Mapping**: Uses sorting data for MDS (not just ratings)
+- **Co-occurrence Matrices**: Based on participant grouping behavior
+- **Ward's Hierarchical Clustering**: Optimal cluster identification
+- **Statistical Analysis**: ANOVA, Tukey's HSD, gap analysis
+- **Comprehensive Visualization**: 8 different plot types
+
+## 🛠️ Advanced Features
+
+### Custom Analysis Parameters
 
 ```python
-def create_custom_figure(self):
-    """Add your custom visualization here."""
-    # Your visualization code
-    plt.savefig(self.figures_dir / 'custom_figure.png', dpi=300, bbox_inches='tight')
-    plt.close()
+# Custom MDS method
+analysis.perform_mds(method='classical')
+
+# Custom clustering
+analysis.perform_clustering(method='complete', n_clusters=5)
+
+# Custom visualizations
+analysis.visualizer.set_color_scheme('viridis')
 ```
 
-### Best Practices
+### Data Validation
 
-1. **Data Quality**: Ensure clean, consistent data before analysis
-2. **Sample Size**: Aim for 10+ participants for reliable results
-3. **Rating Scale**: Use consistent 1-4 or 1-5 scales
-4. **Statement Count**: 50-200 statements work best for concept mapping
-5. **Backup**: Keep original data files before processing
+```python
+from pyconceptmap.utils import validate_data
 
-## 📊 Output Structure
-
-The analysis creates an organized output directory:
-
-```
-concept_mapping_output/
-├── figures/                    # All 17 generated visualizations
-│   ├── figure_1_importance_feasibility_scatter.png
-│   ├── figure_2_quadrant_analysis.png
-│   ├── figure_3_bubble_chart.png
-│   ├── figure_4_optimal_cluster_analysis.png
-│   ├── figure_5_cluster_comparison.png
-│   ├── figure_6_radar_chart.png
-│   ├── figure_7_statement_heatmap.png
-│   ├── figure_8_grouping_frequency.png
-│   ├── figure_9_gap_analysis.png
-│   ├── figure_10_strategic_priorities.png
-│   ├── figure_11_slope_graph.png
-│   ├── figure_12_point_map.png
-│   ├── figure_13_cluster_map.png
-│   ├── figure_14_point_rating_map.png
-│   ├── figure_15_cluster_rating_map.png
-│   ├── figure_16_pattern_match.png
-│   └── figure_17_go_zone_plot.png
-├── processed_data/             # Analysis data files
-│   ├── importance_feasibility_matrix.csv
-│   ├── cluster_summary.csv
-│   ├── cluster_ratings.csv
-│   └── mds_coordinates.csv
-└── reports/                    # Analysis reports
-    └── analysis_summary.txt
+# Validate data consistency
+validation_result = validate_data(statements, sorting_data, ratings, demographics)
+if not validation_result['valid']:
+    print("Data validation errors:", validation_result['errors'])
 ```
 
-## 📈 Generated Figures
+### Custom Visualizations
 
-### Basic Analysis (Figures 1-3)
-1. **Importance vs Feasibility Scatter Plot** - Shows all statements with four quadrants
-2. **Enhanced Quadrant Analysis** - Point size = importance, colors = quadrant
-3. **Bubble Chart** - Bubble size = importance, color = gap
+```python
+# Create custom plots
+fig = analysis.visualizer.create_point_map(mds_coords, statements)
+fig = analysis.visualizer.create_go_zone_plot(statement_summary)
+```
 
-### Cluster Analysis (Figures 4-5, 12-13)
-4. **Optimal Cluster Analysis** - Elbow method and silhouette analysis
-5. **Cluster Comparison** - Mean ratings by cluster
-12. **Point Map (MDS)** - Multidimensional scaling visualization
-13. **Cluster Map** - Shows clusters with convex hull boundaries
+## 📚 Examples
 
-### Advanced Visualizations (Figures 6-11, 14-17)
-6. **Radar Chart** - Top 5 most important statements
-7. **Statement Performance Heatmap** - Participant ratings heatmaps
-8. **Grouping Frequency Analysis** - Frequency of statement groupings
-9. **Gap Analysis** - Bar chart of importance-feasibility gaps
-10. **Strategic Priorities** - Top 3 statements per category
-11. **Slope Graph** - Cluster-level ratings comparison
-14. **Point Rating Map** - MDS with importance ratings
-15. **Cluster Rating Map** - Cluster-level importance ratings
-16. **Pattern Match** - Parallel coordinates with correlation
-17. **Go-Zone Plot** - Above/below average statements
+### Example 1: Basic Analysis
 
-## 📋 Data Files
+```python
+from pyconceptmap import ConceptMappingAnalysis
 
-### importance_feasibility_matrix.csv
-Contains the main analysis data with:
-- StatementID
-- mean_Importance, std_Importance, count_Importance
-- mean_Feasibility, std_Feasibility, count_Feasibility
-- Gap (Importance - Feasibility)
-- Cluster assignment
+# Initialize and run analysis
+analysis = ConceptMappingAnalysis('./data')
+success = analysis.run_complete_analysis()
 
-### cluster_summary.csv
-Individual statement assignments with:
-- StatementID
-- Importance_Mean, Feasibility_Mean
-- Gap
-- Cluster
+if success:
+    print("Analysis completed successfully!")
+    print(f"Results saved to: {analysis.output_folder}")
+```
 
-### cluster_ratings.csv
-Aggregated cluster statistics with:
-- Cluster ID
-- Mean, standard deviation, and count for importance and feasibility
-- Mean and standard deviation for gaps
+### Example 2: Custom Parameters
 
-### mds_coordinates.csv
-Multidimensional scaling coordinates:
-- StatementID
-- Dimension1, Dimension2
+```python
+# Custom analysis with specific parameters
+analysis = ConceptMappingAnalysis('./data', random_state=123)
 
-## 🔍 Analysis Methods
+# Load data
+analysis.load_data()
 
-### Clustering
-- **Method**: Ward's Hierarchical Clustering
-- **Optimal Clusters**: Determined using silhouette analysis
-- **Range Tested**: 2-5 clusters
+# Custom MDS
+analysis.perform_mds(method='classical')
 
-### Multidimensional Scaling (MDS)
-- **Dimensions**: 2D
-- **Distance Metric**: Euclidean distance
-- **Stress**: Calculated for fit quality
+# Custom clustering
+analysis.perform_clustering(method='complete', n_clusters=3)
 
-### Statistical Analysis
-- **Importance-Feasibility Gap**: Calculated for each statement
-- **Quadrant Analysis**: Based on median values
-- **Strategic Categories**: Immediate Implementation, Research & Development, Quick Wins
+# Generate results
+analysis.analyze_ratings()
+analysis.generate_visualizations()
+analysis.generate_reports()
+```
 
-## 🎨 Visualization Features
+### Example 3: Data Validation
 
-- **High Resolution**: All figures saved at 300 DPI
-- **Professional Styling**: Consistent color scheme and formatting
-- **Publication Ready**: Suitable for reports and presentations
-- **Accessible**: Good contrast and clear labeling
+```python
+from pyconceptmap.data_handler import DataHandler
 
-## 📊 Key Findings
+# Load and validate data
+handler = DataHandler()
+statements = handler.load_statements('./data')
+sorting_data = handler.load_sorting_data('./data')
+ratings = handler.load_ratings('./data')
+demographics = handler.load_demographics('./data')
 
-### Data Summary
-- **Total Statements**: 100
-- **Optimal Clusters**: 2 (determined statistically)
-- **Analysis Method**: Concept Mapping with MDS and Hierarchical Clustering
+# Check for issues
+validation_result = validate_data(statements, sorting_data, ratings, demographics)
+print("Validation result:", validation_result)
+```
 
-### Strategic Insights
-- **High Priority & High Feasibility**: 32 statements (immediate implementation)
-- **Research & Development**: 17 statements (high importance, low feasibility)
-- **Quick Wins**: 12 statements (low importance, high feasibility)
-- **Low Priority**: 39 statements (low importance, low feasibility)
-
-## 🛠️ Technical Details
-
-### Dependencies
-- pandas >= 1.3.0
-- numpy >= 1.21.0
-- matplotlib >= 3.4.0
-- seaborn >= 0.11.0
-- scikit-learn >= 1.0.0
-- scipy >= 1.7.0
-
-### Performance
-- **Runtime**: ~30-60 seconds
-- **Memory Usage**: Minimal (efficient design)
-- **Output Size**: ~5MB total
-
-## 🔧 Customization
-
-### Modifying Analysis Parameters
-Edit the `concept_mapping_analysis.py` file to:
-- Change clustering method
-- Adjust MDS parameters
-- Modify color schemes
-- Add new visualizations
-
-### Adding New Figures
-1. Add a new method to the `ConceptMappingAnalysis` class
-2. Call it in the `create_all_figures()` method
-3. Update the documentation
-
-## 🐛 Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 
-1. **Missing Dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
+1. **Missing Files**: Ensure all four CSV files are present in the data folder
+2. **Data Format**: Check that CSV files have the correct column names and formats
+3. **Dependencies**: Run `python run_pyconceptmap.py --check_requirements` to verify installation
+4. **Memory Issues**: For large datasets, consider reducing the number of statements or using sampling
 
-2. **Data File Not Found**
-   - Ensure `data/BCCS AI Workshop_August 11, 2025_23.45.csv` exists
-   - Check file permissions
+### Getting Help
 
-3. **Memory Issues**
-   - The script is designed to be memory-efficient
-   - Close other applications if needed
+- Check the [documentation](docs/) for detailed guides
+- Review the [examples](examples/) folder for sample code
+- Open an [issue](https://github.com/pyconceptmap/pyconceptmap/issues) for bugs or feature requests
 
-### Error Messages
+## 🤝 Contributing
 
-- **"Data file not found"**: Check the data directory and file name
-- **Import errors**: Install missing packages with pip
-- **Permission errors**: Check write permissions for output directory
+We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
 
-## 📝 Usage Examples
+### Development Setup
 
-### Basic Analysis
-```python
-from concept_mapping_analysis import ConceptMappingAnalysis
-
-# Initialize analysis
-analysis = ConceptMappingAnalysis()
-
-# Run complete analysis
-analysis.run_complete_analysis("path/to/data.csv")
+```bash
+git clone https://github.com/pyconceptmap/pyconceptmap.git
+cd pyconceptmap
+pip install -e ".[dev]"
+pytest  # Run tests
 ```
 
-### Custom Analysis
-```python
-# Load data only
-analysis.load_data("path/to/data.csv")
+## 📖 Citation
 
-# Perform analysis
-analysis.perform_analysis()
+If you use PyConceptMap in your research, please cite:
 
-# Create specific figures
-analysis.create_figure_1_scatter()
-analysis.create_figure_2_quadrant()
-
-# Save data
-analysis.save_data_files()
+```bibtex
+@software{pyconceptmap2024,
+  title={PyConceptMap: Open-Source Concept Mapping Tool},
+  author={PyConceptMap Development Team},
+  year={2024},
+  url={https://github.com/pyconceptmap/pyconceptmap}
+}
 ```
 
 ## 📄 License
 
-This project is developed for the BCCS AI Workshop analysis.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+## 🙏 Acknowledgments
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
+- Inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017)
+- Built on the concept mapping methodology of Trochim & Kane (2002)
+- Thanks to the open-source community for the excellent Python libraries
 
-## 📞 Support
+## 📊 Changelog
 
-For questions or issues:
-1. Check the troubleshooting section
-2. Review the generated reports
-3. Examine the data files for insights
+### Version 0.1.0 (2024-01-01)
+- Initial release
+- Complete concept mapping workflow
+- Multiple visualization types
+- Comprehensive reporting
+- Command-line and programmatic interfaces
+- Full compatibility with RCMap methodology
 
 ---
 
-**Generated**: August 2025
-**Data Source**: BCCS AI Workshop August 11, 2025  
-**Analysis Method**: Concept Mapping with MDS and Hierarchical Clustering
+**PyConceptMap** - Making concept mapping accessible in Python! 🐍✨

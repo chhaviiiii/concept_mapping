@@ -1,0 +1,17 @@
+STATEMENT SUMMARY REPORT
+==================================================
+
+Number of clusters: 2
+Total statements: 100
+
+Rating summaries:
+  Importance_mean: Mean=3.277, Std=0.427
+  Importance_std: Mean=1.189, Std=0.134
+  Importance_count: Mean=11.990, Std=0.100
+  Importance_min: Mean=1.000, Std=0.000
+  Importance_max: Mean=4.890, Std=0.345
+  Feasibility_mean: Mean=3.227, Std=0.500
+  Feasibility_std: Mean=1.093, Std=0.162
+  Feasibility_count: Mean=11.960, Std=0.197
+  Feasibility_min: Mean=1.000, Std=0.000
+  Feasibility_max: Mean=4.710, Std=0.518
