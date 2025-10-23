@@ -1,10 +1,10 @@
 # PyConceptMap: Project Overview
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 pyconceptmap/
-├── 📦 Core Package
+├── Core Package
 │   ├── __init__.py              # Package initialization
 │   ├── core.py                   # Main ConceptMappingAnalysis class
 │   ├── data_handler.py           # Data loading and validation
@@ -12,7 +12,7 @@ pyconceptmap/
 │   ├── reporter.py               # Report generation
 │   └── utils.py                  # Utility functions
 │
-├── 📚 Documentation
+├── Documentation
 │   ├── README.md                 # Main documentation
 │   ├── docs/
 │   │   ├── INSTALLATION.md       # Installation guide
@@ -21,18 +21,18 @@ pyconceptmap/
 │   ├── LICENSE                   # MIT License
 │   └── PROJECT_OVERVIEW.md       # This file
 │
-├── 🚀 Scripts
+├── Scripts
 │   ├── run_pyconceptmap.py       # Command-line interface
 │   ├── convert_data_for_pyconceptmap.py  # Data converter
 │   ├── simple_test.py           # Simple test script
 │   └── test_pyconceptmap.py     # Full test suite
 │
-├── 📖 Examples
+├── Examples
 │   ├── examples/
 │   │   ├── basic_analysis.py    # Basic usage example
 │   │   └── advanced_analysis.py     # Advanced features example
 │
-├── 📊 Data & Results
+├── Data & Results
 │   ├── data/                     # Input data files
 │   │   ├── BCCS AI Workshop_August 11, 2025_23.45.csv
 │   │   ├── Statements.csv
@@ -42,15 +42,15 @@ pyconceptmap/
 │   ├── sample_data/              # Sample data for testing
 │   └── concept_mapping_output/   # Analysis results
 │
-└── ⚙️ Configuration
+└── Configuration
     ├── setup.py                  # Package setup
     ├── requirements.txt          # Dependencies
     └── pyconceptmap.egg-info/    # Package metadata
 ```
 
-## 🎯 Key Features
+## Key Features
 
-### ✅ **Complete Concept Mapping Workflow**
+### Complete Concept Mapping Workflow
 - Data loading and validation
 - Co-occurrence matrix creation from sorting data
 - Multidimensional Scaling (MDS)
@@ -59,25 +59,25 @@ pyconceptmap/
 - Comprehensive visualization suite
 - Detailed reporting system
 
-### ✅ **Professional Documentation**
+### Professional Documentation
 - **README.md**: Complete user guide with table of contents
 - **Installation Guide**: Step-by-step setup instructions
 - **User Guide**: Comprehensive usage examples
 - **Contributing Guidelines**: Development standards
 - **Examples**: Working code samples
 
-### ✅ **Multiple Interfaces**
+### Multiple Interfaces
 - **Command Line**: `python run_pyconceptmap.py --data_folder ./data`
 - **Programmatic**: `from pyconceptmap import ConceptMappingAnalysis`
 - **Data Converter**: Convert existing CSV data to PyConceptMap format
 
-### ✅ **Comprehensive Testing**
+### Comprehensive Testing
 - **Unit Tests**: Individual component testing
 - **Integration Tests**: Full workflow testing
 - **Sample Data**: Built-in test data generation
 - **Validation**: Data consistency checking
 
-## 📊 Generated Outputs
+## Generated Outputs
 
 ### Visualizations (8 types)
 1. **Point Map** - MDS configuration with statement numbers
@@ -98,9 +98,9 @@ pyconceptmap/
 6. **Cluster Analysis** - Cluster quality and characteristics
 7. **Comprehensive Report** - Complete analysis summary
 
-## 🔬 Methodology Compliance
+## Methodology Compliance
 
-### ✅ **RCMap Compatibility**
+### RCMap Compatibility
 - **Co-occurrence Matrices**: Uses sorting data (not just ratings)
 - **MDS Implementation**: Proper distance matrix conversion
 - **Ward's Clustering**: Hierarchical clustering with silhouette analysis
@@ -108,13 +108,13 @@ pyconceptmap/
 - **Visualization Types**: All 8 plot types from RCMap
 - **Report Structure**: Same format as RCMap
 
-### ✅ **Concept Mapping Standards**
+### Concept Mapping Standards
 - **Trochim & Kane (2002)** methodology
 - **Bar & Mentch (2017)** RCMap compatibility
 - **Proper MDS**: Based on participant sorting behavior
 - **Statistical Rigor**: Comprehensive significance testing
 
-## 🚀 Usage Examples
+## Usage Examples
 
 ### Command Line
 ```bash
@@ -143,9 +143,9 @@ success = analysis.run_complete_analysis()
 python convert_data_for_pyconceptmap.py
 ```
 
-## 📈 Real-World Testing
+## Real-World Testing
 
-### ✅ **Successfully Analyzed Real Dataset**
+### Successfully Analyzed Real Dataset
 - **100 statements** from AI implementation study
 - **9 sorters** with varying sorting patterns
 - **15 participants** with demographics
@@ -153,16 +153,16 @@ python convert_data_for_pyconceptmap.py
 - **2 optimal clusters** identified
 - **Statistically significant** results (p<0.001)
 
-### ✅ **Production Ready**
+### Production Ready
 - **Error handling** for all edge cases
 - **Data validation** for consistency
 - **Memory efficient** for large datasets
 - **Reproducible** with random seeds
 - **Well-documented** with examples
 
-## 🎉 Project Status
+## Project Status
 
-### ✅ **Complete Implementation**
+### Complete Implementation
 - [x] Core concept mapping functionality
 - [x] Data loading and validation
 - [x] MDS and clustering algorithms
@@ -176,7 +176,7 @@ python convert_data_for_pyconceptmap.py
 - [x] Testing
 - [x] Real-world validation
 
-### ✅ **Ready for Production**
+### Ready for Production
 - **Fully functional** concept mapping tool
 - **RCMap compatible** methodology
 - **Professional documentation**
@@ -184,14 +184,14 @@ python convert_data_for_pyconceptmap.py
 - **Real dataset validation**
 - **MIT License** for open source use
 
-## 🏆 Achievements
+## Achievements
 
-1. **✅ Complete RCMap Translation**: Successfully translated RCMap from R to Python
-2. **✅ Methodology Compliance**: Follows established concept mapping standards
-3. **✅ Production Quality**: Robust error handling and validation
-4. **✅ Comprehensive Documentation**: Professional-grade user guides
-5. **✅ Real-World Testing**: Successfully analyzed actual research data
-6. **✅ Open Source**: MIT licensed for community use
-7. **✅ Extensible Design**: Modular architecture for easy customization
+1. **Complete RCMap Translation**: Successfully translated RCMap from R to Python
+2. **Methodology Compliance**: Follows established concept mapping standards
+3. **Production Quality**: Robust error handling and validation
+4. **Comprehensive Documentation**: Professional-grade user guides
+5. **Real-World Testing**: Successfully analyzed actual research data
+6. **Open Source**: MIT licensed for community use
+7. **Extensible Design**: Modular architecture for easy customization
 
-**PyConceptMap is a complete, production-ready concept mapping tool that successfully replicates RCMap functionality in Python!** 🎉
+**PyConceptMap is a complete, production-ready concept mapping tool that successfully replicates RCMap functionality in Python!**

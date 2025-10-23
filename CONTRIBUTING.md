@@ -218,4 +218,4 @@ If you have questions about contributing:
 2. **Open a new issue** with the "question" label
 3. **Start a discussion** for general questions
 
-Thank you for contributing to PyConceptMap! 🎉
+Thank you for contributing to PyConceptMap!
