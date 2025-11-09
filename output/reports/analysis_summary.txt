@@ -1,0 +1,29 @@
+BCCS AI WORKSHOP - CONCEPT MAPPING ANALYSIS SUMMARY
+============================================================
+
+Analysis Date: 2025-09-17 23:13:07
+Data Source: BCCS AI Workshop August 11, 2025
+
+ANALYSIS RESULTS:
+  - Total Statements: 100
+  - Optimal Clusters: 2
+  - Clustering Method: Ward's Hierarchical Clustering
+  - Figures Generated: 17
+
+CLUSTER SUMMARY:
+  - Cluster 1: 62 statements
+  - Cluster 2: 38 statements
+
+TOP STATEMENTS BY IMPORTANCE:
+  - Statement 1: 4.25
+  - Statement 89: 4.17
+  - Statement 3: 4.08
+  - Statement 8: 4.00
+  - Statement 9: 4.00
+
+TOP STATEMENTS BY FEASIBILITY:
+  - Statement 50: 4.33
+  - Statement 57: 4.25
+  - Statement 37: 4.18
+  - Statement 4: 4.17
+  - Statement 51: 4.17

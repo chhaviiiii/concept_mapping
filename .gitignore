@@ -45,5 +45,5 @@ ehthumbs.db
 Thumbs.db
 
 # Project specific
-output/
+# output/  # Commented out to allow tracking output files
 *.log

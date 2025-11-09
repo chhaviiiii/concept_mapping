@@ -519,3 +519,97 @@ class ReportGenerator:
         
         print(f"✅ Subgroup analysis report generated: {filename}")
         return report_text
+    
+    def generate_publication_tables(self, subgroup_enhanced_results: Dict) -> Dict[str, pd.DataFrame]:
+        """
+        Generate publication-ready tables (Table S1 and S2).
+        
+        Parameters
+        ----------
+        subgroup_enhanced_results : Dict
+            Enhanced subgroup analysis results
+            
+        Returns
+        -------
+        Dict[str, pd.DataFrame]
+            Dictionary with 'table_s1' and 'table_s2' DataFrames
+        """
+        if not subgroup_enhanced_results or 'cluster_table' not in subgroup_enhanced_results:
+            return {}
+        
+        cluster_df = subgroup_enhanced_results['cluster_table'].copy()
+        stmt_df = subgroup_enhanced_results['statement_table'].copy()
+        
+        # Table S1: Cluster-level differences
+        table_s1_rows = []
+        for _, row in cluster_df.iterrows():
+            # Format means with SD
+            clinical_str = f"{row['Clinical_mean']:.2f}±{row['Clinical_std']:.2f}"
+            nonclinical_str = f"{row['Non-Clinical_mean']:.2f}±{row['Non-Clinical_std']:.2f}"
+            
+            # Format CI
+            ci_str = f"[{row['CI_lower']:.3f}, {row['CI_upper']:.3f}]"
+            
+            table_s1_rows.append({
+                'Cluster': int(row['Cluster']),
+                'Metric': row['Metric'],
+                'Clinical (mean±SD)': clinical_str,
+                'Non-clinical (mean±SD)': nonclinical_str,
+                'Δ (Clin–Non)': f"{row['Delta']:.3f}",
+                '95% CI': ci_str,
+                "Hedges' g": f"{row['Hedges_g']:.3f}",
+                'p (Welch)': f"{row['p_Welch']:.4f}",
+                'p (U)': f"{row['p_U']:.4f}",
+                'q (BH)': f"{row.get('q_Welch', np.nan):.4f}" if not pd.isna(row.get('q_Welch')) else "—"
+            })
+        
+        table_s1 = pd.DataFrame(table_s1_rows)
+        
+        # Table S2: Top statement-level differences
+        if len(stmt_df) > 0:
+            # Filter to only statements with valid statistics (non-nan CI and tests)
+            stmt_df_valid = stmt_df[
+                stmt_df['CI_lower'].notna() & 
+                stmt_df['CI_upper'].notna() &
+                stmt_df['p_Welch'].notna()
+            ].copy()
+            
+            if len(stmt_df_valid) > 0:
+                # Sort by absolute delta
+                stmt_df_valid['abs_delta'] = stmt_df_valid['Delta'].abs()
+                stmt_df_sorted = stmt_df_valid.sort_values('abs_delta', ascending=False)
+                
+                # Format for table
+                table_s2_rows = []
+                for _, row in stmt_df_sorted.head(20).iterrows():  # Top 20
+                    ci_str = f"[{row['CI_lower']:.3f}, {row['CI_upper']:.3f}]"
+                    
+                    table_s2_rows.append({
+                        'StatementID': int(row['StatementID']),
+                        'Statement (abridged)': row['Statement'],
+                        'Cluster': int(row['Cluster']),
+                        'Metric': row['Metric'],
+                        'CI': ci_str,
+                        'g': f"{row['Hedges_g']:.3f}",
+                        'q (BH)': f"{row.get('q_Welch', np.nan):.4f}" if not pd.isna(row.get('q_Welch')) else "—"
+                    })
+                
+                table_s2 = pd.DataFrame(table_s2_rows)
+            else:
+                table_s2 = pd.DataFrame()
+        else:
+            table_s2 = pd.DataFrame()
+        
+        # Save tables
+        table_s1.to_csv(self.output_folder / 'Table_S1_cluster_subgroup.csv', index=False)
+        if len(table_s2) > 0:
+            table_s2.to_csv(self.output_folder / 'Table_S2_statement_differences.csv', index=False)
+        
+        print("✅ Publication tables generated:")
+        print(f"  - Table S1: {len(table_s1)} rows")
+        print(f"  - Table S2: {len(table_s2)} rows")
+        
+        return {
+            'table_s1': table_s1,
+            'table_s2': table_s2
+        }

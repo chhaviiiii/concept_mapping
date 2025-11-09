@@ -1,0 +1,41 @@
+PATTERN MATCH ANALYSIS - STATISTICAL TESTS
+============================================================
+
+Comparison: Importance vs Feasibility within each cluster
+
+Note: Wilcoxon signed-rank test is the primary analysis for paired data
+(same rater rating both importance and feasibility for each statement).
+
+Cluster 1
+----------------------------------------
+Importance mean: 3.154
+Feasibility mean: 3.000
+Mean difference (Imp - Feas): 0.154
+95% CI: [0.051, 0.258]
+
+PRIMARY ANALYSIS (Wilcoxon signed-rank test for paired data):
+  p = 0.0047 ** (p < 0.01)
+
+Additional tests (for reference):
+  Paired t-test: t = 2.936, p = 0.0034
+  Mann-Whitney U: p = 0.0037
+
+Effect size (Cohen's d): 0.113
+Number of pairs: 680
+
+Cluster 2
+----------------------------------------
+Importance mean: 3.522
+Feasibility mean: 3.642
+Mean difference (Imp - Feas): -0.120
+95% CI: [-0.215, -0.026]
+
+PRIMARY ANALYSIS (Wilcoxon signed-rank test for paired data):
+  p = 0.0073 ** (p < 0.01)
+
+Additional tests (for reference):
+  Paired t-test: t = -2.503, p = 0.0127
+  Mann-Whitney U: p = 0.0617
+
+Effect size (Cohen's d): -0.123
+Number of pairs: 416

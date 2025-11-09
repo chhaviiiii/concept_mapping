@@ -1,0 +1,16 @@
+TUKEY'S HSD RESULTS REPORT
+==================================================
+
+Tukey multiple comparisons of means
+95% family-wise confidence level
+
+Analysis of Variance: Response = Importance
+
+$Cluster
+
+Tukey multiple comparisons of means
+95% family-wise confidence level
+
+Analysis of Variance: Response = Feasibility
+
+$Cluster

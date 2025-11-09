@@ -1,0 +1,3 @@
+Cluster,mean_Importance_mean,mean_Importance_std,mean_Importance_count,mean_Feasibility_mean,mean_Feasibility_std,mean_Feasibility_count,Gap_mean,Gap_std
+0,3.138,0.429,62,2.988,0.406,62,0.151,0.429
+1,3.504,0.316,38,3.617,0.382,38,-0.114,0.368

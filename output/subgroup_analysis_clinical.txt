@@ -1,0 +1,65 @@
+SUBGROUP ANALYSIS REPORT
+============================================================
+Demographic Variable: Clinical
+
+CLUSTER 1
+------------------------------------------------------------
+
+Feasibility Ratings:
+Subgroup                   Mean        Std      Count      Min      Max
+------------------------------------------------------------------
+Clinical                  3.000      1.117        680      1.0      5.0
+Non-Clinical              2.836      0.793         61      1.0      5.0
+
+Statistical Test: Independent t-test
+  t-statistic: 1.120
+  p-value: 0.2631
+  Group 1 (Clinical): Mean = 3.000, n = 680
+  Group 2 (Non-Clinical): Mean = 2.836, n = 61
+  Significance: ns (p >= 0.05) - Not significant
+
+
+Importance Ratings:
+Subgroup                   Mean        Std      Count      Min      Max
+------------------------------------------------------------------
+Clinical                  3.154      1.293        682      1.0      5.0
+Non-Clinical              2.968      0.861         62      1.0      5.0
+
+Statistical Test: Independent t-test
+  t-statistic: 1.110
+  p-value: 0.2673
+  Group 1 (Clinical): Mean = 3.154, n = 682
+  Group 2 (Non-Clinical): Mean = 2.968, n = 62
+  Significance: ns (p >= 0.05) - Not significant
+
+
+CLUSTER 2
+------------------------------------------------------------
+
+Feasibility Ratings:
+Subgroup                   Mean        Std      Count      Min      Max
+------------------------------------------------------------------
+Clinical                  3.643      1.205        417      1.0      5.0
+Non-Clinical              3.342      0.804         38      2.0      5.0
+
+Statistical Test: Independent t-test
+  t-statistic: 1.504
+  p-value: 0.1333
+  Group 1 (Clinical): Mean = 3.643, n = 417
+  Group 2 (Non-Clinical): Mean = 3.342, n = 38
+  Significance: ns (p >= 0.05) - Not significant
+
+
+Importance Ratings:
+Subgroup                   Mean        Std      Count      Min      Max
+------------------------------------------------------------------
+Clinical                  3.520      1.140        417      1.0      5.0
+Non-Clinical              3.316      0.729         38      2.0      5.0
+
+Statistical Test: Independent t-test
+  t-statistic: 1.084
+  p-value: 0.2791
+  Group 1 (Clinical): Mean = 3.520, n = 417
+  Group 2 (Non-Clinical): Mean = 3.316, n = 38
+  Significance: ns (p >= 0.05) - Not significant
+

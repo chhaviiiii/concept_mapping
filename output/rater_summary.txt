@@ -1,0 +1,16 @@
+RATER SUMMARY REPORT
+==================================================
+
+ParticipantID  
+Min.   :   1.000
+1st Qu.:   4.500
+Median :   8.000
+Mean   :   8.000
+3rd Qu.:  11.500
+Max.   :  15.000
+
+Clinical       
+Clinical       : 13
+Non-Clinical   :  2
+
+Press any key to continue.

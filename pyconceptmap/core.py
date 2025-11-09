@@ -90,6 +90,7 @@ class ConceptMappingAnalysis:
         self.anova_results = None
         self.tukey_results = None
         self.subgroup_results = None
+        self.subgroup_enhanced_results = None
         
         print(f"PyConceptMap initialized")
         print(f"Data folder: {self.data_folder}")
@@ -414,6 +415,285 @@ class ConceptMappingAnalysis:
             
         except Exception as e:
             print(f"❌ Error analyzing subgroups: {e}")
+            import traceback
+            traceback.print_exc()
+            return False
+    
+    def analyze_subgroups_enhanced(self, demographic_var: str) -> bool:
+        """
+        Perform enhanced subgroup analysis with publication-ready statistics.
+        
+        Computes: Hedges' g, Welch's t-test, Mann-Whitney U, BH correction,
+        95% CIs, and statement-level differences.
+        
+        Parameters
+        ----------
+        demographic_var : str
+            Name of the demographic variable to use for subgroup analysis
+            
+        Returns
+        -------
+        bool
+            True if analysis completed successfully
+        """
+        try:
+            print(f"Performing enhanced subgroup analysis by {demographic_var}...")
+            
+            if self.ratings is None or self.demographics is None or self.cluster_labels is None:
+                print("❌ Required data not found. Run load_data(), perform_mds(), perform_clustering(), and analyze_ratings() first.")
+                return False
+            
+            if demographic_var not in self.demographics.columns:
+                print(f"❌ Demographic variable '{demographic_var}' not found in Demographics.csv")
+                return False
+            
+            from scipy.stats import ttest_ind, mannwhitneyu
+            from scipy import stats
+            from statsmodels.stats.multitest import multipletests
+            
+            # Merge ratings with demographics and cluster assignments
+            ratings_with_demo = self.ratings.merge(
+                self.demographics[['RaterID', demographic_var]], 
+                on='RaterID', 
+                how='left'
+            )
+            
+            statement_to_cluster = dict(zip(
+                self.statements['StatementID'], 
+                self.cluster_labels + 1
+            ))
+            ratings_with_demo['Cluster'] = ratings_with_demo['StatementID'].map(statement_to_cluster)
+            
+            # Merge with statements for text
+            ratings_with_demo = ratings_with_demo.merge(
+                self.statements[['StatementID', 'Statement']],
+                on='StatementID',
+                how='left'
+            )
+            
+            rating_vars = [col for col in self.ratings.columns 
+                          if col not in ['RaterID', 'StatementID']]
+            
+            # Cluster-level results
+            cluster_table_rows = []
+            statement_differences = []
+            
+            for cluster_id in range(1, self.n_clusters + 1):
+                cluster_data = ratings_with_demo[ratings_with_demo['Cluster'] == cluster_id]
+                
+                if len(cluster_data) == 0:
+                    continue
+                
+                subgroups = cluster_data[demographic_var].dropna().unique()
+                if len(subgroups) != 2:
+                    continue  # Only handle two-group comparisons
+                
+                group1, group2 = sorted(subgroups)
+                
+                for rating_var in rating_vars:
+                    if rating_var not in cluster_data.columns:
+                        continue
+                    
+                    # Get data for each group
+                    group1_data = cluster_data[
+                        (cluster_data[demographic_var] == group1) & 
+                        (cluster_data[rating_var].notna())
+                    ][rating_var].values
+                    
+                    group2_data = cluster_data[
+                        (cluster_data[demographic_var] == group2) & 
+                        (cluster_data[rating_var].notna())
+                    ][rating_var].values
+                    
+                    if len(group1_data) == 0 or len(group2_data) == 0:
+                        continue
+                    
+                    # Basic statistics
+                    mean1, std1, n1 = np.mean(group1_data), np.std(group1_data, ddof=1), len(group1_data)
+                    mean2, std2, n2 = np.mean(group2_data), np.std(group2_data, ddof=1), len(group2_data)
+                    delta = mean1 - mean2
+                    
+                    # 95% CI for difference (Welch-Satterthwaite)
+                    se_diff = np.sqrt((std1**2 / n1) + (std2**2 / n2))
+                    # Welch-Satterthwaite degrees of freedom
+                    df_welch = ((std1**2 / n1 + std2**2 / n2)**2) / \
+                              ((std1**2 / n1)**2 / (n1 - 1) + (std2**2 / n2)**2 / (n2 - 1))
+                    t_crit = stats.t.ppf(0.975, max(1, int(df_welch)))
+                    ci_lower = delta - t_crit * se_diff
+                    ci_upper = delta + t_crit * se_diff
+                    
+                    # Hedges' g (corrected effect size)
+                    pooled_std = np.sqrt(((n1 - 1) * std1**2 + (n2 - 1) * std2**2) / (n1 + n2 - 2))
+                    if pooled_std > 0:
+                        cohens_d = delta / pooled_std
+                        # Hedges' correction
+                        correction = 1 - (3 / (4 * (n1 + n2 - 2) - 1))
+                        hedges_g = cohens_d * correction
+                    else:
+                        hedges_g = 0.0
+                    
+                    # Welch's t-test (unequal variances)
+                    welch_stat, welch_p = ttest_ind(group1_data, group2_data, equal_var=False)
+                    
+                    # Mann-Whitney U test
+                    try:
+                        u_stat, u_p = mannwhitneyu(group1_data, group2_data, alternative='two-sided')
+                    except:
+                        u_stat, u_p = np.nan, np.nan
+                    
+                    # Store cluster-level results
+                    cluster_table_rows.append({
+                        'Cluster': cluster_id,
+                        'Metric': rating_var,
+                        'Clinical_mean': mean1 if group1 == 'Clinical' else mean2,
+                        'Clinical_std': std1 if group1 == 'Clinical' else std2,
+                        'Non-Clinical_mean': mean2 if group1 == 'Clinical' else mean1,
+                        'Non-Clinical_std': std2 if group1 == 'Clinical' else std1,
+                        'Delta': delta if group1 == 'Clinical' else -delta,
+                        'CI_lower': ci_lower if group1 == 'Clinical' else -ci_upper,
+                        'CI_upper': ci_upper if group1 == 'Clinical' else -ci_lower,
+                        'Hedges_g': hedges_g if group1 == 'Clinical' else -hedges_g,
+                        'p_Welch': welch_p,
+                        'p_U': u_p,
+                        'n1': n1 if group1 == 'Clinical' else n2,
+                        'n2': n2 if group1 == 'Clinical' else n1
+                    })
+                    
+                    # Statement-level analysis
+                    for stmt_id in cluster_data['StatementID'].unique():
+                        stmt_data = cluster_data[cluster_data['StatementID'] == stmt_id]
+                        
+                        stmt_group1 = stmt_data[
+                            (stmt_data[demographic_var] == group1) & 
+                            (stmt_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        stmt_group2 = stmt_data[
+                            (stmt_data[demographic_var] == group2) & 
+                            (stmt_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        # Only analyze if both groups have at least 1 rating
+                        if len(stmt_group1) >= 1 and len(stmt_group2) >= 1:
+                            stmt_mean1 = np.mean(stmt_group1)
+                            stmt_mean2 = np.mean(stmt_group2)
+                            stmt_delta = stmt_mean1 - stmt_mean2 if group1 == 'Clinical' else stmt_mean2 - stmt_mean1
+                            
+                            # CI for statement-level difference
+                            stmt_std1, stmt_std2 = np.std(stmt_group1, ddof=1), np.std(stmt_group2, ddof=1)
+                            stmt_n1, stmt_n2 = len(stmt_group1), len(stmt_group2)
+                            
+                            # Use Welch-Satterthwaite degrees of freedom for CI
+                            if stmt_n1 >= 2 and stmt_n2 >= 2 and stmt_std1 > 0 and stmt_std2 > 0:
+                                stmt_se = np.sqrt((stmt_std1**2 / stmt_n1) + (stmt_std2**2 / stmt_n2))
+                                # Welch-Satterthwaite df
+                                stmt_df = ((stmt_std1**2 / stmt_n1 + stmt_std2**2 / stmt_n2)**2) / \
+                                         ((stmt_std1**2 / stmt_n1)**2 / (stmt_n1 - 1) + (stmt_std2**2 / stmt_n2)**2 / (stmt_n2 - 1))
+                                stmt_t_crit = stats.t.ppf(0.975, max(1, int(stmt_df)))
+                                stmt_ci_lower = stmt_delta - stmt_t_crit * stmt_se
+                                stmt_ci_upper = stmt_delta + stmt_t_crit * stmt_se
+                            elif stmt_n1 == 1 and stmt_n2 == 1:
+                                # Can't compute CI with only 1 observation per group
+                                stmt_ci_lower = np.nan
+                                stmt_ci_upper = np.nan
+                            else:
+                                # Use simpler approximation
+                                stmt_se = np.sqrt((stmt_std1**2 / max(1, stmt_n1)) + (stmt_std2**2 / max(1, stmt_n2)))
+                                stmt_t_crit = stats.t.ppf(0.975, max(1, min(stmt_n1-1, stmt_n2-1)))
+                                stmt_ci_lower = stmt_delta - stmt_t_crit * stmt_se
+                                stmt_ci_upper = stmt_delta + stmt_t_crit * stmt_se
+                            
+                            # Statement-level Hedges' g
+                            if stmt_n1 >= 2 and stmt_n2 >= 2:
+                                stmt_pooled = np.sqrt(((stmt_n1 - 1) * stmt_std1**2 + (stmt_n2 - 1) * stmt_std2**2) / (stmt_n1 + stmt_n2 - 2))
+                                if stmt_pooled > 0:
+                                    stmt_cohens = stmt_delta / stmt_pooled
+                                    stmt_correction = 1 - (3 / (4 * (stmt_n1 + stmt_n2 - 2) - 1))
+                                    stmt_hedges_g = stmt_cohens * stmt_correction
+                                else:
+                                    stmt_hedges_g = 0.0
+                            else:
+                                stmt_hedges_g = 0.0  # Can't compute effect size with n < 2
+                            
+                            # Statement-level tests (only if both groups have at least 2 observations)
+                            if stmt_n1 >= 2 and stmt_n2 >= 2:
+                                try:
+                                    stmt_welch_stat, stmt_welch_p = ttest_ind(stmt_group1, stmt_group2, equal_var=False)
+                                except:
+                                    stmt_welch_p = np.nan
+                                
+                                try:
+                                    stmt_u_stat, stmt_u_p = mannwhitneyu(stmt_group1, stmt_group2, alternative='two-sided')
+                                except:
+                                    stmt_u_p = np.nan
+                            else:
+                                stmt_welch_p = np.nan
+                                stmt_u_p = np.nan
+                            
+                            # Get statement text
+                            stmt_row = self.statements[self.statements['StatementID'] == stmt_id]
+                            if len(stmt_row) > 0:
+                                stmt_text = stmt_row.iloc[0]['Statement']
+                            else:
+                                stmt_text = f"Statement {stmt_id}"
+                            
+                            # Abridge statement text
+                            stmt_text_abridged = stmt_text[:100] + '...' if len(str(stmt_text)) > 100 else stmt_text
+                            
+                            statement_differences.append({
+                                'StatementID': stmt_id,
+                                'Statement': stmt_text_abridged,
+                                'Cluster': cluster_id,
+                                'Metric': rating_var,
+                                'Clinical_mean': stmt_mean1 if group1 == 'Clinical' else stmt_mean2,
+                                'Non-Clinical_mean': stmt_mean2 if group1 == 'Clinical' else stmt_mean1,
+                                'Delta': stmt_delta,
+                                'CI_lower': stmt_ci_lower,
+                                'CI_upper': stmt_ci_upper,
+                                'Hedges_g': stmt_hedges_g,
+                                'p_Welch': stmt_welch_p,
+                                'p_U': stmt_u_p
+                            })
+            
+            # Apply Benjamini-Hochberg correction
+            cluster_df = pd.DataFrame(cluster_table_rows)
+            if len(cluster_df) > 0:
+                # BH correction for cluster-level tests
+                for test_type in ['Welch', 'U']:
+                    p_col = f'p_{test_type}'
+                    if p_col in cluster_df.columns:
+                        valid_p = cluster_df[p_col].dropna()
+                        if len(valid_p) > 0:
+                            _, p_corrected, _, _ = multipletests(valid_p, method='fdr_bh')
+                            cluster_df[f'q_{test_type}'] = np.nan
+                            cluster_df.loc[valid_p.index, f'q_{test_type}'] = p_corrected
+            
+            stmt_df = pd.DataFrame(statement_differences)
+            if len(stmt_df) > 0:
+                # BH correction for statement-level tests
+                for test_type in ['Welch', 'U']:
+                    p_col = f'p_{test_type}'
+                    if p_col in stmt_df.columns:
+                        valid_p = stmt_df[p_col].dropna()
+                        if len(valid_p) > 0:
+                            _, p_corrected, _, _ = multipletests(valid_p, method='fdr_bh')
+                            stmt_df[f'q_{test_type}'] = np.nan
+                            stmt_df.loc[valid_p.index, f'q_{test_type}'] = p_corrected
+            
+            self.subgroup_enhanced_results = {
+                'demographic_var': demographic_var,
+                'cluster_table': cluster_df,
+                'statement_table': stmt_df
+            }
+            
+            print(f"✅ Enhanced subgroup analysis completed")
+            print(f"  - {len(cluster_df)} cluster-level comparisons")
+            print(f"  - {len(stmt_df)} statement-level comparisons")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Error in enhanced subgroup analysis: {e}")
             import traceback
             traceback.print_exc()
             return False

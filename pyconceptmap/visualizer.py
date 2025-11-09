@@ -733,6 +733,182 @@ class ConceptMapVisualizer:
         
         return fig
     
+    def create_subgroup_violin_plots(self, ratings_with_demo: pd.DataFrame,
+                                     demographic_var: str,
+                                     save: bool = True) -> plt.Figure:
+        """
+        Create violin plots with swarm plots for subgroup comparisons.
+        
+        Parameters
+        ----------
+        ratings_with_demo : pd.DataFrame
+            Ratings data merged with demographics and cluster info
+        demographic_var : str
+            Demographic variable name
+        save : bool
+            Whether to save the plot
+            
+        Returns
+        -------
+        plt.Figure
+            The created figure
+        """
+        rating_vars = [col for col in ratings_with_demo.columns 
+                      if col not in ['RaterID', 'StatementID', 'Cluster', demographic_var, 'Statement']]
+        
+        n_vars = len(rating_vars)
+        n_clusters = ratings_with_demo['Cluster'].nunique()
+        
+        fig, axes = plt.subplots(n_clusters, n_vars, 
+                                figsize=(6 * n_vars, 5 * n_clusters))
+        
+        if n_clusters == 1:
+            axes = axes.reshape(1, -1)
+        if n_vars == 1:
+            axes = axes.reshape(-1, 1)
+        
+        vibrant_colors = ['#2196F3', '#4CAF50']
+        
+        for cluster_idx, cluster_id in enumerate(sorted(ratings_with_demo['Cluster'].unique())):
+            cluster_data = ratings_with_demo[ratings_with_demo['Cluster'] == cluster_id]
+            
+            for var_idx, rating_var in enumerate(rating_vars):
+                ax = axes[cluster_idx, var_idx]
+                
+                subgroups = sorted(cluster_data[demographic_var].dropna().unique())
+                
+                data_to_plot = []
+                labels = []
+                colors_list = []
+                
+                for i, subgroup in enumerate(subgroups):
+                    subgroup_data = cluster_data[
+                        (cluster_data[demographic_var] == subgroup) & 
+                        (cluster_data[rating_var].notna())
+                    ][rating_var].values
+                    
+                    if len(subgroup_data) > 0:
+                        data_to_plot.append(subgroup_data)
+                        labels.append(subgroup)
+                        colors_list.append(vibrant_colors[i % len(vibrant_colors)])
+                
+                # Create violin plot
+                parts = ax.violinplot(data_to_plot, positions=range(len(data_to_plot)), 
+                                     showmeans=True, showmedians=True)
+                
+                # Color violins
+                for pc, color in zip(parts['bodies'], colors_list):
+                    pc.set_facecolor(color)
+                    pc.set_alpha(0.7)
+                
+                # Add swarm plot overlay
+                for i, data in enumerate(data_to_plot):
+                    x_pos = np.random.normal(i, 0.05, len(data))
+                    ax.scatter(x_pos, data, alpha=0.3, s=10, color='black', zorder=3)
+                
+                ax.set_xticks(range(len(labels)))
+                ax.set_xticklabels(labels)
+                ax.set_ylabel(f'{rating_var} Rating', fontsize=11)
+                ax.set_title(f'Cluster {cluster_id}: {rating_var}', fontsize=12, fontweight='bold')
+                ax.grid(True, alpha=0.3, axis='y')
+        
+        plt.tight_layout()
+        
+        if save:
+            plt.savefig(self.figures_folder / f'subgroup_violin_{demographic_var.lower()}.png',
+                       dpi=self.dpi, bbox_inches=self.bbox_inches)
+        
+        return fig
+    
+    def create_subgroup_pattern_match(self, subgroup_enhanced_results: Dict,
+                                     save: bool = True) -> plt.Figure:
+        """
+        Create two-bar pattern match plot (clinical vs non-clinical) for each cluster.
+        
+        Parameters
+        ----------
+        subgroup_enhanced_results : Dict
+            Enhanced subgroup analysis results
+        save : bool
+            Whether to save the plot
+            
+        Returns
+        -------
+        plt.Figure
+            The created figure
+        """
+        if not subgroup_enhanced_results or 'cluster_table' not in subgroup_enhanced_results:
+            return None
+        
+        cluster_df = subgroup_enhanced_results['cluster_table']
+        
+        # Get unique clusters and metrics
+        clusters = sorted(cluster_df['Cluster'].unique())
+        metrics = sorted(cluster_df['Metric'].unique())
+        
+        n_clusters = len(clusters)
+        n_metrics = len(metrics)
+        
+        fig, axes = plt.subplots(1, n_clusters, figsize=(6 * n_clusters, 6))
+        
+        if n_clusters == 1:
+            axes = [axes]
+        
+        vibrant_colors = ['#2196F3', '#4CAF50']  # Blue for Clinical, Green for Non-Clinical
+        
+        for cluster_idx, cluster_id in enumerate(clusters):
+            ax = axes[cluster_idx]
+            cluster_data = cluster_df[cluster_df['Cluster'] == cluster_id]
+            
+            x_pos = np.arange(len(metrics))
+            width = 0.35
+            
+            clinical_means = []
+            nonclinical_means = []
+            
+            for metric in metrics:
+                metric_data = cluster_data[cluster_data['Metric'] == metric]
+                if len(metric_data) > 0:
+                    row = metric_data.iloc[0]
+                    clinical_means.append(row['Clinical_mean'])
+                    nonclinical_means.append(row['Non-Clinical_mean'])
+                else:
+                    clinical_means.append(0)
+                    nonclinical_means.append(0)
+            
+            bars1 = ax.bar(x_pos - width/2, clinical_means, width, 
+                          label='Clinical', color=vibrant_colors[0], alpha=0.8, edgecolor='black')
+            bars2 = ax.bar(x_pos + width/2, nonclinical_means, width,
+                          label='Non-Clinical', color=vibrant_colors[1], alpha=0.8, edgecolor='black')
+            
+            # Add error bars
+            for i, metric in enumerate(metrics):
+                metric_data = cluster_data[cluster_data['Metric'] == metric]
+                if len(metric_data) > 0:
+                    row = metric_data.iloc[0]
+                    ax.errorbar(i - width/2, row['Clinical_mean'], 
+                               yerr=row['Clinical_std'], fmt='none', color='black', capsize=3)
+                    ax.errorbar(i + width/2, row['Non-Clinical_mean'],
+                               yerr=row['Non-Clinical_std'], fmt='none', color='black', capsize=3)
+            
+            ax.set_xlabel('Metric', fontsize=12)
+            ax.set_ylabel('Mean Rating', fontsize=12)
+            ax.set_title(f'Cluster {cluster_id}: Clinical vs Non-Clinical', fontsize=13, fontweight='bold')
+            ax.set_xticks(x_pos)
+            ax.set_xticklabels(metrics)
+            ax.legend(fontsize=10)
+            ax.grid(True, alpha=0.3, axis='y')
+            ax.set_ylim(bottom=0)
+        
+        plt.tight_layout()
+        
+        if save:
+            demographic_var = subgroup_enhanced_results.get('demographic_var', 'subgroup')
+            plt.savefig(self.figures_folder / f'subgroup_pattern_match_{demographic_var.lower()}.png',
+                       dpi=self.dpi, bbox_inches=self.bbox_inches)
+        
+        return fig
+    
     def close_all_figures(self):
         """Close all matplotlib figures."""
         plt.close('all')
