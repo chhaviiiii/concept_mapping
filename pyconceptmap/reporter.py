@@ -426,3 +426,96 @@ class ReportGenerator:
         
         print("✅ Comprehensive report generated")
         return report_text
+    
+    def generate_subgroup_report(self, subgroup_results: Dict) -> str:
+        """
+        Generate subgroup analysis report.
+        
+        Parameters
+        ----------
+        subgroup_results : Dict
+            Subgroup analysis results dictionary
+            
+        Returns
+        -------
+        str
+            Subgroup analysis report text
+        """
+        if not subgroup_results or 'results' not in subgroup_results:
+            return ""
+        
+        demographic_var = subgroup_results.get('demographic_var', 'Subgroup')
+        results = subgroup_results['results']
+        
+        report_lines = [
+            "SUBGROUP ANALYSIS REPORT",
+            "=" * 60,
+            f"Demographic Variable: {demographic_var}",
+            ""
+        ]
+        
+        for cluster_key in sorted(results.keys()):
+            cluster_id = cluster_key.split('_')[1]
+            cluster_data = results[cluster_key]
+            
+            report_lines.append(f"CLUSTER {cluster_id}")
+            report_lines.append("-" * 60)
+            
+            for rating_var in sorted(cluster_data.keys()):
+                var_data = cluster_data[rating_var]
+                stats = var_data['subgroup_stats']
+                test_results = var_data['test_results']
+                subgroups = var_data['subgroups']
+                
+                report_lines.append(f"\n{rating_var} Ratings:")
+                report_lines.append(f"{'Subgroup':<20s} {'Mean':>10s} {'Std':>10s} {'Count':>10s} {'Min':>8s} {'Max':>8s}")
+                report_lines.append("-" * 66)
+                
+                for subgroup in subgroups:
+                    s = stats[subgroup]
+                    report_lines.append(
+                        f"{str(subgroup):<20s} {s['mean']:>10.3f} {s['std']:>10.3f} "
+                        f"{s['count']:>10d} {s['min']:>8.1f} {s['max']:>8.1f}"
+                    )
+                
+                # Add statistical test results
+                if test_results:
+                    report_lines.append("")
+                    if test_results['test_type'] == 't-test':
+                        report_lines.append(f"Statistical Test: Independent t-test")
+                        report_lines.append(f"  t-statistic: {test_results['statistic']:.3f}")
+                        report_lines.append(f"  p-value: {test_results['p_value']:.4f}")
+                        report_lines.append(f"  Group 1 ({subgroups[0]}): Mean = {test_results['group1_mean']:.3f}, n = {test_results['group1_n']}")
+                        report_lines.append(f"  Group 2 ({subgroups[1]}): Mean = {test_results['group2_mean']:.3f}, n = {test_results['group2_n']}")
+                    elif test_results['test_type'] == 'ANOVA':
+                        report_lines.append(f"Statistical Test: One-way ANOVA")
+                        report_lines.append(f"  F-statistic: {test_results['statistic']:.3f}")
+                        report_lines.append(f"  p-value: {test_results['p_value']:.4f}")
+                        report_lines.append(f"  Number of groups: {test_results['n_groups']}")
+                    
+                    # Significance interpretation
+                    p_val = test_results['p_value']
+                    if p_val < 0.001:
+                        sig_text = "*** (p < 0.001) - Highly significant"
+                    elif p_val < 0.01:
+                        sig_text = "** (p < 0.01) - Very significant"
+                    elif p_val < 0.05:
+                        sig_text = "* (p < 0.05) - Significant"
+                    else:
+                        sig_text = "ns (p >= 0.05) - Not significant"
+                    
+                    report_lines.append(f"  Significance: {sig_text}")
+                
+                report_lines.append("")
+            
+            report_lines.append("")
+        
+        report_text = "\n".join(report_lines)
+        
+        # Save to file
+        filename = f'subgroup_analysis_{demographic_var.lower()}.txt'
+        with open(self.output_folder / filename, 'w') as f:
+            f.write(report_text)
+        
+        print(f"✅ Subgroup analysis report generated: {filename}")
+        return report_text

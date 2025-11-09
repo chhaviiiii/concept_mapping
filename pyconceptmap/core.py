@@ -89,6 +89,7 @@ class ConceptMappingAnalysis:
         self.statement_summary = None
         self.anova_results = None
         self.tukey_results = None
+        self.subgroup_results = None
         
         print(f"PyConceptMap initialized")
         print(f"Data folder: {self.data_folder}")
@@ -275,6 +276,146 @@ class ConceptMappingAnalysis:
             
         except Exception as e:
             print(f"❌ Error analyzing ratings: {e}")
+            return False
+    
+    def analyze_subgroups(self, demographic_var: str) -> bool:
+        """
+        Perform subgroup analysis comparing ratings across demographic groups for each cluster.
+        
+        Parameters
+        ----------
+        demographic_var : str
+            Name of the demographic variable to use for subgroup analysis
+            (e.g., 'Clinical', 'Department', 'Experience')
+            
+        Returns
+        -------
+        bool
+            True if analysis completed successfully
+        """
+        try:
+            print(f"Analyzing subgroups by {demographic_var}...")
+            
+            if self.ratings is None or self.demographics is None or self.cluster_labels is None:
+                print("❌ Required data not found. Run load_data(), perform_mds(), perform_clustering(), and analyze_ratings() first.")
+                return False
+            
+            if demographic_var not in self.demographics.columns:
+                print(f"❌ Demographic variable '{demographic_var}' not found in Demographics.csv")
+                print(f"Available columns: {list(self.demographics.columns)}")
+                return False
+            
+            # Merge ratings with demographics and cluster assignments
+            ratings_with_demo = self.ratings.merge(
+                self.demographics[['RaterID', demographic_var]], 
+                on='RaterID', 
+                how='left'
+            )
+            
+            # Add cluster information to ratings
+            statement_to_cluster = dict(zip(
+                self.statements['StatementID'], 
+                self.cluster_labels + 1
+            ))
+            ratings_with_demo['Cluster'] = ratings_with_demo['StatementID'].map(statement_to_cluster)
+            
+            # Get rating variables
+            rating_vars = [col for col in self.ratings.columns 
+                          if col not in ['RaterID', 'StatementID']]
+            
+            # Perform subgroup analysis for each cluster and rating variable
+            subgroup_results = {}
+            
+            for cluster_id in range(1, self.n_clusters + 1):
+                cluster_data = ratings_with_demo[ratings_with_demo['Cluster'] == cluster_id]
+                
+                if len(cluster_data) == 0:
+                    continue
+                
+                cluster_results = {}
+                
+                for rating_var in rating_vars:
+                    if rating_var not in cluster_data.columns:
+                        continue
+                    
+                    # Get unique subgroups
+                    subgroups = cluster_data[demographic_var].dropna().unique()
+                    
+                    if len(subgroups) < 2:
+                        print(f"  Warning: Cluster {cluster_id}, {rating_var}: Only {len(subgroups)} subgroup(s) found. Need at least 2 for comparison.")
+                        continue
+                    
+                    # Calculate statistics for each subgroup
+                    subgroup_stats = {}
+                    subgroup_data_list = []
+                    
+                    for subgroup in subgroups:
+                        subgroup_ratings = cluster_data[
+                            (cluster_data[demographic_var] == subgroup) & 
+                            (cluster_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        if len(subgroup_ratings) > 0:
+                            subgroup_stats[subgroup] = {
+                                'mean': np.mean(subgroup_ratings),
+                                'std': np.std(subgroup_ratings),
+                                'count': len(subgroup_ratings),
+                                'median': np.median(subgroup_ratings),
+                                'min': np.min(subgroup_ratings),
+                                'max': np.max(subgroup_ratings)
+                            }
+                            subgroup_data_list.append(subgroup_ratings)
+                    
+                    # Perform statistical tests
+                    test_results = {}
+                    
+                    if len(subgroup_data_list) == 2:
+                        # Two groups: t-test
+                        from scipy.stats import ttest_ind
+                        stat, p_value = ttest_ind(subgroup_data_list[0], subgroup_data_list[1])
+                        test_results = {
+                            'test_type': 't-test',
+                            'statistic': stat,
+                            'p_value': p_value,
+                            'group1_mean': subgroup_stats[subgroups[0]]['mean'],
+                            'group2_mean': subgroup_stats[subgroups[1]]['mean'],
+                            'group1_n': subgroup_stats[subgroups[0]]['count'],
+                            'group2_n': subgroup_stats[subgroups[1]]['count']
+                        }
+                    elif len(subgroup_data_list) > 2:
+                        # Multiple groups: ANOVA
+                        from scipy.stats import f_oneway
+                        stat, p_value = f_oneway(*subgroup_data_list)
+                        test_results = {
+                            'test_type': 'ANOVA',
+                            'statistic': stat,
+                            'p_value': p_value,
+                            'n_groups': len(subgroup_data_list)
+                        }
+                    
+                    cluster_results[rating_var] = {
+                        'subgroup_stats': subgroup_stats,
+                        'test_results': test_results,
+                        'subgroups': list(subgroups)
+                    }
+                
+                if cluster_results:
+                    subgroup_results[f'Cluster_{cluster_id}'] = cluster_results
+            
+            self.subgroup_results = {
+                'demographic_var': demographic_var,
+                'results': subgroup_results
+            }
+            
+            print(f"✅ Subgroup analysis completed successfully")
+            print(f"  - Analyzed {len(subgroup_results)} clusters")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Error analyzing subgroups: {e}")
+            import traceback
+            traceback.print_exc()
             return False
     
     def generate_visualizations(self, save_plots: bool = True) -> bool:
