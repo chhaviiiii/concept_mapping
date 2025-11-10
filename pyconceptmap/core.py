@@ -478,7 +478,11 @@ class ConceptMappingAnalysis:
             cluster_table_rows = []
             statement_differences = []
             
+            # First, compute statement-level means by subgroup
+            statement_means_by_subgroup = {}
+            
             for cluster_id in range(1, self.n_clusters + 1):
+                cluster_statements = np.where(self.cluster_labels == (cluster_id - 1))[0] + 1
                 cluster_data = ratings_with_demo[ratings_with_demo['Cluster'] == cluster_id]
                 
                 if len(cluster_data) == 0:
@@ -494,70 +498,128 @@ class ConceptMappingAnalysis:
                     if rating_var not in cluster_data.columns:
                         continue
                     
-                    # Get data for each group
-                    group1_data = cluster_data[
-                        (cluster_data[demographic_var] == group1) & 
-                        (cluster_data[rating_var].notna())
-                    ][rating_var].values
+                    # Compute statement-level means by subgroup
+                    stmt_means_group1 = []
+                    stmt_means_group2 = []
                     
-                    group2_data = cluster_data[
-                        (cluster_data[demographic_var] == group2) & 
-                        (cluster_data[rating_var].notna())
-                    ][rating_var].values
+                    for stmt_id in cluster_statements:
+                        stmt_data = cluster_data[cluster_data['StatementID'] == stmt_id]
+                        
+                        group1_ratings = stmt_data[
+                            (stmt_data[demographic_var] == group1) & 
+                            (stmt_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        group2_ratings = stmt_data[
+                            (stmt_data[demographic_var] == group2) & 
+                            (stmt_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        if len(group1_ratings) > 0:
+                            stmt_means_group1.append(np.mean(group1_ratings))
+                        if len(group2_ratings) > 0:
+                            stmt_means_group2.append(np.mean(group2_ratings))
                     
-                    if len(group1_data) == 0 or len(group2_data) == 0:
-                        continue
-                    
-                    # Basic statistics
-                    mean1, std1, n1 = np.mean(group1_data), np.std(group1_data, ddof=1), len(group1_data)
-                    mean2, std2, n2 = np.mean(group2_data), np.std(group2_data, ddof=1), len(group2_data)
-                    delta = mean1 - mean2
-                    
-                    # 95% CI for difference (Welch-Satterthwaite)
-                    se_diff = np.sqrt((std1**2 / n1) + (std2**2 / n2))
-                    # Welch-Satterthwaite degrees of freedom
-                    df_welch = ((std1**2 / n1 + std2**2 / n2)**2) / \
-                              ((std1**2 / n1)**2 / (n1 - 1) + (std2**2 / n2)**2 / (n2 - 1))
-                    t_crit = stats.t.ppf(0.975, max(1, int(df_welch)))
-                    ci_lower = delta - t_crit * se_diff
-                    ci_upper = delta + t_crit * se_diff
-                    
-                    # Hedges' g (corrected effect size)
-                    pooled_std = np.sqrt(((n1 - 1) * std1**2 + (n2 - 1) * std2**2) / (n1 + n2 - 2))
-                    if pooled_std > 0:
-                        cohens_d = delta / pooled_std
-                        # Hedges' correction
-                        correction = 1 - (3 / (4 * (n1 + n2 - 2) - 1))
-                        hedges_g = cohens_d * correction
-                    else:
-                        hedges_g = 0.0
-                    
-                    # Welch's t-test (unequal variances)
-                    welch_stat, welch_p = ttest_ind(group1_data, group2_data, equal_var=False)
-                    
-                    # Mann-Whitney U test
-                    try:
-                        u_stat, u_p = mannwhitneyu(group1_data, group2_data, alternative='two-sided')
-                    except:
-                        u_stat, u_p = np.nan, np.nan
-                    
-                    # Store cluster-level results
-                    cluster_table_rows.append({
-                        'Cluster': cluster_id,
-                        'Metric': rating_var,
-                        'Clinical_mean': mean1 if group1 == 'Clinical' else mean2,
-                        'Clinical_std': std1 if group1 == 'Clinical' else std2,
-                        'Non-Clinical_mean': mean2 if group1 == 'Clinical' else mean1,
-                        'Non-Clinical_std': std2 if group1 == 'Clinical' else std1,
-                        'Delta': delta if group1 == 'Clinical' else -delta,
-                        'CI_lower': ci_lower if group1 == 'Clinical' else -ci_upper,
-                        'CI_upper': ci_upper if group1 == 'Clinical' else -ci_lower,
-                        'Hedges_g': hedges_g if group1 == 'Clinical' else -hedges_g,
-                        'p_Welch': welch_p,
-                        'p_U': u_p,
-                        'n1': n1 if group1 == 'Clinical' else n2,
-                        'n2': n2 if group1 == 'Clinical' else n1
-                    })
+                    # Aggregate statement-level means to cluster-level means
+                    if len(stmt_means_group1) > 0 and len(stmt_means_group2) > 0:
+                        # Cluster-level means (mean of statement means)
+                        mean1 = np.mean(stmt_means_group1)
+                        mean2 = np.mean(stmt_means_group2)
+                        
+                        # Cluster-level SD (SD of statement means)
+                        std1 = np.std(stmt_means_group1, ddof=1) if len(stmt_means_group1) > 1 else 0.0
+                        std2 = np.std(stmt_means_group2, ddof=1) if len(stmt_means_group2) > 1 else 0.0
+                        
+                        # Sample sizes (number of statements with data)
+                        n1 = len(stmt_means_group1)
+                        n2 = len(stmt_means_group2)
+                        
+                        delta = mean1 - mean2
+                        
+                        # For statistical tests, use all individual ratings (not statement means)
+                        group1_data = cluster_data[
+                            (cluster_data[demographic_var] == group1) & 
+                            (cluster_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        group2_data = cluster_data[
+                            (cluster_data[demographic_var] == group2) & 
+                            (cluster_data[rating_var].notna())
+                        ][rating_var].values
+                        
+                        if len(group1_data) == 0 or len(group2_data) == 0:
+                            continue
+                        
+                        # 95% CI for difference (using statement means as units)
+                        # SE of mean difference when using statement means
+                        se_diff = np.sqrt((std1**2 / n1) + (std2**2 / n2))
+                        # Welch-Satterthwaite degrees of freedom
+                        if std1 > 0 and std2 > 0 and n1 > 1 and n2 > 1:
+                            df_welch = ((std1**2 / n1 + std2**2 / n2)**2) / \
+                                      ((std1**2 / n1)**2 / (n1 - 1) + (std2**2 / n2)**2 / (n2 - 1))
+                            t_crit = stats.t.ppf(0.975, max(1, int(df_welch)))
+                            ci_lower = delta - t_crit * se_diff
+                            ci_upper = delta + t_crit * se_diff
+                        else:
+                            ci_lower = np.nan
+                            ci_upper = np.nan
+                        
+                        # Hedges' g (using statement means as units)
+                        pooled_std = np.sqrt(((n1 - 1) * std1**2 + (n2 - 1) * std2**2) / (n1 + n2 - 2))
+                        if pooled_std > 0:
+                            cohens_d = delta / pooled_std
+                            # Hedges' correction
+                            correction = 1 - (3 / (4 * (n1 + n2 - 2) - 1))
+                            hedges_g = cohens_d * correction
+                        else:
+                            hedges_g = 0.0
+                        
+                        # Statistical tests: Use statement means as units (paired by statement)
+                        # This tests if statement means differ between groups
+                        if len(stmt_means_group1) == len(stmt_means_group2) and len(stmt_means_group1) > 1:
+                            # Paired t-test (statements are paired)
+                            try:
+                                from scipy.stats import ttest_rel
+                                welch_stat, welch_p = ttest_rel(stmt_means_group1, stmt_means_group2)
+                            except:
+                                # Fallback to independent test
+                                welch_stat, welch_p = ttest_ind(stmt_means_group1, stmt_means_group2, equal_var=False)
+                            
+                            # Wilcoxon signed-rank test (paired)
+                            try:
+                                from scipy.stats import wilcoxon
+                                u_stat, u_p = wilcoxon(stmt_means_group1, stmt_means_group2, alternative='two-sided')
+                            except:
+                                # Fallback to Mann-Whitney U
+                                try:
+                                    u_stat, u_p = mannwhitneyu(stmt_means_group1, stmt_means_group2, alternative='two-sided')
+                                except:
+                                    u_stat, u_p = np.nan, np.nan
+                        else:
+                            # Use individual ratings if statement pairing not possible
+                            welch_stat, welch_p = ttest_ind(group1_data, group2_data, equal_var=False)
+                            try:
+                                u_stat, u_p = mannwhitneyu(group1_data, group2_data, alternative='two-sided')
+                            except:
+                                u_stat, u_p = np.nan, np.nan
+                        
+                        # Store cluster-level results
+                        cluster_table_rows.append({
+                            'Cluster': cluster_id,
+                            'Metric': rating_var,
+                            'Clinical_mean': mean1 if group1 == 'Clinical' else mean2,
+                            'Clinical_std': std1 if group1 == 'Clinical' else std2,
+                            'Non-Clinical_mean': mean2 if group1 == 'Clinical' else mean1,
+                            'Non-Clinical_std': std2 if group1 == 'Clinical' else std1,
+                            'Delta': delta if group1 == 'Clinical' else -delta,
+                            'CI_lower': ci_lower if group1 == 'Clinical' else -ci_upper,
+                            'CI_upper': ci_upper if group1 == 'Clinical' else -ci_lower,
+                            'Hedges_g': hedges_g if group1 == 'Clinical' else -hedges_g,
+                            'p_Welch': welch_p,
+                            'p_U': u_p,
+                            'n1': n1 if group1 == 'Clinical' else n2,
+                            'n2': n2 if group1 == 'Clinical' else n1
+                        })
                     
                     # Statement-level analysis
                     for stmt_id in cluster_data['StatementID'].unique():
@@ -720,11 +782,8 @@ class ConceptMappingAnalysis:
                 return False
             
             # Generate core visualizations
-            self.visualizer.create_point_map(
-                self.mds_coords, self.statements, save=save_plots
-            )
-            
-            self.visualizer.create_cluster_map(
+            # Create combined figure 1 (1a and 1b side-by-side)
+            self.visualizer.create_combined_figure_1(
                 self.mds_coords, self.cluster_labels, self.statements, save=save_plots
             )
             

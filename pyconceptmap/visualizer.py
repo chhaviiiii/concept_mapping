@@ -176,6 +176,92 @@ class ConceptMapVisualizer:
         
         return fig
     
+    def create_combined_figure_1(self, mds_coords: np.ndarray,
+                                cluster_labels: np.ndarray,
+                                statements: pd.DataFrame,
+                                save: bool = True) -> plt.Figure:
+        """
+        Create a combined figure showing both point map (1a) and cluster map (1b) side-by-side.
+        
+        Parameters
+        ----------
+        mds_coords : np.ndarray
+            MDS coordinates (n_statements, 2)
+        cluster_labels : np.ndarray
+            Cluster assignments
+        statements : pd.DataFrame
+            Statements data
+        save : bool
+            Whether to save the plot
+            
+        Returns
+        -------
+        plt.Figure
+            The created figure
+        """
+        # Create figure with two subplots side-by-side
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(20, 8))
+        
+        # Left subplot: Point Map (Figure 1a)
+        ax1.scatter(mds_coords[:, 0], mds_coords[:, 1], 
+                   c='#2196F3', s=50, alpha=0.8, edgecolors='black', linewidth=0.5)
+        
+        # Add statement numbers
+        for i, (x, y) in enumerate(mds_coords):
+            ax1.annotate(str(i + 1), (x, y), xytext=(2, 2), 
+                        textcoords='offset points', fontsize=8, ha='left')
+        
+        ax1.set_xlabel('Dimension 1', fontsize=12)
+        ax1.set_ylabel('Dimension 2', fontsize=12)
+        ax1.set_title('Figure 1a: Point Map (MDS Configuration)', fontsize=14, fontweight='bold')
+        ax1.grid(True, alpha=0.3)
+        ax1.set_aspect('equal')
+        
+        # Right subplot: Cluster Map (Figure 1b)
+        n_clusters = len(np.unique(cluster_labels))
+        # Use darker, more saturated colors
+        dark_colors = ['#2E86AB', '#A23B72', '#F18F01', '#C73E1D', '#6A994E', 
+                      '#BC4749', '#7209B7', '#3A86FF', '#FF006E', '#8338EC']
+        colors = [dark_colors[i % len(dark_colors)] for i in range(n_clusters)]
+        
+        # Plot points by cluster
+        for cluster_id in range(n_clusters):
+            mask = cluster_labels == cluster_id
+            cluster_coords = mds_coords[mask]
+            
+            ax2.scatter(cluster_coords[:, 0], cluster_coords[:, 1],
+                       c=[colors[cluster_id]], s=50, alpha=0.7,
+                       edgecolors='black', linewidth=0.5,
+                       label=f'Cluster {cluster_id + 1}')
+            
+            # Add convex hull
+            if len(cluster_coords) > 2:
+                try:
+                    hull = ConvexHull(cluster_coords)
+                    hull_points = cluster_coords[hull.vertices]
+                    hull_points = np.vstack([hull_points, hull_points[0]])  # Close the hull
+                    
+                    ax2.plot(hull_points[:, 0], hull_points[:, 1], 
+                            color=colors[cluster_id], linewidth=2, alpha=0.8)
+                except:
+                    pass  # Skip hull if not enough points
+        
+        ax2.set_xlabel('Dimension 1', fontsize=12)
+        ax2.set_ylabel('Dimension 2', fontsize=12)
+        ax2.set_title('Figure 1b: Cluster Map', fontsize=14, fontweight='bold')
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+        ax2.set_aspect('equal')
+        
+        # Adjust layout
+        plt.tight_layout()
+        
+        if save:
+            plt.savefig(self.figures_folder / 'figure_1_combined.png',
+                       dpi=self.dpi, bbox_inches=self.bbox_inches)
+        
+        return fig
+    
     def create_point_rating_map(self, mds_coords: np.ndarray,
                                statement_summary: pd.DataFrame,
                                rating_var: str = 'Importance',
