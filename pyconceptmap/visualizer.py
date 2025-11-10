@@ -910,6 +910,7 @@ class ConceptMapVisualizer:
                                      save: bool = True) -> plt.Figure:
         """
         Create two-bar pattern match plot (clinical vs non-clinical) for each cluster.
+        Includes rating values on bars, p-values, and Hedge's g with interpretation.
         
         Parameters
         ----------
@@ -935,12 +936,25 @@ class ConceptMapVisualizer:
         n_clusters = len(clusters)
         n_metrics = len(metrics)
         
-        fig, axes = plt.subplots(1, n_clusters, figsize=(6 * n_clusters, 6))
+        # Increase figure height to accommodate annotations
+        fig, axes = plt.subplots(1, n_clusters, figsize=(6 * n_clusters, 7))
         
         if n_clusters == 1:
             axes = [axes]
         
         vibrant_colors = ['#2196F3', '#4CAF50']  # Blue for Clinical, Green for Non-Clinical
+        
+        def interpret_hedges_g(g):
+            """Interpret Hedge's g effect size."""
+            abs_g = abs(g)
+            if abs_g < 0.2:
+                return "negligible"
+            elif abs_g < 0.5:
+                return "small"
+            elif abs_g < 0.8:
+                return "medium"
+            else:
+                return "large"
         
         for cluster_idx, cluster_id in enumerate(clusters):
             ax = axes[cluster_idx]
@@ -951,6 +965,10 @@ class ConceptMapVisualizer:
             
             clinical_means = []
             nonclinical_means = []
+            clinical_stds = []
+            nonclinical_stds = []
+            p_values = []
+            hedges_g_values = []
             
             for metric in metrics:
                 metric_data = cluster_data[cluster_data['Metric'] == metric]
@@ -958,9 +976,17 @@ class ConceptMapVisualizer:
                     row = metric_data.iloc[0]
                     clinical_means.append(row['Clinical_mean'])
                     nonclinical_means.append(row['Non-Clinical_mean'])
+                    clinical_stds.append(row['Clinical_std'])
+                    nonclinical_stds.append(row['Non-Clinical_std'])
+                    p_values.append(row.get('p_Welch', np.nan))
+                    hedges_g_values.append(row.get('Hedges_g', np.nan))
                 else:
                     clinical_means.append(0)
                     nonclinical_means.append(0)
+                    clinical_stds.append(0)
+                    nonclinical_stds.append(0)
+                    p_values.append(np.nan)
+                    hedges_g_values.append(np.nan)
             
             bars1 = ax.bar(x_pos - width/2, clinical_means, width, 
                           label='Clinical', color=vibrant_colors[0], alpha=0.8, edgecolor='black')
@@ -969,22 +995,114 @@ class ConceptMapVisualizer:
             
             # Add error bars
             for i, metric in enumerate(metrics):
-                metric_data = cluster_data[cluster_data['Metric'] == metric]
-                if len(metric_data) > 0:
-                    row = metric_data.iloc[0]
-                    ax.errorbar(i - width/2, row['Clinical_mean'], 
-                               yerr=row['Clinical_std'], fmt='none', color='black', capsize=3)
-                    ax.errorbar(i + width/2, row['Non-Clinical_mean'],
-                               yerr=row['Non-Clinical_std'], fmt='none', color='black', capsize=3)
+                ax.errorbar(i - width/2, clinical_means[i], 
+                           yerr=clinical_stds[i], fmt='none', color='black', capsize=3)
+                ax.errorbar(i + width/2, nonclinical_means[i],
+                           yerr=nonclinical_stds[i], fmt='none', color='black', capsize=3)
+            
+            # First, calculate maximum height needed for proper spacing
+            max_height = 0
+            max_annotation_height = 0
+            for i in range(len(metrics)):
+                # Calculate max bar height (bar + error bar)
+                max_bar_height = max(clinical_means[i] + clinical_stds[i], 
+                                   nonclinical_means[i] + nonclinical_stds[i])
+                max_height = max(max_height, max_bar_height)
+                
+                # Calculate positions: rating values, then bracket, then annotations
+                # Rating values go above bars with error bars
+                rating_value_y = max_bar_height + 0.15
+                # Bracket goes well above rating values to avoid overlap
+                bracket_y = rating_value_y + 0.25
+                # P-value and Hedge's g go above bracket
+                p_value_y = bracket_y + 0.25
+                hedges_g_y = p_value_y + 0.25
+                
+                # Track the highest annotation point (add padding for text height)
+                max_annotation_height = max(max_annotation_height, hedges_g_y + 0.3)
+            
+            # Set y-axis limit before adding text to ensure nothing gets clipped
+            ax.set_ylim(bottom=0, top=max_annotation_height)
+            
+            # Add rating values on top of bars
+            for i in range(len(metrics)):
+                max_bar_height = max(clinical_means[i] + clinical_stds[i], 
+                                   nonclinical_means[i] + nonclinical_stds[i])
+                rating_value_y = max_bar_height + 0.15
+                
+                # Clinical bar value
+                ax.text(i - width/2, rating_value_y, 
+                       f'{clinical_means[i]:.2f}', 
+                       ha='center', va='bottom', fontsize=10, fontweight='bold')
+                # Non-Clinical bar value
+                ax.text(i + width/2, rating_value_y, 
+                       f'{nonclinical_means[i]:.2f}', 
+                       ha='center', va='bottom', fontsize=10, fontweight='bold')
+            
+            # Add p-values and Hedge's g between bars
+            for i in range(len(metrics)):
+                max_bar_height = max(clinical_means[i] + clinical_stds[i], 
+                                   nonclinical_means[i] + nonclinical_stds[i])
+                
+                # Position for rating values (already added above)
+                rating_value_y = max_bar_height + 0.15
+                # Position for bracket (well above rating values)
+                bracket_y = rating_value_y + 0.25
+                
+                # Position for annotations (above the bracket)
+                p_value_y = bracket_y + 0.25
+                hedges_g_y = p_value_y + 0.25
+                
+                # Format p-value
+                if not np.isnan(p_values[i]):
+                    if p_values[i] < 0.001:
+                        p_text = "p < 0.001"
+                    elif p_values[i] < 0.01:
+                        p_text = f"p = {p_values[i]:.3f}"
+                    else:
+                        p_text = f"p = {p_values[i]:.3f}"
+                else:
+                    p_text = "p = N/A"
+                
+                # Format Hedge's g with interpretation
+                if not np.isnan(hedges_g_values[i]):
+                    g_interpretation = interpret_hedges_g(hedges_g_values[i])
+                    g_text = f"g = {hedges_g_values[i]:.3f} ({g_interpretation})"
+                else:
+                    g_text = "g = N/A"
+                
+                # Add bracket/line connecting the bars (with vertical lines at ends)
+                # Vertical lines start just above the rating values
+                bracket_start_y = rating_value_y + 0.1
+                ax.plot([i - width/2, i + width/2], [bracket_y, bracket_y], 
+                       'k-', linewidth=1.5)
+                ax.plot([i - width/2, i - width/2], [bracket_start_y, bracket_y], 
+                       'k-', linewidth=1.5)
+                ax.plot([i + width/2, i + width/2], [bracket_start_y, bracket_y], 
+                       'k-', linewidth=1.5)
+                
+                # Add p-value text
+                ax.text(i, p_value_y, p_text, 
+                       ha='center', va='bottom', fontsize=9, fontweight='bold',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.9, edgecolor='black', linewidth=1))
+                
+                # Add Hedge's g text
+                ax.text(i, hedges_g_y, g_text, 
+                       ha='center', va='bottom', fontsize=9, fontweight='bold',
+                       bbox=dict(boxstyle='round,pad=0.3', facecolor='lightyellow', alpha=0.9, edgecolor='black', linewidth=1))
             
             ax.set_xlabel('Metric', fontsize=12)
             ax.set_ylabel('Mean Rating', fontsize=12)
-            ax.set_title(f'Cluster {cluster_id}: Clinical vs Non-Clinical', fontsize=13, fontweight='bold')
+            if cluster_idx == 0:
+                ax.set_title(f'Figure 4: Pattern Match Comparison\nCluster {cluster_id}: Clinical vs Non-Clinical', 
+                           fontsize=13, fontweight='bold')
+            else:
+                ax.set_title(f'Cluster {cluster_id}: Clinical vs Non-Clinical', 
+                           fontsize=13, fontweight='bold')
             ax.set_xticks(x_pos)
             ax.set_xticklabels(metrics)
             ax.legend(fontsize=10)
             ax.grid(True, alpha=0.3, axis='y')
-            ax.set_ylim(bottom=0)
         
         plt.tight_layout()
         
