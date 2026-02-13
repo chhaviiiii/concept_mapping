@@ -22,10 +22,12 @@ pyconceptmap/
 │   └── PROJECT_OVERVIEW.md       # This file
 │
 ├── Scripts
-│   ├── run_pyconceptmap.py       # Command-line interface
-│   ├── convert_data_for_pyconceptmap.py  # Data converter
-│   ├── simple_test.py           # Simple test script
-│   └── test_pyconceptmap.py     # Full test suite
+│   ├── scripts/
+│   │   ├── run_pyconceptmap.py   # Command-line interface
+│   │   └── convert_data_for_pyconceptmap.py  # Data converter
+│   └── tests/
+│       ├── simple_test.py       # Simple test script
+│       └── test_pyconceptmap.py # Full test suite
 │
 ├── Examples
 │   ├── examples/
@@ -34,7 +36,7 @@ pyconceptmap/
 │
 ├── Data & Results
 │   ├── data/                     # Input data files
-│   │   ├── BCCS AI Workshop_August 11, 2025_23.45.csv
+│   │   ├── BCCS AI Workshop_2025_23.45.csv
 │   │   ├── Statements.csv
 │   │   ├── SortedCards.csv
 │   │   ├── Demographics.csv
@@ -67,7 +69,7 @@ pyconceptmap/
 - **Examples**: Working code samples
 
 ### Multiple Interfaces
-- **Command Line**: `python run_pyconceptmap.py --data_folder ./data`
+- **Command Line**: `python scripts/run_pyconceptmap.py --data_folder ./data`
 - **Programmatic**: `from pyconceptmap import ConceptMappingAnalysis`
 - **Data Converter**: Convert existing CSV data to PyConceptMap format
 
@@ -118,14 +120,14 @@ pyconceptmap/
 
 ### Command Line
 ```bash
-# Create sample data
-python run_pyconceptmap.py --create_sample_data
+# Create sample data (from project root)
+python scripts/run_pyconceptmap.py --create_sample_data
 
 # Run analysis
-python run_pyconceptmap.py --data_folder ./data
+python scripts/run_pyconceptmap.py --data_folder ./data
 
 # Custom parameters
-python run_pyconceptmap.py --data_folder ./data --mds_method classical --clustering_method complete
+python scripts/run_pyconceptmap.py --data_folder ./data --mds_method classical --clustering_method complete
 ```
 
 ### Programmatic

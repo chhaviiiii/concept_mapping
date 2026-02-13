@@ -42,8 +42,9 @@ Thank you for your interest in contributing to PyConceptMap! This document provi
 
 ```bash
 # Fork and clone the repository
-git clone https://github.com/your-username/pyconceptmap.git
-cd pyconceptmap
+git clone https://github.com/chhaviiiii/concept_mapping.git
+cd concept_mapping
+# Or after forking: git clone https://github.com/your-username/concept_mapping.git
 
 # Create a virtual environment
 python -m venv pyconceptmap_env

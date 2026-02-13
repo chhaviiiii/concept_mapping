@@ -18,7 +18,7 @@ PyConceptMap requires four CSV files in your data folder:
 ### 2. Run Analysis
 
 ```bash
-python run_pyconceptmap.py --data_folder /path/to/your/data
+python scripts/run_pyconceptmap.py --data_folder /path/to/your/data
 ```
 
 ### 3. View Results
@@ -93,36 +93,36 @@ RaterID,StatementID,Importance,Feasibility
 ### Basic Commands
 
 ```bash
-# Check if everything is installed correctly
-python run_pyconceptmap.py --check_requirements
+# Check if everything is installed correctly (from project root)
+python scripts/run_pyconceptmap.py --check_requirements
 
 # Create sample data for testing
-python run_pyconceptmap.py --create_sample_data
+python scripts/run_pyconceptmap.py --create_sample_data
 
 # Run analysis on your data
-python run_pyconceptmap.py --data_folder ./my_data
+python scripts/run_pyconceptmap.py --data_folder ./my_data
 
 # Run with custom output folder
-python run_pyconceptmap.py --data_folder ./my_data --output_folder ./results
+python scripts/run_pyconceptmap.py --data_folder ./my_data --output_folder ./results
 ```
 
 ### Advanced Options
 
 ```bash
 # Custom MDS method
-python run_pyconceptmap.py --data_folder ./data --mds_method classical
+python scripts/run_pyconceptmap.py --data_folder ./data --mds_method classical
 
 # Custom clustering method
-python run_pyconceptmap.py --data_folder ./data --clustering_method complete
+python scripts/run_pyconceptmap.py --data_folder ./data --clustering_method complete
 
 # Specify number of clusters
-python run_pyconceptmap.py --data_folder ./data --n_clusters 5
+python scripts/run_pyconceptmap.py --data_folder ./data --n_clusters 5
 
 # Set random seed for reproducibility
-python run_pyconceptmap.py --data_folder ./data --random_state 42
+python scripts/run_pyconceptmap.py --data_folder ./data --random_state 42
 
 # Enable verbose output
-python run_pyconceptmap.py --data_folder ./data --verbose
+python scripts/run_pyconceptmap.py --data_folder ./data --verbose
 ```
 
 ## Programmatic Usage
@@ -262,7 +262,7 @@ analysis.generate_reports()
 
 1. Check the [troubleshooting section](README.md#troubleshooting)
 2. Review the [examples](examples/) folder
-3. Open an [issue](https://github.com/pyconceptmap/pyconceptmap/issues)
+3. Open an [issue](https://github.com/chhaviiiii/concept_mapping/issues)
 4. Check the [documentation](README.md)
 
 ## Next Steps

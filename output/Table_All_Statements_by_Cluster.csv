@@ -1,0 +1,101 @@
+Cluster,Statement ID,Statement,Importance Mean,Feasibility Mean
+Cluster 1,1,Human oversight during implementation in early days,4.25,3.42
+Cluster 1,2,Concerns with confidentiality,3.75,3.25
+Cluster 1,3,Concerns with patient acceptability,4.08,3.17
+Cluster 1,5,False confidence,3.33,2.73
+Cluster 1,7,AI could perpetuate existing biases,3.33,3.25
+Cluster 1,9,Ensuring accountability and oversight of AI,4.0,3.58
+Cluster 1,10,Concerns with digital literacy and digital divide barriers,3.08,2.75
+Cluster 1,12,Diversification of AI training data and sources,3.33,3.33
+Cluster 1,13,Too much bureaucracy slowing progress,3.0,3.0
+Cluster 1,14,Concerns with liability,3.33,2.83
+Cluster 1,16,Proactive preventative care,3.17,3.0
+Cluster 1,19,Developing a rigorous privacy and quality assurance framework,3.5,3.42
+Cluster 1,20,AI could be misused,3.17,2.75
+Cluster 1,21,Helps with generation of ideas can act as a sounding board,2.83,3.58
+Cluster 1,25,Establishing proper consent,3.0,3.08
+Cluster 1,26,Concerns with job security,2.42,2.25
+Cluster 1,28,Concerns about personalizing care,2.83,3.25
+Cluster 1,29,Data governance policies and regulations to enhance data quality and accountability,2.92,2.58
+Cluster 1,32,Regulation framework and a good understanding of the medico-legal implications,2.83,2.25
+Cluster 1,33,"AI could lead to excessive human delegation, assuming that AI will take care of it!",2.58,2.5
+Cluster 1,35,AI could be of concern regarding its ongoing validation,3.0,3.09
+Cluster 1,36,AI could be of concern to patient privacy,3.08,3.08
+Cluster 1,37,Consultation recording and transcription,3.17,4.18
+Cluster 1,38,Ensuring cybersecurity of AI tools,3.75,3.17
+Cluster 1,39,Educating end-users about properly navigating AI,3.83,3.58
+Cluster 1,40,Concerns with protection of personal health identifiers,3.42,3.0
+Cluster 1,43,Ensuring accessibility and translation,3.5,3.67
+Cluster 1,45,Embed research / quality improvement into all areas,2.92,3.25
+Cluster 1,46,"Data that the AI model is trained on must be good, clean, large and diverse",3.58,2.83
+Cluster 1,47,Concerns with attrition of skills in healthcare providers,2.58,2.58
+Cluster 1,48,Preservation of human touch,3.08,2.83
+Cluster 1,49,Loss of human connection/interactions,3.33,2.75
+Cluster 1,52,AI could engender issues with trust,2.75,2.67
+Cluster 1,54,Concerns with responsibility accountability of AI recommendations,3.17,3.0
+Cluster 1,55,AI hallucinations,3.17,2.83
+Cluster 1,56,Multidisciplinary collaboration and training in developing AI models,3.17,3.25
+Cluster 1,60,"Concerns with standards for quality, accuracy, etc.",3.08,2.92
+Cluster 1,61,Concerns with power outages and down time procedures,2.17,2.58
+Cluster 1,63,Distress is nuanced and often detected in the unsaid of human communication and in a trusting therapeutic relationship,3.42,2.5
+Cluster 1,65,Concerns with difficulty to know older data for training and missing new breakthrough information,2.92,2.92
+Cluster 1,66,Concerns with consent of patient,3.25,3.17
+Cluster 1,67,Racism bias through research (history of medical research),3.08,2.5
+Cluster 1,68,Phased roll-out,3.17,4.08
+Cluster 1,71,Over reliance by physicians and reduced problem solving skills,2.67,2.75
+Cluster 1,73,Ensuring clinical validation of AI tools,3.5,3.42
+Cluster 1,74,"Concerns with maintaining up to date information, sources and programming",2.83,3.42
+Cluster 1,75,Data privacy concerns,3.33,2.83
+Cluster 1,77,Concerns with going too far and can't come back,2.33,2.5
+Cluster 1,78,Control of data by corporations,2.75,2.5
+Cluster 1,81,Concerns with transparency,3.08,2.75
+Cluster 1,82,AI could make mistakes,3.33,3.0
+Cluster 1,83,"Concerns with stability of the system (during virus attack, power outage, system interruption)",2.75,2.42
+Cluster 1,85,"Establishing guidelines for ""best practices"" for training AI + clinical validation",3.5,3.17
+Cluster 1,86,Lack of training/knowledge for those using the AI tool in the real world,3.17,3.25
+Cluster 1,87,Can existing healthcare servers support the use of AI?,2.17,3.08
+Cluster 1,88,Ensuring interpretability of AI tools,3.42,3.33
+Cluster 1,91,Concerns that data is held by private companies,2.92,2.42
+Cluster 1,93,Minority groups being marginalized,3.0,2.92
+Cluster 1,94,Patient/parent/caregiver/provider acceptability,3.92,2.92
+Cluster 1,95,Data ownership and standards and guidelines on AI developed are not established,2.83,2.92
+Cluster 1,96,Possibility of data breaches / data leaks,3.0,2.83
+Cluster 1,99,Cybersecurity concerns,2.75,2.42
+Cluster 2,4,Efficiency improved for documentation,3.58,4.17
+Cluster 2,6,AI could provide alternate perspectives,3.17,3.17
+Cluster 2,8,Minimizing bias and increasing performance and accuracy,4.0,3.33
+Cluster 2,11,"Better detection (of moles, cancer lumps)",3.58,3.75
+Cluster 2,15,AI could decrease false positives,3.42,3.42
+Cluster 2,17,Benefits in equitable access,3.33,2.92
+Cluster 2,18,AI could free up time for pt care,3.75,3.67
+Cluster 2,22,Benefits with accessibility & communication (translating languages lay terms),3.25,3.58
+Cluster 2,23,AI allows access vast information very quickly to help diagnosis,3.75,4.0
+Cluster 2,24,Benefits in early distress screening,3.33,3.25
+Cluster 2,27,Benefits with patient access to accurate information,3.25,3.55
+Cluster 2,30,"Savings in time, can integrate different information and improve in treatment especially when there is less number of human specialist",3.83,3.67
+Cluster 2,31,AI could remove human bias,3.17,2.75
+Cluster 2,34,Knowledge repositing for learning and research,2.92,3.5
+Cluster 2,41,Facilitation of clinical research,3.08,3.42
+Cluster 2,42,Improve access to services,3.67,3.58
+Cluster 2,44,AI could help improve accuracy,3.58,3.75
+Cluster 2,50,Increases digestibility/highlighting key points,3.67,4.33
+Cluster 2,51,Collate large databases,3.25,4.17
+Cluster 2,53,Pooling large volume of data can improve accuracy of AI system and allow for more timely diagnosis and treatment recommendation,3.58,3.75
+Cluster 2,57,"24/7 availability, AI doesn't get tired or brain fog",3.42,4.25
+Cluster 2,58,Noticing patterns and new things humans haven't noticed,3.58,3.5
+Cluster 2,59,Prediction/prognosis/treatment recommendations,3.92,3.58
+Cluster 2,62,Increased opportunities for innovation,2.92,3.58
+Cluster 2,64,Personalization of AI support tools for patients,3.58,3.33
+Cluster 2,69,Reduce admin burden,3.92,4.17
+Cluster 2,70,Potential in navigation and directing to self-management resources,3.42,3.67
+Cluster 2,72,Ability to make text/conversation more digestable for patients (less technical),3.5,3.83
+Cluster 2,76,Triage diagnostic results for clinicians,3.67,3.67
+Cluster 2,79,AI could help address the human health resources issue,3.58,3.25
+Cluster 2,80,Faster assessments to inform decision-making,3.5,3.58
+Cluster 2,84,Live translation and/or transcription of conversations,3.73,4.08
+Cluster 2,89,Allow clinicians to focus on tasks requiring their expertise,4.17,4.0
+Cluster 2,90,"Identifying and focusing on high-priority areas, such as prevention",3.08,3.42
+Cluster 2,92,Maintaining competency with changing best practices and approved standards,3.17,2.83
+Cluster 2,97,"Potential for widening differential diagnosis, widening perspective of patient",3.0,3.33
+Cluster 2,98,Lists possible outcome and risks for the patient,3.83,3.58
+Cluster 2,100,Automation of routine tasks,4.0,4.08

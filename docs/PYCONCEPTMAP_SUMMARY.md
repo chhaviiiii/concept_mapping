@@ -52,17 +52,17 @@
 
 #### Command Line Interface
 ```bash
-# Create sample data
-python3 run_pyconceptmap.py --create_sample_data
+# Create sample data (from project root)
+python scripts/run_pyconceptmap.py --create_sample_data
 
 # Run complete analysis
-python3 run_pyconceptmap.py --data_folder ./data
+python scripts/run_pyconceptmap.py --data_folder ./data
 
 # Check requirements
-python3 run_pyconceptmap.py --check_requirements
+python scripts/run_pyconceptmap.py --check_requirements
 
 # Custom parameters
-python3 run_pyconceptmap.py --data_folder ./data --mds_method classical --clustering_method complete
+python scripts/run_pyconceptmap.py --data_folder ./data --mds_method classical --clustering_method complete
 ```
 
 #### Programmatic Interface
@@ -93,7 +93,7 @@ pyconceptmap/
 ├── reporter.py               # Report generation
 └── utils.py                  # Utility functions
 
-run_pyconceptmap.py           # Command-line interface
+scripts/run_pyconceptmap.py   # Command-line interface
 setup.py                      # Package setup
 requirements.txt              # Dependencies
 README.md                     # Documentation
@@ -155,9 +155,9 @@ The tool generates **15 output files**:
 
 PyConceptMap is now a fully functional, open-source concept mapping tool that can be used immediately for research and analysis. It provides all the functionality of RCMap but in Python, with modern visualization capabilities and comprehensive reporting.
 
-**To get started:**
-1. `python3 run_pyconceptmap.py --create_sample_data`
-2. `python3 run_pyconceptmap.py --data_folder sample_data`
+**To get started (from project root):**
+1. `python scripts/run_pyconceptmap.py --create_sample_data`
+2. `python scripts/run_pyconceptmap.py --data_folder sample_data`
 3. Check the `sample_data/output/` folder for results!
 
 The tool is ready for production use and can handle real concept mapping data following the standard CSV format requirements.

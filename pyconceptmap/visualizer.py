@@ -461,7 +461,6 @@ class ConceptMapVisualizer:
         
         ax.set_xticks(x_positions)
         ax.set_xticklabels(categories)
-        ax.set_title('Figure 4: Pattern Match Analysis', fontsize=14, fontweight='bold')
         ax.set_ylabel('Mean Rating')
         ax.legend()
         ax.grid(True, alpha=0.3)
@@ -496,7 +495,7 @@ class ConceptMapVisualizer:
         feas_col = 'Feasibility_mean'
         
         if imp_col not in statement_summary.columns or feas_col not in statement_summary.columns:
-            print("Warning: Importance_mean or Feasibility_mean columns not found")
+            warnings.warn("Importance_mean or Feasibility_mean columns not found", UserWarning)
             return fig
         
         # Calculate means
@@ -647,7 +646,7 @@ class ConceptMapVisualizer:
         numeric_cols = cluster_means.select_dtypes(include=[np.number]).columns
         
         if len(numeric_cols) < 2:
-            print("Warning: Not enough numeric columns for parallel coordinates")
+            warnings.warn("Not enough numeric columns for parallel coordinates", UserWarning)
             return fig
         
         # Normalize data
@@ -715,7 +714,7 @@ class ConceptMapVisualizer:
             The created figure
         """
         if not subgroup_results or 'results' not in subgroup_results:
-            print("Warning: No subgroup results to plot")
+            warnings.warn("No subgroup results to plot", UserWarning)
             return None
         
         demographic_var = subgroup_results.get('demographic_var', 'Subgroup')

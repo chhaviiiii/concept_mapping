@@ -2,7 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/pyconceptmap/pyconceptmap)
+[![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/chhaviiiii/concept_mapping)
 
 **PyConceptMap** is a comprehensive Python implementation of concept mapping methodology, inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017). It provides a user-friendly interface for performing concept mapping analysis, including data loading, multidimensional scaling (MDS), clustering, visualization, and report generation.
 
@@ -40,8 +40,8 @@
 ### From Source
 
 ```bash
-git clone https://github.com/pyconceptmap/pyconceptmap.git
-cd pyconceptmap
+git clone https://github.com/chhaviiiii/concept_mapping.git
+cd concept_mapping
 pip install -e .
 ```
 
@@ -57,10 +57,12 @@ pip install -e .
 
 ## Quick Start
 
+Run commands from the project root. Use `python scripts/run_pyconceptmap.py` or, after `pip install -e .`, the `pyconceptmap` command.
+
 ### 1. Create Sample Data
 
 ```bash
-python run_pyconceptmap.py --create_sample_data
+python scripts/run_pyconceptmap.py --create_sample_data
 ```
 
 This creates sample data files in the `./sample_data` folder.
@@ -68,13 +70,13 @@ This creates sample data files in the `./sample_data` folder.
 ### 2. Run Analysis
 
 ```bash
-python run_pyconceptmap.py --data_folder ./sample_data
+python scripts/run_pyconceptmap.py --data_folder ./sample_data
 ```
 
 ### 3. Check Requirements
 
 ```bash
-python run_pyconceptmap.py --check_requirements
+python scripts/run_pyconceptmap.py --check_requirements
 ```
 
 ## Data Format
@@ -121,16 +123,16 @@ RaterID,StatementID,Importance,Feasibility
 
 ```bash
 # Basic usage
-python run_pyconceptmap.py --data_folder /path/to/data
+python scripts/run_pyconceptmap.py --data_folder /path/to/data
 
 # With custom output folder
-python run_pyconceptmap.py --data_folder /path/to/data --output_folder /path/to/output
+python scripts/run_pyconceptmap.py --data_folder /path/to/data --output_folder /path/to/output
 
 # With custom parameters
-python run_pyconceptmap.py --data_folder /path/to/data --mds_method classical --clustering_method complete
+python scripts/run_pyconceptmap.py --data_folder /path/to/data --mds_method classical --clustering_method complete
 
 # Create sample data for testing
-python run_pyconceptmap.py --create_sample_data
+python scripts/run_pyconceptmap.py --create_sample_data
 ```
 
 ### Programmatic Interface
@@ -177,6 +179,15 @@ analysis.generate_reports()
 - **Tukey's HSD**: Pairwise cluster comparisons
 - **Cluster Analysis**: Cluster quality and characteristics
 - **Comprehensive Report**: Complete analysis summary
+
+### Optional: Subcluster analysis
+After running the main analysis, you can run subcluster analysis (Ward clustering within each main cluster) to get finer-grained themes and extra figures:
+
+```bash
+python scripts/run_subcluster_analysis.py --output_folder ./output --n_subclusters 4
+```
+
+This produces `statements_with_subclusters.csv`, `subcluster_summary.csv`, and three figures in `output/figures/`: **subcluster_point_map.png**, **subcluster_pattern_match.png**, and **subcluster_go_zone.png**.
 
 ## Methodology
 
@@ -292,24 +303,24 @@ print("Validation result:", validation_result)
 
 1. **Missing Files**: Ensure all four CSV files are present in the data folder
 2. **Data Format**: Check that CSV files have the correct column names and formats
-3. **Dependencies**: Run `python run_pyconceptmap.py --check_requirements` to verify installation
+3. **Dependencies**: Run `python scripts/run_pyconceptmap.py --check_requirements` to verify installation
 4. **Memory Issues**: For large datasets, consider reducing the number of statements or using sampling
 
 ### Getting Help
 
 - Check the [documentation](docs/) for detailed guides
 - Review the [examples](examples/) folder for sample code
-- Open an [issue](https://github.com/pyconceptmap/pyconceptmap/issues) for bugs or feature requests
+- Open an [issue](https://github.com/chhaviiiii/concept_mapping/issues) for bugs or feature requests
 
 ## Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for guidelines.
 
 ### Development Setup
 
 ```bash
-git clone https://github.com/pyconceptmap/pyconceptmap.git
-cd pyconceptmap
+git clone https://github.com/chhaviiiii/concept_mapping.git
+cd concept_mapping
 pip install -e ".[dev]"
 pytest  # Run tests
 ```
@@ -323,7 +334,7 @@ If you use PyConceptMap in your research, please cite:
   title={PyConceptMap: Open-Source Concept Mapping Tool},
   author={PyConceptMap Development Team},
   year={2024},
-  url={https://github.com/pyconceptmap/pyconceptmap}
+  url={https://github.com/chhaviiiii/concept_mapping}
 }
 ```
 

@@ -13,8 +13,8 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/pyconceptmap/pyconceptmap.git
-   cd pyconceptmap
+   git clone https://github.com/chhaviiiii/concept_mapping.git
+   cd concept_mapping
    ```
 
 2. **Install in development mode**:
@@ -22,9 +22,9 @@
    pip install -e .
    ```
 
-3. **Verify installation**:
+3. **Verify installation** (run from project root):
    ```bash
-   python run_pyconceptmap.py --check_requirements
+   python scripts/run_pyconceptmap.py --check_requirements
    ```
 
 ### Method 2: Using pip (Future)
@@ -59,14 +59,14 @@ pip install numpy pandas matplotlib seaborn scikit-learn scipy
 After installation, verify that everything works:
 
 ```bash
-# Check requirements
-python run_pyconceptmap.py --check_requirements
+# Check requirements (from project root)
+python scripts/run_pyconceptmap.py --check_requirements
 
 # Create sample data
-python run_pyconceptmap.py --create_sample_data
+python scripts/run_pyconceptmap.py --create_sample_data
 
 # Run test analysis
-python run_pyconceptmap.py --data_folder sample_data
+python scripts/run_pyconceptmap.py --data_folder sample_data
 ```
 
 ## Troubleshooting
@@ -103,7 +103,7 @@ python run_pyconceptmap.py --data_folder sample_data
 If you encounter issues:
 
 1. Check the [troubleshooting section](README.md#troubleshooting)
-2. Open an [issue](https://github.com/pyconceptmap/pyconceptmap/issues)
+2. Open an [issue](https://github.com/chhaviiiii/concept_mapping/issues)
 3. Check the [documentation](README.md)
 
 ## Development Installation
@@ -112,8 +112,8 @@ For developers who want to contribute:
 
 ```bash
 # Clone and install in development mode
-git clone https://github.com/pyconceptmap/pyconceptmap.git
-cd pyconceptmap
+git clone https://github.com/chhaviiiii/concept_mapping.git
+cd concept_mapping
 pip install -e ".[dev]"
 
 # Install development dependencies
