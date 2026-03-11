@@ -1,8 +1,9 @@
 # PyConceptMap: Open-Source Concept Mapping Tool
 
+**Repository:** [https://github.com/chhaviiiii/concept_mapping](https://github.com/chhaviiiii/concept_mapping)
+
 [![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/status-production%20ready-brightgreen.svg)](https://github.com/chhaviiiii/concept_mapping)
 
 **PyConceptMap** is a comprehensive Python implementation of concept mapping methodology, inspired by [RCMap](https://haimbar.github.io/RCMap/) (Bar & Mentch, 2017). It provides a user-friendly interface for performing concept mapping analysis, including data loading, multidimensional scaling (MDS), clustering, visualization, and report generation.
 
@@ -160,6 +161,8 @@ analysis.generate_reports()
 ```
 
 ## Generated Outputs
+
+Running the pipeline creates the following in `./output` (and in `./output/processed_data`); these are not stored in the repository.
 
 ### Visualizations (8 files)
 - **Point Map**: MDS configuration with statement numbers
@@ -337,6 +340,8 @@ If you use PyConceptMap in your research, please cite:
   url={https://github.com/chhaviiiii/concept_mapping}
 }
 ```
+
+**Code and data availability:** [https://github.com/chhaviiiii/concept_mapping](https://github.com/chhaviiiii/concept_mapping)
 
 ## License
 
